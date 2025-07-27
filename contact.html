@@ -278,7 +278,8 @@
       };
 
       // Replace this URL with your Discord webhook URL
-      const webhookUrl = 'https://discord.com/api/webhooks/1398873394153525361/rPiqjjnHFz1jaZZscEI0bfptrDWMLfihvXjOPbvEFMNfeIeBHq07hJRnLkS-CnD_xpVt';
+      // Use environment variable or server endpoint instead
+      const webhookUrl = '/api/contact'; // This will be handled by your server
       
       const embed = {
         title: 'New Contact Form Submission',
@@ -313,14 +314,13 @@
         timestamp: new Date().toISOString()
       };
 
+      // Send to your server endpoint instead of directly to Discord
       fetch(webhookUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          embeds: [embed]
-        })
+        body: JSON.stringify(data) // Send form data to your server
       })
       .then(response => {
         if (response.ok) {
