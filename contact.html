@@ -264,76 +264,79 @@
 
   <script>
     // Contact form submission
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
+    document.getElementById('contact-form').addEventListener('submit', async function(e) {
       e.preventDefault();
       
-      const formData = new FormData(this);
-      const data = {
-        firstName: formData.get('firstName'),
-        lastName: formData.get('lastName'),
-        email: formData.get('email'),
-        discord: formData.get('discord'),
-        subject: formData.get('subject'),
-        message: formData.get('message')
-      };
-
-      // Replace this URL with your Discord webhook URL
-      const webhookUrl = 'https://discord.com/api/webhooks/1398873394153525361/rPiqjjnHFz1jaZZscEI0bfptrDWMLfihvXjOPbvEFMNfeIeBHq07hJRnLkS-CnD_xpVt';
+      const form = e.target;
+      const formData = new FormData(form);
+      const submitButton = form.querySelector('button[type="submit"]');
+      const statusMessage = document.getElementById('form-status');
       
-      const embed = {
-        title: 'New Contact Form Submission',
-        color: 0x00ff00,
-        fields: [
-          {
-            name: 'Name',
-            value: `${data.firstName} ${data.lastName}`,
-            inline: true
+      // Get form values
+      const name = `${formData.get('firstName')} ${formData.get('lastName')}`;
+      const email = formData.get('email');
+      const subject = formData.get('subject');
+      const message = formData.get('message');
+      const discord = formData.get('discord');
+      
+      // Simple validation
+      if (!name || !email || !subject || !message) {
+        statusMessage.textContent = 'Please fill in all fields.';
+        statusMessage.className = 'text-red-500 text-sm mt-2';
+        return;
+      }
+      
+      // Validate email format
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        statusMessage.textContent = 'Please enter a valid email address.';
+        statusMessage.className = 'text-red-500 text-sm mt-2';
+        return;
+      }
+      
+      // Disable submit button
+      submitButton.disabled = true;
+      submitButton.innerHTML = 'Sending...';
+      statusMessage.textContent = '';
+      
+      try {
+        const response = await fetch('/.netlify/functions/submit-form', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
           },
-          {
-            name: 'Email',
-            value: data.email,
-            inline: true
-          },
-          {
-            name: 'Discord',
-            value: data.discord || 'Not provided',
-            inline: true
-          },
-          {
-            name: 'Subject',
-            value: data.subject,
-            inline: true
-          },
-          {
-            name: 'Message',
-            value: data.message,
-            inline: false
-          }
-        ],
-        timestamp: new Date().toISOString()
-      };
-
-      fetch(webhookUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          embeds: [embed]
-        })
-      })
-      .then(response => {
+          body: JSON.stringify({
+            name,
+            email,
+            subject,
+            message,
+            discord
+          }),
+        });
+        
+        const data = await response.json();
+        
         if (response.ok) {
-          alert('Message sent successfully! We\'ll get back to you soon.');
-          this.reset();
+          statusMessage.textContent = 'Message sent successfully!';
+          statusMessage.className = 'text-green-500 text-sm mt-2';
+          form.reset();
         } else {
-          alert('Error sending message. Please try again or contact us on Discord.');
+          throw new Error(data.error || 'Failed to send message');
         }
-      })
-      .catch(error => {
+      } catch (error) {
         console.error('Error:', error);
-        alert('Error sending message. Please try again or contact us on Discord.');
-      });
+        statusMessage.textContent = 'Failed to send message. Please try again later.';
+        statusMessage.className = 'text-red-500 text-sm mt-2';
+      } finally {
+        // Re-enable submit button
+        submitButton.disabled = false;
+        submitButton.innerHTML = 'Send Message';
+        
+        // Clear status message after 5 seconds
+        setTimeout(() => {
+          statusMessage.textContent = '';
+        }, 5000);
+      }
     });
 
     // Downloads modal functions
