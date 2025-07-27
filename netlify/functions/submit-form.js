@@ -9,7 +9,16 @@ exports.handler = async (event, context) => {
   try {
     const { name, email, subject, message, discord } = JSON.parse(event.body);
     
-    const webhookUrl = 'https://discord.com/api/webhooks/1398873394153525361/rPiqjjnHFz1jaZZscEI0bfptrDWMLfihvXjOPbvEFMNfeIeBHq07hJRnLkS-CnD_xpVt';
+    // Get webhook URL from environment variable
+    const webhookUrl = process.env.DISCORD_WEBHOOK_URL;
+    
+    if (!webhookUrl) {
+      console.error('DISCORD_WEBHOOK_URL environment variable is not set');
+      return {
+        statusCode: 500,
+        body: JSON.stringify({ error: 'Server configuration error' })
+      };
+    }
     
     const discordMessage = {
       username: 'Website Contact Form',
