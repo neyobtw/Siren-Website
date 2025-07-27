@@ -320,6 +320,8 @@
         if (response.ok) {
           statusMessage.textContent = 'Message sent successfully!';
           statusMessage.className = 'text-green-500 text-sm mt-2';
+          submitButton.innerHTML = 'Sent!';
+          submitButton.classList.add('bg-green-500', 'hover:bg-green-600');
           form.reset();
         } else {
           throw new Error(data.error || 'Failed to send message');
@@ -329,13 +331,21 @@
         statusMessage.textContent = 'Failed to send message. Please try again later.';
         statusMessage.className = 'text-red-500 text-sm mt-2';
       } finally {
-        // Re-enable submit button
-        submitButton.disabled = false;
-        submitButton.innerHTML = 'Send Message';
+        // Don't reset the button if the form was successfully submitted
+        if (!submitButton.classList.contains('bg-green-500')) {
+          submitButton.disabled = false;
+          submitButton.innerHTML = 'Send Message';
+        }
         
         // Clear status message after 5 seconds
         setTimeout(() => {
           statusMessage.textContent = '';
+          // Reset button after message disappears
+          if (submitButton.classList.contains('bg-green-500')) {
+            submitButton.disabled = false;
+            submitButton.innerHTML = 'Send Message';
+            submitButton.classList.remove('bg-green-500', 'hover:bg-green-600');
+          }
         }, 5000);
       }
     });
