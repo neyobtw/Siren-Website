@@ -21,7 +21,7 @@ A modern, professional website for Siren Software's gaming enhancement services.
 ├── contact.html        # Contact form page
 ├── terms.html          # Terms of service page
 ├── README.md           # This file
-└── ApexCheats _ Undetected Game Cheats since 2025_files/
+└── SirenSoftware _ Undetected Game Cheats since 2025_files/
     ├── logo.png        # Company logo
     ├── output.css      # Tailwind CSS styles
     └── [other assets]  # Images and resources
@@ -135,15 +135,15 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Support
 
 For support and questions:
-- Join our Discord: [discord.gg/apex69](https://discord.gg/apex69)
+- Join our Discord: [discord.gg/sirensoftware](https://discord.gg/sirensoftware)
 - Contact us through the [contact form](contact.html)
 
 ## 🙏 Acknowledgments
 
-- Built with ❤️ by Jerry
+- Built with ❤️ by syvn
 - Icons and graphics from various sources
 - Tailwind CSS for styling framework
 
 ---
 
-**Made With Love By ♡ Jerry** 
+**Made With Love By ♡ syvn** 
