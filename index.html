@@ -53,20 +53,40 @@
 </head>
 
 <body class="bg-black font-primary scroll-smooth overflow-x-hidden" style="overflow-x: hidden; max-width: 100vw;">
-<!-- Store Announcement Bar -->
-<div id="store-announcement" class="w-full bg-gradient-to-r from-pink-500 via-yellow-400 to-green-400 text-black font-bold py-2 px-4 flex items-center justify-center gap-2 shadow-lg z-50 fixed top-0 left-0" style="min-height:48px;">
-  <span class="mr-2">🎉 <span class="hidden sm:inline">Special Offer!</span> 10% OFF all store items with code <span class="bg-black text-yellow-300 rounded px-2 py-1 mx-1 tracking-wider">Menu10</span></span>
-  <button onclick="document.getElementById('store-announcement').style.display='none'" class="ml-2 text-black/60 hover:text-black text-xl font-bold focus:outline-none">&times;</button>
+<!-- Discount Code Popup Modal -->
+<div id="discount-modal-overlay" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 backdrop-blur-sm transition-opacity duration-300 opacity-100">
+  <div class="relative bg-gradient-to-br from-violet-600 via-indigo-500 to-blue-500 rounded-2xl shadow-2xl p-8 w-full max-w-xs sm:max-w-sm md:max-w-md mx-4 text-center border-4 border-white/10 animate-fade-in">
+    <button onclick="document.getElementById('discount-modal-overlay').style.display='none'" class="absolute top-4 right-4 text-white/70 hover:text-white text-2xl font-bold focus:outline-none">&times;</button>
+    <h2 class="text-3xl font-extrabold text-white mb-2 drop-shadow">10% OFF</h2>
+    <p class="text-white/90 text-lg mb-4 font-medium">Use code below for 10% off your purchase!</p>
+    <button id="copy-discount-modal" class="bg-white text-violet-700 font-bold text-lg rounded-full px-6 py-2 shadow-lg border-2 border-violet-400 hover:bg-violet-100 transition flex items-center justify-center gap-2 mx-auto mb-2 select-all" style="outline:none;">
+      <span id="discount-code-modal">Menu10</span>
+      <svg id="copy-icon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16h8M8 12h8m-7 8h6a2 2 0 002-2V6a2 2 0 00-2-2H8a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+    </button>
+    <span id="copied-tooltip-modal" class="block text-xs text-white bg-violet-700 rounded px-2 py-1 mt-1 opacity-0 transition-opacity duration-300 mx-auto w-fit">Copied!</span>
+  </div>
 </div>
 <script>
-// Push content down to avoid overlap
+// Discount code copy-to-clipboard for popup modal
 window.addEventListener('DOMContentLoaded', () => {
-  const bar = document.getElementById('store-announcement');
-  if(bar) {
-    document.body.style.paddingTop = bar.offsetHeight + 'px';
+  const copyBtn = document.getElementById('copy-discount-modal');
+  if(copyBtn) {
+    copyBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const code = document.getElementById('discount-code-modal').textContent;
+      navigator.clipboard.writeText(code).then(() => {
+        const tooltip = document.getElementById('copied-tooltip-modal');
+        tooltip.style.opacity = '1';
+        setTimeout(() => { tooltip.style.opacity = '0'; }, 1200);
+      });
+    });
   }
 });
 </script>
+
+    document.body.style.paddingTop = bar.offsetHeight + 'px';
+  }
+
 
 
 
