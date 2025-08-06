@@ -184,7 +184,50 @@
             class="text-white/40 font-medium hover:text-white transition">Products</a>
         <a href="#" onclick="showDownloadsModal(); return false;"
           class="text-white/40 font-medium hover:text-white transition">Downloads</a>
+
+        <script>
+        // Dropdown click toggle for Jobs (desktop)
+        document.addEventListener('DOMContentLoaded', function () {
+          const toggle = document.getElementById('jobs-dropdown-toggle');
+          const menu = document.getElementById('jobs-dropdown-menu');
+          let open = false;
+          toggle.addEventListener('click', function (e) {
+            e.stopPropagation();
+            open = !open;
+            if (open) {
+              menu.classList.remove('opacity-0', 'invisible');
+              menu.classList.add('opacity-100', 'visible');
+            } else {
+              menu.classList.add('opacity-0', 'invisible');
+              menu.classList.remove('opacity-100', 'visible');
+            }
+          });
+          // Close dropdown if clicking outside
+          document.addEventListener('click', function (e) {
+            if (!toggle.contains(e.target) && !menu.contains(e.target)) {
+              menu.classList.add('opacity-0', 'invisible');
+              menu.classList.remove('opacity-100', 'visible');
+              open = false;
+            }
+          });
+        });
+        </script>
         <a class="text-white/40 font-medium hover:text-white transition" href="status.html">Status</a>
+        <div class="relative group ml-4" id="jobs-dropdown-parent">
+          <div id="jobs-dropdown-toggle" class="text-white/40 font-medium hover:text-white transition flex items-center space-x-1 cursor-pointer select-none">
+            <span>Jobs</span>
+            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </div>
+          <div id="jobs-dropdown-menu" class="absolute top-full left-0 mt-2 w-48 bg-zinc-900 border border-zinc-800 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+            <div class="py-2">
+              <a href="#" onclick="showJobForm('media-creator'); return false;" class="block px-4 py-2 text-white/70 hover:text-white hover:bg-zinc-800 transition">Media Creator</a>
+              <a href="#" onclick="showJobForm('reseller'); return false;" class="block px-4 py-2 text-white/70 hover:text-white hover:bg-zinc-800 transition">Reseller</a>
+              <a href="#" onclick="showJobForm('cheat-developer'); return false;" class="block px-4 py-2 text-white/70 hover:text-white hover:bg-zinc-800 transition">Cheat Developer</a>
+            </div>
+          </div>
+        </div>
       </div>
       <!-- Auth Buttons -->
       <div class="hidden md:flex items-center space-x-4">
@@ -225,6 +268,15 @@
           <a href="#" onclick="showDownloadsModal(); return false;" class="block text-white/70 font-medium hover:text-white transition px-3 py-2 rounded-lg hover:bg-black/30">
             Downloads
           </a>
+          <!-- Jobs Dropdown (Mobile) -->
+          <div class="">
+            <span class="block text-white/70 font-medium px-3 py-2">Jobs</span>
+            <div class="pl-4">
+              <a href="#" onclick="showJobForm('media-creator'); return false;" class="block text-white/60 hover:text-white px-3 py-2 rounded-lg hover:bg-zinc-800 transition">Media Creator</a>
+              <a href="#" onclick="showJobForm('cheat-developer'); return false;" class="block text-white/60 hover:text-white px-3 py-2 rounded-lg hover:bg-zinc-800 transition">Cheat Developer</a>
+              <a href="#" onclick="showJobForm('web-developer'); return false;" class="block text-white/60 hover:text-white px-3 py-2 rounded-lg hover:bg-zinc-800 transition">Web Developer</a>
+            </div>
+          </div>
           <a class="block text-white/70 font-medium hover:text-white transition px-3 py-2 rounded-lg hover:bg-black/30" href="status.html">
             Status
           </a>
@@ -1741,6 +1793,239 @@
     // Initialize position and start animation
     track.style.transform = `translateX(${position}px)`;
     animate();
+  </script>
+
+  <!-- Job Application Modals and JS -->
+  <div id="job-modal-overlay" class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm transition-opacity duration-300 opacity-0 pointer-events-none">
+    <div id="job-modal-container" class="bg-zinc-900 border border-white/10 rounded-2xl shadow-2xl p-6 w-full max-w-xl mx-auto relative" style="width:600px; max-width:95vw; height:80vh; max-height:700px; overflow-y:auto; color:white;">
+      <button onclick="hideJobModal()" class="absolute top-4 right-4 text-white/50 hover:text-white text-2xl">&times;</button>
+      <div id="job-modal-content"></div>
+    </div>
+  </div>
+  <script>
+  function showJobForm(jobType) {
+  const overlay = document.getElementById('job-modal-overlay');
+  overlay.style.display = 'flex';
+  const content = document.getElementById('job-modal-content');
+    let formHtml = '';
+    if (jobType === 'media-creator') {
+      formHtml = `
+        <h2 class='text-2xl font-bold text-white mb-2'>Apply: Media Creator</h2>
+        <div class='mb-4 text-white/90 text-sm'>
+          <p class='mb-2'>Siren Software is seeking talented and creative content creators for YouTube and TikTok. Develop and execute content strategies that drive engagement and views. Earn up to 15€ per 1000 views on YouTube (not TikTok). If you love social media, video production, and making compelling content, we want you!</p>
+          <b class='block mt-2 mb-1'>What You'll Do:</b>
+          <ul class='list-disc list-inside mb-2'>
+            <li>Create engaging content for YouTube and/or TikTok platforms.</li>
+            <li>Develop strategies to increase views and engagement.</li>
+            <li>Monitor and analyze audience metrics to optimize content.</li>
+            <li>Collaborate with the team on content strategies.</li>
+          </ul>
+          <b class='block mt-2 mb-1'>What You'll Need:</b>
+          <ul class='list-disc list-inside mb-2'>
+            <li>Good video editing skills.</li>
+            <li>Excellent communication and collaboration skills.</li>
+            <li>Proficiency with YouTube and TikTok.</li>
+            <li>Knowledge of current social media trends.</li>
+          </ul>
+          <b class='block mt-2 mb-1'>What We Offer:</b>
+          <ul class='list-disc list-inside mb-2'>
+            <li>Up to 15€ per 1000 YouTube views (different rate for TikTok).</li>
+            <li>Free access to all our cheats (Premium subscription).</li>
+            <li>Opportunities for professional growth and development.</li>
+          </ul>
+        </div>
+        <form id='jobForm' class='space-y-4'>
+          <input type='hidden' name='job' value='Media Creator'>
+          <div><label class='block text-white/80 mb-1'>Full Name</label><input name='name' required class='w-full p-2 rounded bg-zinc-800 text-white'></div>
+          <div><label class='block text-white/80 mb-1'>Email</label><input name='email' type='email' required class='w-full p-2 rounded bg-zinc-800 text-white'></div>
+          <div><label class='block text-white/80 mb-1'>Discord (optional)</label><input name='discord' class='w-full p-2 rounded bg-zinc-800 text-white'></div>
+          <div><label class='block text-white/80 mb-1'>Why do you want to join?</label><textarea name='message' required class='w-full p-2 rounded bg-zinc-800 text-white'></textarea></div>
+          <button type='submit' class='w-full bg-white text-black font-bold py-2 rounded hover:bg-zinc-100 transition'>Submit Application</button>
+        </form>`;
+    } else if (jobType === 'reseller') {
+      formHtml = `
+        <h2 class='text-2xl font-bold text-white mb-2'>Apply: Reseller</h2>
+        <div class='mb-4 text-white/90 text-sm'>
+          <p class='mb-2'>Become an official Siren Software reseller! Get access to bulk discounts, priority support, and exclusive resources to grow your business. If you have an audience, a Discord server, or a community and want to make money selling Siren Software products, this is for you.</p>
+          <b class='block mt-2 mb-1'>What You'll Do:</b>
+          <ul class='list-disc list-inside mb-2'>
+            <li>Promote and sell Siren Software products to your audience.</li>
+            <li>Provide basic customer support to your buyers.</li>
+            <li>Work with our team to ensure a smooth experience for your customers.</li>
+          </ul>
+          <b class='block mt-2 mb-1'>What You'll Need:</b>
+          <ul class='list-disc list-inside mb-2'>
+            <li>An active Discord server, website, or social media following.</li>
+            <li>Strong communication and marketing skills.</li>
+            <li>Honesty, reliability, and professionalism.</li>
+          </ul>
+          <b class='block mt-2 mb-1'>What We Offer:</b>
+          <ul class='list-disc list-inside mb-2'>
+            <li><b>Free Reseller:</b> Get 15% off all products and free access to the reseller panel.</li>
+            <li><b>Pro Reseller:</b> Pay $50 one-time and get 50% off all products, plus free panel access.</li>
+            <li>Bulk discounts and high profit margins.</li>
+            <li>Priority support for you and your customers.</li>
+            <li>Exclusive reseller resources and tools.</li>
+            <li>Potential to earn a lot—top resellers make $1000s/month.</li>
+          </ul>
+        </div>
+        <form id='jobForm' class='space-y-4'>
+          <input type='hidden' name='job' value='Reseller'>
+          <div><label class='block text-white/80 mb-1'>Full Name</label><input name='name' required class='w-full p-2 rounded bg-zinc-800 text-white'></div>
+          <div><label class='block text-white/80 mb-1'>Email</label><input name='email' type='email' required class='w-full p-2 rounded bg-zinc-800 text-white'></div>
+          <div><label class='block text-white/80 mb-1'>Discord (required)</label><input name='discord' required class='w-full p-2 rounded bg-zinc-800 text-white'></div>
+          <div><label class='block text-white/80 mb-1'>Tell us about your audience/community</label><textarea name='message' required class='w-full p-2 rounded bg-zinc-800 text-white'></textarea></div>
+          <button type='submit' class='w-full bg-white text-black font-bold py-2 rounded hover:bg-zinc-100 transition'>Submit Application</button>
+        </form>`;
+    } else if (jobType === 'cheat-developer') {
+      formHtml = `
+        <h2 class='text-2xl font-bold text-white mb-2'>Apply: Cheat Developer</h2>
+        <div class='mb-4 text-white/90 text-sm'>
+          <p class='mb-2'>Join Siren Software as an experienced and highly skilled cheat developer. Use your expertise to develop new cheats and maintain existing ones for popular games. Work with a passionate team to ensure our cheats are effective and undetected.</p>
+          <b class='block mt-2 mb-1'>What You'll Do:</b>
+          <ul class='list-disc list-inside mb-2'>
+            <li>Windows kernel and user level software development.</li>
+            <li>Reverse engineering of games and anti-cheats.</li>
+            <li>Technical analysis of anti-cheat systems.</li>
+            <li>Deobfuscation and analysis of protection techniques.</li>
+            <li>Deep dive into Windows internals and undocumented APIs.</li>
+            <li>Collaborate with the engineering team.</li>
+          </ul>
+          <b class='block mt-2 mb-1'>What You'll Need:</b>
+          <ul class='list-disc list-inside mb-2'>
+            <li>Passion for making cheats and learning new things.</li>
+            <li>Strong C/C++ and assembly knowledge.</li>
+            <li>Deep knowledge of Windows OS internals and kernel-level driver dev.</li>
+            <li>High experience in reverse engineering and debugging.</li>
+            <li>Optional: Experience with Intel VT-x & AMD SVM virtualization.</li>
+            <li>Strong logic, algorithms, and optimization skills.</li>
+            <li>Excellent communication skills.</li>
+          </ul>
+          <b class='block mt-2 mb-1'>What We Offer:</b>
+          <ul class='list-disc list-inside mb-2'>
+            <li>Work from home, higher than average market pay.</li>
+            <li>Join a leading team of enthusiasts.</li>
+            <li>Professional growth and development.</li>
+            <li>Improve your skills and work with passionate people.</li>
+            <li>Be part of a well-known project with an active community.</li>
+          </ul>
+        </div>
+        <form id='jobForm' class='space-y-4'>
+          <input type='hidden' name='job' value='Cheat Developer'>
+          <div><label class='block text-white/80 mb-1'>Full Name</label><input name='name' required class='w-full p-2 rounded bg-zinc-800 text-white'></div>
+          <div><label class='block text-white/80 mb-1'>Email</label><input name='email' type='email' required class='w-full p-2 rounded bg-zinc-800 text-white'></div>
+          <div><label class='block text-white/80 mb-1'>Discord (optional)</label><input name='discord' class='w-full p-2 rounded bg-zinc-800 text-white'></div>
+          <div><label class='block text-white/80 mb-1'>Describe your experience with cheat development</label><textarea name='message' required class='w-full p-2 rounded bg-zinc-800 text-white'></textarea></div>
+          <button type='submit' class='w-full bg-white text-black font-bold py-2 rounded hover:bg-zinc-100 transition'>Submit Application</button>
+        </form>`;
+    } else if (jobType === 'web-developer') {
+      formHtml = `
+        <h2 class='text-2xl font-bold text-white mb-2'>Apply: Web Developer</h2>
+        <div class='mb-4 text-white/90 text-sm'>
+          <p class='mb-2'>We're looking for a skilled web developer to join Siren Software! Help us build and maintain our web presence, create new features, and work with a team that values innovation and security. (You can customize this section with more details if you want!)</p>
+          <b class='block mt-2 mb-1'>What You'll Do:</b>
+          <ul class='list-disc list-inside mb-2'>
+            <li>Design, develop, and maintain our main website and web tools.</li>
+            <li>Work with designers to implement beautiful, responsive UIs.</li>
+            <li>Optimize for performance, accessibility, and security.</li>
+            <li>Collaborate with the team on new features and improvements.</li>
+          </ul>
+          <b class='block mt-2 mb-1'>What You'll Need:</b>
+          <ul class='list-disc list-inside mb-2'>
+            <li>Strong HTML, CSS, and JavaScript skills.</li>
+            <li>Experience with modern frameworks (React, Vue, etc.) is a plus.</li>
+            <li>Understanding of web security best practices.</li>
+            <li>Good communication and teamwork skills.</li>
+          </ul>
+          <b class='block mt-2 mb-1'>What We Offer:</b>
+          <ul class='list-disc list-inside mb-2'>
+            <li>Competitive pay and flexible hours.</li>
+            <li>Work remotely with a passionate team.</li>
+            <li>Opportunities for learning and growth.</li>
+          </ul>
+        </div>
+        <form id='jobForm' class='space-y-4'>
+          <input type='hidden' name='job' value='Web Developer'>
+          <div><label class='block text-white/80 mb-1'>Full Name</label><input name='name' required class='w-full p-2 rounded bg-zinc-800 text-white'></div>
+          <div><label class='block text-white/80 mb-1'>Email</label><input name='email' type='email' required class='w-full p-2 rounded bg-zinc-800 text-white'></div>
+          <div><label class='block text-white/80 mb-1'>Discord (optional)</label><input name='discord' class='w-full p-2 rounded bg-zinc-800 text-white'></div>
+          <div><label class='block text-white/80 mb-1'>Describe your web dev experience</label><textarea name='message' required class='w-full p-2 rounded bg-zinc-800 text-white'></textarea></div>
+          <button type='submit' class='w-full bg-white text-black font-bold py-2 rounded hover:bg-zinc-100 transition'>Submit Application</button>
+        </form>`;
+    }
+    content.innerHTML = formHtml;
+    overlay.classList.remove('opacity-0', 'pointer-events-none');
+    overlay.classList.add('opacity-100');
+    const form = document.getElementById('jobForm');
+    if (form) {
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const formData = new FormData(form);
+        const submitButton = form.querySelector('button[type="submit"]');
+        const statusMessage = document.createElement('div');
+        form.appendChild(statusMessage);
+        if (!formData.get('name') || !formData.get('email') || !formData.get('message')) {
+          statusMessage.textContent = 'Please fill in all fields.';
+          statusMessage.className = 'text-red-500 text-sm mt-2';
+          return;
+        }
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(formData.get('email'))) {
+          statusMessage.textContent = 'Please enter a valid email address.';
+          statusMessage.className = 'text-red-500 text-sm mt-2';
+          return;
+        }
+        submitButton.disabled = true;
+        submitButton.innerHTML = 'Sending...';
+        statusMessage.textContent = '';
+        try {
+          const response = await fetch('/.netlify/functions/submit-form', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              name: formData.get('name'),
+              email: formData.get('email'),
+              subject: formData.get('job'),
+              message: formData.get('message'),
+              discord: formData.get('discord') || ''
+            })
+          });
+          const data = await response.json();
+          if (response.ok) {
+            statusMessage.textContent = 'Application sent successfully!';
+            statusMessage.className = 'text-green-500 text-sm mt-2';
+            submitButton.innerHTML = 'Sent!';
+            submitButton.classList.add('bg-green-500', 'hover:bg-green-600');
+            form.reset();
+          } else {
+            throw new Error(data.error || 'Failed to send application');
+          }
+        } catch (error) {
+          statusMessage.textContent = 'Failed to send application. Please try again later.';
+          statusMessage.className = 'text-red-500 text-sm mt-2';
+        } finally {
+          if (!submitButton.classList.contains('bg-green-500')) {
+            submitButton.disabled = false;
+            submitButton.innerHTML = 'Submit Application';
+          }
+          setTimeout(() => {
+            statusMessage.textContent = '';
+            if (submitButton.classList.contains('bg-green-500')) {
+              submitButton.disabled = false;
+              submitButton.innerHTML = 'Submit Application';
+              submitButton.classList.remove('bg-green-500', 'hover:bg-green-600');
+            }
+          }, 5000);
+        }
+      });
+    }
+  }
+  function hideJobModal() {
+    const overlay = document.getElementById('job-modal-overlay');
+    document.getElementById('job-modal-content').innerHTML = '';
+    overlay.style.display = 'none';
+    overlay.classList.remove('opacity-100');
+  }
   </script>
 
   <!--Start of Tawk.to Script-->
