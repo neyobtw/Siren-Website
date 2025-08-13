@@ -21,7 +21,7 @@ A modern, professional website for Siren Software's gaming enhancement services.
 ├── contact.html        # Contact form page
 ├── terms.html          # Terms of service page
 ├── README.md           # This file
-└── SirenSoftware _ Undetected Game Cheats since 2025_files/
+└── Fractal.Assets2/
     ├── logo.png        # Company logo
     ├── output.css      # Tailwind CSS styles
     └── [other assets]  # Images and resources
@@ -135,7 +135,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Support
 
 For support and questions:
-- Join our Discord: [discord.gg/sirensoftware](https://discord.gg/sirensoftware)
+- Join our Discord: [discord.gg/5PTE9tD5s9](https://discord.gg/5PTE9tD5s9)
 - Contact us through the [contact form](contact.html)
 
 ## 🙏 Acknowledgments
