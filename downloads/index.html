@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fractal Downloads</title>
+  <link rel="stylesheet" href="../Fractal.Assets2/output.css" />
+  <style>
+    body { background:#000; color:#fff; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, 'Helvetica Neue', Arial, 'Apple Color Emoji', 'Segoe UI Emoji'; }
+    .card { background:#0b0b0e; border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:24px; }
+    a.download { display:inline-block; background:#fff; color:#000; font-weight:700; padding:12px 16px; border-radius:10px; }
+    .muted{ color: rgba(255,255,255,0.65); }
+    .mono{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace; }
+  </style>
+</head>
+<body class="p-6 md:p-10">
+  <main class="max-w-3xl mx-auto space-y-6">
+    <h1 class="text-2xl font-bold mb-2">Fractal Downloads</h1>
+    <p class="muted mb-6">Direct downloads hosted on our site. If a file opens in the browser instead of saving, headers may still be caching; give it a minute, or right‑click and Save As.</p>
+
+    <div class="card">
+      <h2 class="text-xl font-semibold mb-2">Fractal Installer</h2>
+      <p class="muted mb-4">Latest build. Replace <span class="mono">installer.zip</span> with your actual file name when you upload.</p>
+      <a href="/downloads/installer.zip" class="download">Download installer.zip</a>
+      <p class="muted mt-3 text-sm">Path: <span class="mono">/downloads/installer.zip</span></p>
+    </div>
+
+    <div class="card">
+      <h3 class="text-lg font-semibold mb-2">Having trouble?</h3>
+      <ul class="list-disc list-inside muted">
+        <li>Make sure the file exists in the <span class="mono">downloads/</span> folder in the repo.</li>
+        <li>Netlify headers may take a moment to propagate on first deploy.</li>
+        <li>Large files are better served via object storage (S3/R2/B2) and redirected.</li>
+      </ul>
+    </div>
+  </main>
+</body>
+</html>
