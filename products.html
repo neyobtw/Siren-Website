@@ -1127,8 +1127,40 @@
             currentModal.classList.remove('opacity-100');
           }
           
-          // Show the iframe modal
-          showIframeModal(url);
+          // Primary flow: Desktop popup, Mobile same-tab redirect with overlay
+          const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || window.innerWidth < 768;
+          const overlay = document.getElementById('redirect-overlay');
+
+          if (isMobile) {
+            // Show redirecting overlay and navigate in same tab
+            if (overlay) {
+              overlay.classList.remove('opacity-0', 'pointer-events-none');
+              overlay.classList.add('opacity-100');
+            }
+            setTimeout(() => {
+              window.location.href = url;
+            }, 50);
+            return;
+          }
+
+          // Desktop: open centered popup; fallback to same-tab if blocked
+          // Make it much wider: ~90% of screen width, capped for very large displays
+          const w = Math.min(Math.floor(window.screen.width * 0.9), 1920);
+          const h = 780;
+          const left = Math.max(0, (window.screen.width - w) / 2);
+          const top = Math.max(0, (window.screen.height - h) / 2);
+          const features = `width=${w},height=${h},left=${left},top=${top},resizable=yes,scrollbars=yes,status=yes`;
+          const win = window.open(url, 'checkout', features);
+          if (!win || win.closed) {
+            // Popup blocked -> same-tab redirect
+            if (overlay) {
+              overlay.classList.remove('opacity-0', 'pointer-events-none');
+              overlay.classList.add('opacity-100');
+            }
+            window.location.href = url;
+          } else {
+            try { win.focus(); } catch (e) { /* no-op */ }
+          }
         });
       });
 
@@ -1167,6 +1199,15 @@
       }
     });
   </script>
+
+  <!-- Redirecting Overlay -->
+  <div id="redirect-overlay" class="fixed inset-0 z-[120] flex items-center justify-center bg-black/80 backdrop-blur-sm transition-opacity duration-300 opacity-0 pointer-events-none">
+    <div class="bg-zinc-900 border border-white/10 rounded-xl p-6 text-center max-w-sm mx-4">
+      <div class="animate-spin rounded-full h-10 w-10 border-2 border-white/20 border-t-white mx-auto mb-4"></div>
+      <h3 class="text-white font-semibold mb-1">Redirecting to checkout…</h3>
+      <p class="text-white/70 text-sm">Please wait while we open the secure payment page.</p>
+    </div>
+  </div>
   
   <script>
   </script>
