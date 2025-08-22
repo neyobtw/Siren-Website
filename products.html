@@ -115,17 +115,17 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         
         <!-- Fortnite Product -->
-        <div class="bg-gradient-to-b from-green-500/15 to-[#141419] rounded-xl overflow-hidden border border-[#1C1C26]/50 hover:translate-y-[-4px] duration-300 ease-in-out transition-all group">
-          <div class="h-1 rounded-full w-full bg-gradient-to-r from-green-500 to-green-400"></div>
+        <div class="bg-gradient-to-b from-amber-500/15 to-[#141419] rounded-xl overflow-hidden border border-[#1C1C26]/50 hover:translate-y-[-4px] duration-300 ease-in-out transition-all group">
+          <div class="h-1 rounded-full w-full bg-gradient-to-r from-amber-500 to-amber-400"></div>
           <div class="p-6">
             <div class="mb-4">
               <img src="./Fractal.Assets2/fortnite.png" alt="Fortnite" class="w-full h-56 object-contain rounded-lg">
             </div>
             <div class="flex items-center justify-between mb-4">
               <h3 class="text-2xl font-bold text-white">Fortnite</h3>
-              <div class="bg-green-500/20 border-green-500/40 text-green-500 border text-xs px-2.5 py-1 rounded-full font-medium flex items-center gap-2">
-                <span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
-                <span>UNDETECTED</span>
+              <div class="bg-amber-500/20 border-amber-500/40 text-amber-500 border text-xs px-2.5 py-1 rounded-full font-medium flex items-center gap-2">
+                <span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>
+                <span>UPDATING</span>
               </div>
             </div>
             <p class="text-gray-400 text-sm mb-4">Premium Fortnite cheat with advanced features including aimbot, ESP, and more.</p>
@@ -135,6 +135,33 @@
               <span class="bg-[#2d2d35] text-gray-300 px-3 py-1 rounded-full text-xs">Misc</span>
             </div>
             <button class="w-full bg-white hover:bg-white/90 text-black font-bold py-3 rounded-lg transition-all" onclick="showModal('fortnite-modal')">
+              View Details
+            </button>
+          </div>
+        </div>
+
+        <!-- FN Unbranded + Temp Product -->
+        <div class="bg-gradient-to-b from-green-500/15 to-[#141419] rounded-xl overflow-hidden border border-[#1C1C26]/50 hover:translate-y-[-4px] duration-300 ease-in-out transition-all group">
+          <div class="h-1 rounded-full w-full bg-gradient-to-r from-green-500 to-green-400"></div>
+          <div class="p-6">
+            <div class="mb-4">
+              <!-- Using Fortnite image as placeholder to avoid missing asset; update if a dedicated asset is provided -->
+              <img src="./Fractal.Assets2/FORTNITE UNBRANDED.png" alt="FN Unbranded + Temp" class="w-full h-56 object-contain rounded-lg">
+            </div>
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-2xl font-bold text-white">FN Unbranded + Temp</h3>
+              <div class="bg-green-500/20 border-green-500/40 text-green-500 border text-xs px-2.5 py-1 rounded-full font-medium flex items-center gap-2">
+                <span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
+                <span>UNDETECTED</span>
+              </div>
+            </div>
+            <p class="text-gray-400 text-sm mb-4">Fortnite build with unbranded loader + temporary access. Smooth aimbot, ESP and safe configuration.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="bg-[#2d2d35] text-gray-300 px-3 py-1 rounded-full text-xs">Aimbot</span>
+              <span class="bg-[#2d2d35] text-gray-300 px-3 py-1 rounded-full text-xs">ESP</span>
+              <span class="bg-[#2d2d35] text-gray-300 px-3 py-1 rounded-full text-xs">Unbranded</span>
+            </div>
+            <button class="w-full bg-white hover:bg-white/90 text-black font-bold py-3 rounded-lg transition-all" onclick="showModal('fn-unbranded-temp-modal')">
               View Details
             </button>
           </div>
@@ -494,6 +521,36 @@
     </div>
   </div>
 
+  <!-- FN Unbranded + Temp Modal -->
+  <div id="fn-unbranded-temp-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm transition-opacity duration-300 opacity-0 pointer-events-none">
+    <div class="bg-black border border-white/10 rounded-2xl shadow-2xl p-6 w-full max-w-2xl mx-auto relative">
+      <button onclick="hideModal('fn-unbranded-temp-modal')" class="absolute top-4 right-4 text-white/60 hover:text-white text-2xl">&times;</button>
+      <div class="text-center">
+        <h3 class="text-white text-2xl font-bold mb-4">FN Unbranded + Temp</h3>
+        <img src="./Fractal.Assets2/FORTNITE UNBRANDED.png" alt="FN Unbranded + Temp" class="w-full h-64 object-contain rounded-lg mb-4">
+        <p class="text-gray-300 mb-6">Unbranded Fortnite build with temporary access. Includes memory/silent aimbot, ESP visuals and safe configurations. Undetected and maintained.</p>
+        
+        <div class="bg-zinc-900 border border-white/10 rounded-xl p-6 mb-6">
+          <div class="flex items-center justify-between mb-4">
+            <span class="bg-white text-black text-sm font-bold px-3 py-1 rounded-md">PREMIUM</span>
+            <span class="text-white text-xl font-bold">$7.00</span>
+          </div>
+          <div class="text-white font-semibold text-lg mb-3">FN Unbranded + Temp</div>
+          <ul class="text-white/80 text-sm mb-4 text-left space-y-1">
+            <li>• Memory/Silent Aimbot</li>
+            <li>• ESP & Visuals</li>
+            <li>• Unbranded Loader</li>
+            <li>• Regular Updates</li>
+            <li>• 24/7 Support</li>
+          </ul>
+          <button class="w-full bg-white text-black font-bold py-3 rounded-lg hover:bg-gray-200 transition buy-now-btn" data-url="https://fractal.sellhub.cx/product/FNunbrandedtemp/">
+            Purchase Now
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Tarkov Modal -->
   <div id="tarkov-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm transition-opacity duration-300 opacity-0 pointer-events-none">
     <div class="bg-black border border-white/10 rounded-2xl shadow-2xl p-6 w-full max-w-2xl mx-auto relative">
@@ -724,10 +781,10 @@
         
         <div class="bg-zinc-900 border border-white/10 rounded-xl p-6 mb-6">
           <div class="flex items-center justify-between mb-4">
-            <span class="bg-white text-black text-sm font-bold px-3 py-1 rounded-md">SIREN</span>
+            <span class="bg-white text-black text-sm font-bold px-3 py-1 rounded-md">Fractal</span>
             <span class="text-white text-xl font-bold">$3.00</span>
           </div>
-          <div class="text-white font-semibold text-lg mb-3">Apex Siren Premium</div>
+          <div class="text-white font-semibold text-lg mb-3">Apex Fractal</div>
           <ul class="text-white/80 text-sm mb-4 text-left space-y-1">
             <li>• Aimbot (Prediction, FOV, Smooth, Recoil)</li>
             <li>• Player Visuals (Box, Name, Skeleton, Glow)</li>
@@ -839,7 +896,7 @@
 
     // Close modals when clicking outside
     document.addEventListener('DOMContentLoaded', function() {
-      const modalIds = ['fortnite-modal', 'tarkov-modal', 'r6-full-modal', 'r6-lite-modal', 'r6-unlock-modal', 'bo6-modal', 'valorant-modal', 'marvel-modal', 'apex-modal', 'temp-spoofer-modal', 'perm-spoofer-modal', 'rust-modal'];
+      const modalIds = ['fortnite-modal', 'fn-unbranded-temp-modal', 'tarkov-modal', 'r6-full-modal', 'r6-lite-modal', 'r6-unlock-modal', 'bo6-modal', 'valorant-modal', 'marvel-modal', 'apex-modal', 'temp-spoofer-modal', 'perm-spoofer-modal', 'rust-modal'];
       
       modalIds.forEach(modalId => {
         const modal = document.getElementById(modalId);
