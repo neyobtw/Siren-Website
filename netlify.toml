@@ -1,0 +1,25 @@
+[build]
+  command = "npm install"
+  publish = "."
+  functions = "netlify/functions"
+
+[build.environment]
+  # Environment variables for build
+  NODE_VERSION = "18"
+
+# Required environment variables for Netlify Functions
+[functions]
+  node_bundler = "esbuild"
+
+# Environment variables for production
+[context.production.environment]
+  # This will be set in the Netlify UI under Site settings > Build & deploy > Environment
+  # Add DISCORD_WEBHOOK_URL with your webhook URL there
+  DISCORD_WEBHOOK_URL = ""
+
+# You can also set different values for other contexts like deploy previews
+[context.deploy-preview.environment]
+  DISCORD_WEBHOOK_URL = ""
+
+[context.branch-deploy.environment]
+  DISCORD_WEBHOOK_URL = ""

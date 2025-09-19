@@ -1,0 +1,23 @@
+Fractal — Update Changelog
+
+• Payment Flow Overhaul
+  - Desktop: Checkout opens in a centered popup (~90% screen width, max 1920px), height 780.
+  - Mobile: Smooth same‑tab redirect with a "Redirecting to checkout…" overlay.
+  - If a popup is blocked, auto‑fallback to same‑tab with overlay.
+
+• "Redirecting…" Overlay
+  - New in‑app overlay provides clear feedback before navigating to checkout.
+
+• Wider Desktop Popup
+  - Popup width now scales to ~90% of screen width for a more immersive flow.
+
+• Product Modals Consistency
+  - Standardized "View Details" modals (Fortnite, Tarkov) with height cap and scroll (max-h 85vh) for consistent sizing.
+  - Rust modal currently retains original sizing; can normalize on request.
+
+• Metadata Tweak
+  - Updated status page social preview title to "since 2025".
+
+What this means
+- Faster, cleaner checkout with fewer blocks on desktop and a smoother experience on mobile.
+- More consistent product detail modals across titles.
