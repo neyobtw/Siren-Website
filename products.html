@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" style="scroll-behavior: smooth;">
 
 <head>
@@ -88,12 +88,11 @@
       shopId: 96664,
       products: {
         fortnite: {
-          productId: 454624,
+          productId: 468574,  // Fortnite product ID
           variants: {
-            '1d': null,
-            '1w': null,
-            '1m': null,
-            'life': null
+            '1d': 688843,  // 1 Day
+            '1w': 688844,  // 1 Week
+            '1m': 688845   // 1 Month
           }
         },
         fn_unbranded: {
@@ -275,17 +274,17 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         
         <!-- Fortnite Product -->
-        <div class="bg-gradient-to-b from-amber-500/15 to-[#141419] rounded-xl overflow-hidden border border-[#1C1C26]/50 hover:translate-y-[-4px] duration-300 ease-in-out transition-all group">
-          <div class="h-1 rounded-full w-full bg-gradient-to-r from-amber-500 to-amber-400"></div>
+        <div class="bg-gradient-to-b from-green-500/15 to-[#141419] rounded-xl overflow-hidden border border-[#1C1C26]/50 hover:translate-y-[-4px] duration-300 ease-in-out transition-all group">
+          <div class="h-1 rounded-full w-full bg-gradient-to-r from-green-500 to-green-400"></div>
           <div class="p-6">
             <div class="mb-4">
               <img src="./Fractal.Assets2/fortnite.png" alt="Fortnite" class="w-full h-56 object-contain rounded-lg">
             </div>
             <div class="flex items-center justify-between mb-4">
               <h3 class="text-2xl font-bold text-white">Fortnite</h3>
-              <div class="bg-amber-500/20 border-amber-500/40 text-amber-500 border text-xs px-2.5 py-1 rounded-full font-medium flex items-center gap-2">
-                <span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>
-                <span>UPDATING</span>
+              <div class="bg-green-500/20 border-green-500/40 text-green-500 border text-xs px-2.5 py-1 rounded-full font-medium flex items-center gap-2">
+                <span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
+                <span>UNDETECTED</span>
               </div>
             </div>
             <p class="text-gray-400 text-sm mb-4">Premium Fortnite cheat with advanced features including aimbot, ESP, and more.</p>
@@ -309,7 +308,7 @@
               <img src="./Fractal.Assets2/fortniteunbranded.png" alt="FN Unbranded + Temp" class="w-full h-56 object-contain rounded-lg">
             </div>
             <div class="flex items-center justify-between mb-4">
-              <h3 class="text-2xl font-bold text-white">FN Unbranded + Temp</h3>
+              <h3 class="text-2xl font-bold text-white">FN Unbranded</h3>
               <div class="bg-green-500/20 border-green-500/40 text-green-500 border text-xs px-2.5 py-1 rounded-full font-medium flex items-center gap-2">
                 <span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
                 <span>UNDETECTED</span>
@@ -540,10 +539,10 @@
           <div class="h-1 rounded-full w-full bg-gradient-to-r from-green-500 to-green-400"></div>
           <div class="p-6">
             <div class="mb-4">
-              <img src="./Fractal.Assets2/apexlegends.png" alt="Apex Fractal" class="w-full h-56 object-contain rounded-lg">
+              <img src="./Fractal.Assets2/apexlegends.png" alt="Apex Axolot" class="w-full h-56 object-contain rounded-lg">
             </div>
             <div class="flex items-center justify-between mb-4">
-              <h3 class="text-2xl font-bold text-white">Apex Fractal</h3>
+              <h3 class="text-2xl font-bold text-white">Apex Axolot</h3>
               <div class="bg-green-500/20 border-green-500/40 text-green-500 border text-xs px-2.5 py-1 rounded-full font-medium flex items-center gap-2">
                 <span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
                 <span>UNDETECTED</span>
@@ -691,28 +690,14 @@
           </div>
           <div class="text-white font-semibold text-lg mb-3">Fortnite Premium Cheat</div>
           <ul class="text-white/80 text-sm mb-4 text-left space-y-1">
-            <li>â€¢ Memory Aimbot, Silent Aimbot</li>
-            <li>â€¢ Triggerbot</li>
-            <li>â€¢ Visuals</li>
-            <li>â€¢ World</li>
-            <li>â€¢ Misc Features</li>
-            <li>â€¢ Regular Updates</li>
-            <li>â€¢ 24/7 Support</li>
+            <li>&bull; Memory Aimbot, Silent Aimbot</li>
+            <li>&bull; Triggerbot</li>
+            <li>&bull; Visuals</li>
+            <li>&bull; World</li>
+            <li>&bull; Misc Features</li>
+            <li>&bull; Regular Updates</li>
+            <li>&bull; 24/7 Support</li>
           </ul>
-          <!-- PRODUCT UPDATING NOTICE: Fortnite purchases disabled -->
-          <div class="mt-4">
-            <div class="w-full bg-gradient-to-r from-amber-600 to-amber-500 text-white font-semibold text-sm py-2.5 rounded-lg border border-white/10 shadow-md shadow-amber-500/10 text-center">
-              This product is currently updating and is not available for purchase.
-            </div>
-          </div>
-
-          <!-- How to Change Status (Developer Note):
-               To re-enable purchases for Fortnite when updates are complete:
-               1) Remove the entire 'PRODUCT UPDATING NOTICE' block above.
-               2) Uncomment the SellAuth button grid block below.
-               3) Ensure AXO_SELLAUTH has valid variant IDs (they are currently null) and verify checkout.
-          -->
-          <!-- SellAuth actions (disabled while updating)
           <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-2">
             <button class="w-full bg-gradient-to-b from-purple-600 to-fuchsia-600 text-white font-semibold text-sm py-2.5 rounded-lg border border-white/10 shadow-md shadow-fuchsia-500/10 hover:from-purple-500 hover:to-fuchsia-500 hover:shadow-fuchsia-500/20 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-400/70"
                     onclick="openSellAuthCheckout('fortnite', '1d')">
@@ -722,16 +707,11 @@
                     onclick="openSellAuthCheckout('fortnite', '1w')">
               Purchase 1 Week
             </button>
-            <button class="w-full bg-gradient-to-b from-purple-600 to-fuchsia-600 text-white font-semibold text-sm py-2.5 rounded-lg border border-white/10 shadow-md shadow-fuchsia-500/10 hover:from-purple-500 hover:to-fuchsia-500 hover:shadow-fuchsia-500/20 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-400/70"
+            <button class="w-full bg-gradient-to-b from-purple-600 to-fuchsia-600 text-white font-semibold text-sm py-2.5 rounded-lg border border-white/10 shadow-md shadow-fuchsia-500/10 hover:from-purple-500 hover:to-fuchsia-500 hover:shadow-fuchsia-500/20 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-400/70 sm:col-span-2"
                     onclick="openSellAuthCheckout('fortnite', '1m')">
               Purchase 1 Month
             </button>
-            <button class="w-full bg-gradient-to-b from-purple-600 to-fuchsia-600 text-white font-semibold text-sm py-2.5 rounded-lg border border-white/10 shadow-md shadow-fuchsia-500/10 hover:from-purple-500 hover:to-fuchsia-500 hover:shadow-fuchsia-500/20 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-400/70"
-                    onclick="openSellAuthCheckout('fortnite', 'life')">
-              Purchase Lifetime
-            </button>
           </div>
-          -->
         </div>
       </div>
     </div>
@@ -753,11 +733,11 @@
           </div>
           <div class="text-white font-semibold text-lg mb-3">FN Unbranded + Temp</div>
           <ul class="text-white/80 text-sm mb-4 text-left space-y-1">
-            <li>â€¢ Memory/Silent Aimbot</li>
-            <li>â€¢ ESP & Visuals</li>
-            <li>â€¢ Unbranded Loader</li>
-            <li>â€¢ Regular Updates</li>
-            <li>â€¢ 24/7 Support</li>
+            <li>&bull; Memory/Silent Aimbot</li>
+            <li>&bull; ESP & Visuals</li>
+            <li>&bull; Unbranded Loader</li>
+            <li>&bull; Regular Updates</li>
+            <li>&bull; 24/7 Support</li>
           </ul>
           <!-- SellAuth actions -->
           <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -795,13 +775,13 @@
           </div>
           <div class="text-white font-semibold text-lg mb-3">Tarkov Premium Cheat</div>
           <ul class="text-white/80 text-sm mb-4 text-left space-y-1">
-            <li>â€¢ Aimbot</li>
-            <li>â€¢ Crazy Visual Features</li>
-            <li>â€¢ Item & Container Detection</li>
-            <li>â€¢ Exploits</li>
-            <li>â€¢ Misc</li>
-            <li>â€¢ Regular Updates</li>
-            <li>â€¢ 24/7 Support</li>
+            <li>&bull; Aimbot</li>
+            <li>&bull; Crazy Visual Features</li>
+            <li>&bull; Item & Container Detection</li>
+            <li>&bull; Exploits</li>
+            <li>&bull; Misc</li>
+            <li>&bull; Regular Updates</li>
+            <li>&bull; 24/7 Support</li>
           </ul>
           <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-2">
             <button class="w-full bg-gradient-to-b from-purple-600 to-fuchsia-600 text-white font-semibold text-sm py-2.5 rounded-lg border border-white/10 shadow-md shadow-fuchsia-500/10 hover:from-purple-500 hover:to-fuchsia-500 hover:shadow-fuchsia-500/20 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-400/70"
@@ -1083,28 +1063,28 @@
     </div>
   </div>
 
-  <!-- Apex Fractal Modal -->
+  <!-- Apex Axolot Modal -->
   <div id="apex-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm transition-opacity duration-300 opacity-0 pointer-events-none">
     <div class="bg-black border border-white/10 rounded-2xl shadow-2xl p-6 w-full max-w-2xl mx-auto relative">
       <button onclick="hideModal('apex-modal')" class="absolute top-4 right-4 text-white/60 hover:text-white text-2xl">&times;</button>
       <div class="text-center">
-        <h3 class="text-white text-2xl font-bold mb-4">Apex Fractal Cheat</h3>
-        <img src="./Fractal.Assets2/apexlegends.png" alt="Apex Fractal" class="w-full h-64 object-contain rounded-lg mb-4">
+        <h3 class="text-white text-2xl font-bold mb-4">Apex Axolot Cheat</h3>
+        <img src="./Fractal.Assets2/apexlegends.png" alt="Apex Axolot" class="w-full h-64 object-contain rounded-lg mb-4">
         <p class="text-gray-300 mb-6">Built-in spoofer included. Great for legit/rage. External with advanced aimbot and visuals.</p>
         
         <div class="bg-zinc-900 border border-white/10 rounded-xl p-6 mb-6">
           <div class="flex items-center justify-between mb-4">
-            <span class="bg-white text-black text-sm font-bold px-3 py-1 rounded-md">Fractal</span>
+            <span class="bg-white text-black text-sm font-bold px-3 py-1 rounded-md">Axolot</span>
             <span class="text-white text-xl font-bold">$3.00</span>
           </div>
-          <div class="text-white font-semibold text-lg mb-3">Apex Fractal</div>
+          <div class="text-white font-semibold text-lg mb-3">Apex Axolot</div>
           <ul class="text-white/80 text-sm mb-4 text-left space-y-1">
-            <li>â€¢ Aimbot (Prediction, FOV, Smooth, Recoil)</li>
-            <li>â€¢ Player Visuals (Box, Name, Skeleton, Glow)</li>
-            <li>â€¢ Loot Visuals & Smart Loot</li>
-            <li>â€¢ Built-in Spoofer</li>
-            <li>â€¢ Auto Tap Strafe & BunnyHop</li>
-            <li>â€¢ Config System</li>
+            <li>&bull; Aimbot (Prediction, FOV, Smooth, Recoil)</li>
+            <li>&bull; Player Visuals (Box, Name, Skeleton, Glow)</li>
+            <li>&bull; Loot Visuals & Smart Loot</li>
+            <li>&bull; Built-in Spoofer</li>
+            <li>&bull; Auto Tap Strafe & BunnyHop</li>
+            <li>&bull; Config System</li>
           </ul>
           <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-2">
             <button class="w-full bg-gradient-to-b from-purple-600 to-fuchsia-600 text-white font-semibold text-sm py-2.5 rounded-lg border border-white/10 shadow-md shadow-fuchsia-500/10 hover:from-purple-500 hover:to-fuchsia-500 hover:shadow-fuchsia-500/20 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-400/70"
@@ -1147,12 +1127,12 @@
           </div>
           <div class="text-white font-semibold text-lg mb-3">Temporary HWID Spoofer</div>
           <ul class="text-white/80 text-sm mb-4 text-left space-y-1">
-            <li>â€¢ Hardware ID Spoofing</li>
-            <li>â€¢ Temporary Protection</li>
-            <li>â€¢ Safe Ban Bypass</li>
-            <li>â€¢ Easy to Use</li>
-            <li>â€¢ Regular Updates</li>
-            <li>â€¢ Support Included</li>
+            <li>&bull; Hardware ID Spoofing</li>
+            <li>&bull; Temporary Protection</li>
+            <li>&bull; Safe Ban Bypass</li>
+            <li>&bull; Easy to Use</li>
+            <li>&bull; Regular Updates</li>
+            <li>&bull; Support Included</li>
           </ul>
           <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-2">
             <button class="w-full bg-gradient-to-b from-purple-600 to-fuchsia-600 text-white font-semibold text-sm py-2.5 rounded-lg border border-white/10 shadow-md shadow-fuchsia-500/10 hover:from-purple-500 hover:to-fuchsia-500 hover:shadow-fuchsia-500/20 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-400/70"
@@ -1193,11 +1173,11 @@
           </div>
           <div class="text-white font-semibold text-lg mb-3">Verse Permanent Spoofer</div>
           <ul class="text-white/80 text-sm mb-4 text-left space-y-1">
-            <li>â€¢ Permanent HWID Spoofing</li>
-            <li>â€¢ Supports Most Motherboards</li>
-            <li>â€¢ Works for Valorant, LoL, Apex, R6, COD & more</li>
-            <li>â€¢ Includes Fortnite Tourney Support</li>
-            <li>â€¢ Lifetime Updates & Support</li>
+            <li>&bull; Permanent HWID Spoofing</li>
+            <li>&bull; Supports Most Motherboards</li>
+            <li>&bull; Works for Valorant, LoL, Apex, R6, COD & more</li>
+            <li>&bull; Includes Fortnite Tourney Support</li>
+            <li>&bull; Lifetime Updates & Support</li>
           </ul>
           <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-2">
             <button class="w-full bg-gradient-to-b from-purple-600 to-fuchsia-600 text-white font-semibold text-sm py-2.5 rounded-lg border border-white/10 shadow-md shadow-fuchsia-500/10 hover:from-purple-500 hover:to-fuchsia-500 hover:shadow-fuchsia-500/20 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-400/70"
@@ -1624,7 +1604,7 @@
   <div id="redirect-overlay" class="fixed inset-0 z-[120] flex items-center justify-center bg-black/80 backdrop-blur-sm transition-opacity duration-300 opacity-0 pointer-events-none">
     <div class="bg-zinc-900 border border-white/10 rounded-xl p-6 text-center max-w-sm mx-4">
       <div class="animate-spin rounded-full h-10 w-10 border-2 border-white/20 border-t-white mx-auto mb-4"></div>
-      <h3 class="text-white font-semibold mb-1">Redirecting to checkoutâ€¦</h3>
+      <h3 class="text-white font-semibold mb-1">Redirecting to checkout...</h3>
       <p class="text-white/70 text-sm">Please wait while we open the secure payment page.</p>
     </div>
   </div>
