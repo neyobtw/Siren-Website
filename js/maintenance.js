@@ -1,15 +1,21 @@
 /**
  * Maintenance Mode Script
  * 
- * This script checks if maintenance is enabled by looking for a flag in maintenance.html
- * To enable maintenance mode, set the text content of .maintenance-flag to 'TRUE' in maintenance.html
+ * This script checks if maintenance is enabled by looking for a flag in maintenance
+ * To enable maintenance mode, set the text content of .maintenance-flag to 'TRUE' in maintenance
  */
+
+// Helper function to check if we're on the maintenance page
+function isMaintenancePage() {
+    const path = window.location.pathname;
+    return path.endsWith('maintenance') || path.endsWith('maintenance/') || path.endsWith('maintenance.html');
+}
 
 document.addEventListener('DOMContentLoaded', function() {
     // Check if we're on the maintenance page
-    if (window.location.pathname.endsWith('maintenance.html')) {
+    if (isMaintenancePage()) {
         // If maintenance is disabled and we're on the maintenance page, redirect to home
-        fetch('maintenance.html', { cache: 'no-store' })
+        fetch('maintenance', { cache: 'no-store' })
             .then(response => response.text())
             .then(html => {
                 const parser = new DOMParser();
@@ -18,14 +24,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 const isMaintenance = maintenanceFlag?.textContent.trim() === 'TRUE';
                 
                 if (!isMaintenance) {
-                    window.location.href = 'index.html';
+                    window.location.href = '/';
                 }
             });
         return;
     }
     
     // Check maintenance status for all other pages
-    fetch('maintenance.html', { cache: 'no-store' })
+    fetch('maintenance', { cache: 'no-store' })
         .then(response => response.text())
         .then(html => {
             const parser = new DOMParser();
@@ -34,8 +40,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const isMaintenance = maintenanceFlag?.textContent.trim() === 'TRUE';
             
             if (isMaintenance) {
-                // Redirect to maintenance page
-                window.location.href = 'maintenance.html';
+                // Redirect to maintenance page with clean URL
+                window.location.href = '/maintenance';
             }
         })
         .catch(error => {
