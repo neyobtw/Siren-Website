@@ -51,7 +51,7 @@ async function githubGetStatus() {
     }
   }
   const url = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${encodeURIComponent(GH_PATH)}?ref=${GH_BRANCH}`;
-  const res = await fetch(url, { headers: { Authorization: `Bearer ${GH_TOKEN}`, 'User-Agent': 'status-bot' } });
+  const res = await fetch(url, { headers: { Authorization: `Bearer ${GH_TOKEN}`, 'User-Agent': 'status-bot', 'Accept': 'application/vnd.github+json' } });
   if (!res.ok) return { lastUpdated: null, products: {} };
   const data = await res.json();
   try {
@@ -75,7 +75,7 @@ async function githubSaveStatus(statusObj) {
   // Get existing sha if file exists
   let sha;
   const getUrl = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${encodeURIComponent(GH_PATH)}?ref=${GH_BRANCH}`;
-  const getRes = await fetch(getUrl, { headers: { Authorization: `Bearer ${GH_TOKEN}`, 'User-Agent': 'status-bot' } });
+  const getRes = await fetch(getUrl, { headers: { Authorization: `Bearer ${GH_TOKEN}`, 'User-Agent': 'status-bot', 'Accept': 'application/vnd.github+json' } });
   if (getRes.ok) {
     const existing = await getRes.json();
     sha = existing.sha;
@@ -91,13 +91,18 @@ async function githubSaveStatus(statusObj) {
   };
   const putRes = await fetch(putUrl, {
     method: 'PUT',
-    headers: { Authorization: `Bearer ${GH_TOKEN}`, 'User-Agent': 'status-bot', 'Content-Type': 'application/json' },
+    headers: { Authorization: `Bearer ${GH_TOKEN}`, 'User-Agent': 'status-bot', 'Content-Type': 'application/json', 'Accept': 'application/vnd.github+json' },
     body: JSON.stringify(body)
   });
   if (!putRes.ok) {
     const err = await putRes.text();
     throw new Error(`GitHub update failed: ${putRes.status} ${err}`);
   }
+  const result = await putRes.json();
+  return {
+    commitUrl: result && result.commit && result.commit.html_url ? result.commit.html_url : null,
+    contentSha: result && result.content && result.content.sha ? result.content.sha : null
+  };
 }
 
 function isAuthorized(interaction) {
@@ -162,11 +167,12 @@ client.on('interactionCreate', async (interaction) => {
     if (!data.products[product]) data.products[product] = {};
     data.products[product].status = statusLabel;
     data.products[product].available = available;
-    await githubSaveStatus(data);
-    await interaction.reply({ content: `Updated ${product}: status=${statusLabel}, available=${available}`, ephemeral: true });
+    const res = await githubSaveStatus(data);
+    const msg = `Updated ${product}: status=${statusLabel}, available=${available}` + (res.commitUrl ? `\nCommit: ${res.commitUrl}` : '');
+    await interaction.reply({ content: msg, ephemeral: true });
   } catch (e) {
     console.error('Failed to update status:', e);
-    await interaction.reply({ content: 'Failed to update status (GitHub update error).', ephemeral: true });
+    await interaction.reply({ content: `Failed to update status: ${e.message || e}`, ephemeral: true });
   }
 });
 
