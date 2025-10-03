@@ -1,0 +1,129 @@
+﻿<!-- Job Application Modals (to be included in index.html) -->
+<div id="job-modal-overlay" class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm transition-opacity duration-300 opacity-0 pointer-events-none">
+  <div id="job-modal-container" class="bg-zinc-900 border border-white/10 rounded-2xl shadow-2xl p-6 w-full max-w-lg mx-auto relative">
+    <button onclick="hideJobModal()" class="absolute top-4 right-4 text-white/50 hover:text-white text-2xl">&times;</button>
+    <div id="job-modal-content"></div>
+  </div>
+</div>
+
+<script>
+// Show the correct job form
+function showJobForm(jobType) {
+  const overlay = document.getElementById('job-modal-overlay');
+  const content = document.getElementById('job-modal-content');
+  let formHtml = '';
+
+  if (jobType === 'media-creator') {
+    formHtml = `
+      <h2 class='text-2xl font-bold text-white mb-4'>Apply: Media Creator</h2>
+      <form id='jobForm' class='space-y-4'>
+        <input type='hidden' name='job' value='Media Creator'>
+        <div><label class='block text-white/80 mb-1'>Full Name</label><input name='name' required class='w-full p-2 rounded bg-zinc-800 text-white'></div>
+        <div><label class='block text-white/80 mb-1'>Email</label><input name='email' type='email' required class='w-full p-2 rounded bg-zinc-800 text-white'></div>
+        <div><label class='block text-white/80 mb-1'>Discord (optional)</label><input name='discord' class='w-full p-2 rounded bg-zinc-800 text-white'></div>
+        <div><label class='block text-white/80 mb-1'>Why do you want to join?</label><textarea name='message' required class='w-full p-2 rounded bg-zinc-800 text-white'></textarea></div>
+        <button type='submit' class='w-full bg-[#00ffc8] text-black font-bold py-2 rounded hover:bg-[#00cfa0] transition'>Submit Application</button>
+      </form>`;
+  } else if (jobType === 'cheat-developer') {
+    formHtml = `
+      <h2 class='text-2xl font-bold text-white mb-4'>Apply: Cheat Developer</h2>
+      <form id='jobForm' class='space-y-4'>
+        <input type='hidden' name='job' value='Cheat Developer'>
+        <div><label class='block text-white/80 mb-1'>Full Name</label><input name='name' required class='w-full p-2 rounded bg-zinc-800 text-white'></div>
+        <div><label class='block text-white/80 mb-1'>Email</label><input name='email' type='email' required class='w-full p-2 rounded bg-zinc-800 text-white'></div>
+        <div><label class='block text-white/80 mb-1'>Discord (optional)</label><input name='discord' class='w-full p-2 rounded bg-zinc-800 text-white'></div>
+        <div><label class='block text-white/80 mb-1'>Describe your experience with cheat development</label><textarea name='message' required class='w-full p-2 rounded bg-zinc-800 text-white'></textarea></div>
+        <button type='submit' class='w-full bg-[#00ffc8] text-black font-bold py-2 rounded hover:bg-[#00cfa0] transition'>Submit Application</button>
+      </form>`;
+  } else if (jobType === 'web-developer') {
+    formHtml = `
+      <h2 class='text-2xl font-bold text-white mb-4'>Apply: Web Developer</h2>
+      <form id='jobForm' class='space-y-4'>
+        <input type='hidden' name='job' value='Web Developer'>
+        <div><label class='block text-white/80 mb-1'>Full Name</label><input name='name' required class='w-full p-2 rounded bg-zinc-800 text-white'></div>
+        <div><label class='block text-white/80 mb-1'>Email</label><input name='email' type='email' required class='w-full p-2 rounded bg-zinc-800 text-white'></div>
+        <div><label class='block text-white/80 mb-1'>Discord (optional)</label><input name='discord' class='w-full p-2 rounded bg-zinc-800 text-white'></div>
+        <div><label class='block text-white/80 mb-1'>Describe your web dev experience</label><textarea name='message' required class='w-full p-2 rounded bg-zinc-800 text-white'></textarea></div>
+        <button type='submit' class='w-full bg-[#00ffc8] text-black font-bold py-2 rounded hover:bg-[#00cfa0] transition'>Submit Application</button>
+      </form>`;
+  }
+
+  content.innerHTML = formHtml;
+  overlay.classList.remove('opacity-0', 'pointer-events-none');
+  overlay.classList.add('opacity-100');
+
+  // Attach form submission handler
+  const form = document.getElementById('jobForm');
+  if (form) {
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const submitButton = form.querySelector('button[type="submit"]');
+      const statusMessage = document.createElement('div');
+      form.appendChild(statusMessage);
+      // Simple validation
+      if (!formData.get('name') || !formData.get('email') || !formData.get('message')) {
+        statusMessage.textContent = 'Please fill in all fields.';
+        statusMessage.className = 'text-red-500 text-sm mt-2';
+        return;
+      }
+      // Validate email format
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(formData.get('email'))) {
+        statusMessage.textContent = 'Please enter a valid email address.';
+        statusMessage.className = 'text-red-500 text-sm mt-2';
+        return;
+      }
+      submitButton.disabled = true;
+      submitButton.innerHTML = 'Sending...';
+      statusMessage.textContent = '';
+      try {
+        const response = await fetch('/.netlify/functions/submit-form', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: formData.get('name'),
+            email: formData.get('email'),
+            subject: formData.get('job'),
+            message: formData.get('message'),
+            discord: formData.get('discord') || ''
+          })
+        });
+        const data = await response.json();
+        if (response.ok) {
+          statusMessage.textContent = 'Application sent successfully!';
+          statusMessage.className = 'text-green-500 text-sm mt-2';
+          submitButton.innerHTML = 'Sent!';
+          submitButton.classList.add('bg-green-500', 'hover:bg-green-600');
+          form.reset();
+        } else {
+          throw new Error(data.error || 'Failed to send application');
+        }
+      } catch (error) {
+        statusMessage.textContent = 'Failed to send application. Please try again later.';
+        statusMessage.className = 'text-red-500 text-sm mt-2';
+      } finally {
+        if (!submitButton.classList.contains('bg-green-500')) {
+          submitButton.disabled = false;
+          submitButton.innerHTML = 'Submit Application';
+        }
+        setTimeout(() => {
+          statusMessage.textContent = '';
+          if (submitButton.classList.contains('bg-green-500')) {
+            submitButton.disabled = false;
+            submitButton.innerHTML = 'Submit Application';
+            submitButton.classList.remove('bg-green-500', 'hover:bg-green-600');
+          }
+        }, 5000);
+      }
+    });
+  }
+}
+
+function hideJobModal() {
+  const overlay = document.getElementById('job-modal-overlay');
+  overlay.classList.add('opacity-0', 'pointer-events-none');
+  overlay.classList.remove('opacity-100');
+  document.getElementById('job-modal-content').innerHTML = '';
+}
+</script>

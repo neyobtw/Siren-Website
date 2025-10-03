@@ -1,0 +1,2162 @@
+<!DOCTYPE html>
+<!-- saved from url=(0031)https://fractalcheats.xyz/#products -->
+<html lang="en" style="scroll-behavior: smooth;">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./Fractal.Assets2/output.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="./Fractal.Assets2/logo.png">
+  <link rel="icon" type="image/png" sizes="32x32"
+    href="./Fractal.Assets2/logo.png">
+  <link rel="icon" type="image/png" sizes="16x16"
+    href="./Fractal.Assets2/logo.png">
+  <link rel="shortcut icon" href="./Fractal.Assets2/logo.png">
+  <link rel="manifest" href="./Fractal.Assets2/site.webmanifest">
+  <link rel="stylesheet" href="./Fractal.Assets2/swiper-bundle.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link href="./Fractal.Assets2/css2" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
+
+  <style>
+    html, body {
+      overflow-x: hidden;
+      max-width: 100vw;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    .carousel-container {
+      overflow-x: hidden;
+      max-width: 100vw;
+    }
+    .carousel-track {
+      overflow-x: hidden;
+    }
+  </style>
+
+  <!-- Primary Meta Tags -->
+  <title>Rekall — Undetected Game Cheats & Spoofers</title>
+  <meta name="title" content="Rekall — Undetected Game Cheats & Spoofers">
+  <meta name="description" content="Premium undetected game cheats and spoofers for Fortnite, Tarkov, Rainbow Six, BO6, Valorant, Marvel Rivals, Apex and more. Regular updates and 24/7 support.">
+  <meta name="keywords" content="Rekall, undetected cheats, game cheats, Fortnite, Tarkov, Rainbow Six, R6, BO6, Valorant, Marvel Rivals, Apex, spoofer, HWID spoofer">
+  <meta name="author" content="Rekall">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  <meta name="revisit-after" content="7 days">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://rekall.cc/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rekall.cc/">
+  <meta property="og:title" content="Rekall — Undetected Game Cheats & Spoofers">
+  <meta property="og:description" content="Premium undetected game cheats and spoofers for top titles. Regular updates and 24/7 support.">
+  <meta property="og:image" content="https://rekall.cc/Fractal.Assets2/logo.png">
+  <meta property="og:site_name" content="Rekall">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://rekall.cc/">
+  <meta name="twitter:title" content="Rekall — Undetected Game Cheats & Spoofers">
+  <meta name="twitter:description" content="Premium undetected gaming solutions with regular updates and support.">
+  <meta name="twitter:image" content="https://rekall.cc/Fractal.Assets2/logo.png">
+
+  <!-- Additional SEO Enhancements -->
+  <meta name="theme-color" content="#000000">
+</head>
+
+<body class="bg-black font-primary scroll-smooth overflow-x-hidden" style="overflow-x: hidden; max-width: 100vw;">
+
+
+
+
+
+  <!-- Loading Screen -->
+  <div id="loading-screen"
+    class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/70 backdrop-blur-md transition-opacity duration-500"
+    style="opacity: 0; display: none;">
+    <!-- Logo Container -->
+    <div class="relative mb-8">
+      <img src="./Fractal.Assets2/logo.png" alt="Rekall Logo"
+        class="h-16 z-10 relative">
+      <!-- White glow effect behind logo -->
+      <div class="absolute -inset-4 bg-white opacity-20 blur-[20px] rounded-full"></div>
+    </div>
+
+    <!-- Loading Animation -->
+    <div class="relative w-64 h-1 bg-zinc-800 rounded-full overflow-hidden mb-4">
+      <div id="loading-bar"
+        class="absolute top-0 left-0 h-full w-0 bg-gradient-to-r from-white/50 to-white rounded-full transition-all duration-300"
+        style="width: 100%;"></div>
+    </div>
+
+    <!-- Loading Text -->
+    <p class="text-white/70 text-sm font-medium">
+      <span id="loading-text">Welcome</span> <span class="loading-dots"></span>
+    </p>
+  </div>
+
+  <!-- JavaScript for Loading Screen -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const loadingScreen = document.getElementById('loading-screen');
+      const loadingBar = document.getElementById('loading-bar');
+      const loadingText = document.getElementById('loading-text');
+      const messages = [
+        "Preparing Interface",
+        "Loading Website",
+        "Establishing Connection",
+        "Almost Ready"
+      ];
+
+      // Animate loading dots
+      let dotsCount = 0;
+      const loadingDots = document.querySelector('.loading-dots');
+      const animateDots = setInterval(() => {
+        dotsCount = (dotsCount + 1) % 4;
+        loadingDots.textContent = '.'.repeat(dotsCount || 1);
+      }, 300);
+
+      // Set specific progress points and timing (faster)
+      const loadingSteps = [
+        { progress: 0, delay: 0 },
+        { progress: 30, delay: 400 },
+        { progress: 60, delay: 350 },
+        { progress: 85, delay: 300 },
+        { progress: 100, delay: 500 } // Final step with shorter delay
+      ];
+
+      let currentStep = 0;
+
+      function animateLoading() {
+        if (currentStep >= loadingSteps.length) return;
+
+        const step = loadingSteps[currentStep];
+        loadingBar.style.width = `${step.progress}%`;
+
+        // Update text message based on progress
+        const messageIndex = Math.min(Math.floor(currentStep), messages.length - 1);
+        loadingText.textContent = messages[messageIndex];
+
+        // If this is the final step (100%)
+        if (step.progress === 100) {
+          loadingText.textContent = "Welcome";
+          loadingDots.textContent = "";
+          clearInterval(animateDots);
+
+          // Wait a moment at 100% before fading out
+          setTimeout(() => {
+            loadingScreen.style.opacity = '0';
+            setTimeout(() => {
+              loadingScreen.style.display = 'none';
+            }, 300);
+          }, 400);
+          return;
+        }
+
+        // Move to next step after delay
+        currentStep++;
+        setTimeout(animateLoading, step.delay);
+      }
+
+      // Start the loading animation sequence
+      animateLoading();
+    });
+
+    // Fallback to ensure loading screen hides after max time
+    window.addEventListener('load', function () {
+      // Maximum loading time - 4 seconds (reduced from 8)
+      setTimeout(() => {
+        const loadingScreen = document.getElementById('loading-screen');
+        const loadingBar = document.getElementById('loading-bar');
+        const loadingText = document.getElementById('loading-text');
+
+        // Ensure bar is at 100% before hiding
+        loadingBar.style.width = '100%';
+        loadingText.textContent = "Welcome";
+
+        setTimeout(() => {
+          loadingScreen.style.opacity = '0';
+          setTimeout(() => {
+            loadingScreen.style.display = 'none';
+          }, 300);
+        }, 300);
+      }, 4000);
+    });
+
+
+  </script>
+  <nav class="w-full py-5 border-b border-[#1C1C26]">
+    <div class="px-6 md:px-24 mx-auto flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex-shrink-0">
+        <img src="./Fractal.Assets2/logo.png" class="w-20 min-w-0"
+          alt="Rekall Logo">
+      </div>
+      <!-- Main Navigation - Desktop Only -->
+      <div class="hidden md:flex items-center space-x-10">
+                <a class="text-white font-medium hover:text-white transition" href="index.html">Home</a>
+        <a href="products.html"
+            class="text-white/40 font-medium hover:text-white transition">Products</a>
+        <a href="#" onclick="showDownloadsModal(); return false;"
+          class="text-white/40 font-medium hover:text-white transition">Downloads</a>
+
+        <script>
+        // Dropdown click toggle for Jobs (desktop)
+        document.addEventListener('DOMContentLoaded', function () {
+          const toggle = document.getElementById('jobs-dropdown-toggle');
+          const menu = document.getElementById('jobs-dropdown-menu');
+          let open = false;
+          toggle.addEventListener('click', function (e) {
+            e.stopPropagation();
+            open = !open;
+            if (open) {
+              menu.classList.remove('opacity-0', 'invisible');
+              menu.classList.add('opacity-100', 'visible');
+            } else {
+              menu.classList.add('opacity-0', 'invisible');
+              menu.classList.remove('opacity-100', 'visible');
+            }
+          });
+          // Close dropdown if clicking outside
+          document.addEventListener('click', function (e) {
+            if (!toggle.contains(e.target) && !menu.contains(e.target)) {
+              menu.classList.add('opacity-0', 'invisible');
+              menu.classList.remove('opacity-100', 'visible');
+              open = false;
+            }
+          });
+        });
+        </script>
+        <a class="text-white/40 font-medium hover:text-white transition" href="status.html">Status</a>
+        <div class="relative group ml-4" id="jobs-dropdown-parent">
+          <div id="jobs-dropdown-toggle" class="text-white/40 font-medium hover:text-white transition flex items-center space-x-1 cursor-pointer select-none">
+            <span>Jobs</span>
+            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </div>
+          <div id="jobs-dropdown-menu" class="absolute top-full left-0 mt-2 w-48 bg-zinc-900 border border-zinc-800 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+            <div class="py-2">
+              <a href="#" onclick="showJobForm('media-creator'); return false;" class="block px-4 py-2 text-white/70 hover:text-white hover:bg-zinc-800 transition">Media Creator</a>
+              <a href="#" onclick="showJobForm('reseller'); return false;" class="block px-4 py-2 text-white/70 hover:text-white hover:bg-zinc-800 transition">Reseller</a>
+              <a href="#" onclick="showJobForm('cheat-developer'); return false;" class="block px-4 py-2 text-white/70 hover:text-white hover:bg-zinc-800 transition">Cheat Developer</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Auth Buttons -->
+      <div class="hidden md:flex items-center space-x-4">
+        <a href="https://discord.gg/5PTE9tD5s9" target="_blank"
+          class="bg-zinc-900 hover:bg-zinc-800 px-6 py-2 rounded-lg text-white font-medium border-b-4 border-zinc-950 transition-all hover:translate-y-1 hover:border-b-2">Join
+          Discord</a>
+        <a href="https://rekall.mysellauth.com/customer/dashboard"
+          class="bg-white hover:bg-white/90 px-6 py-2 rounded-lg text-black font-medium border-b-4 border-white/80 transition-all hover:translate-y-1 hover:border-b-2">Customer
+          Dashboard</a>
+      </div>
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden flex items-center space-x-3">
+                <a href="products.html"
+            class="bg-white hover:bg-white/90 px-4 py-1.5 rounded-lg text-black text-sm font-medium border-b-3 border-white/80 transition-all hover:translate-y-1 hover:border-b-1">Get
+            Started</a>
+        <button id="mobile-menu-button" type="button"
+          class="text-gray-300 hover:text-white bg-zinc-900 p-2 rounded-lg border border-zinc-800 focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden">
+      <div
+        class="absolute left-0 right-0 z-40 px-6 pt-4 pb-6 bg-zinc-900/95 backdrop-blur-lg border-b border-zinc-800 shadow-2xl transition-all duration-300 transform -translate-y-1 opacity-0"
+        id="mobile-menu-container">
+        <!-- Mobile Navigation Links -->
+        <div class="space-y-3 py-3">
+                      <a class="block text-white font-medium hover:text-white transition px-3 py-2 rounded-lg hover:bg-black/30" href="index.html">
+            Home
+          </a>
+          <a href="products.html" class="block text-white/70 font-medium hover:text-white transition px-3 py-2 rounded-lg hover:bg-black/30">
+            Products
+          </a>
+          <a href="#" onclick="showDownloadsModal(); return false;" class="block text-white/70 font-medium hover:text-white transition px-3 py-2 rounded-lg hover:bg-black/30">
+            Downloads
+          </a>
+          <!-- Jobs Dropdown (Mobile) -->
+          <div class="">
+            <span class="block text-white/70 font-medium px-3 py-2">Jobs</span>
+            <div class="pl-4">
+              <a href="#" onclick="showJobForm('media-creator'); return false;" class="block text-white/60 hover:text-white px-3 py-2 rounded-lg hover:bg-zinc-800 transition">Media Creator</a>
+              <a href="#" onclick="showJobForm('cheat-developer'); return false;" class="block text-white/60 hover:text-white px-3 py-2 rounded-lg hover:bg-zinc-800 transition">Cheat Developer</a>
+              <a href="#" onclick="showJobForm('web-developer'); return false;" class="block text-white/60 hover:text-white px-3 py-2 rounded-lg hover:bg-zinc-800 transition">Web Developer</a>
+            </div>
+          </div>
+          <a class="block text-white/70 font-medium hover:text-white transition px-3 py-2 rounded-lg hover:bg-black/30" href="status.html">
+            Status
+          </a>
+        </div>
+
+        <!-- Mobile Auth Button -->
+        <div class="pt-3 border-t border-zinc-800">
+          <a href="https://discord.gg/5PTE9tD5s9" target="_blank"
+            class="flex items-center justify-center gap-2 bg-zinc-800 hover:bg-zinc-800/80 px-4 py-3 rounded-lg text-white font-medium transition-all">
+            Join Discord
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <section>
+    <div class="p-4 sm:p-8 md:p-12 lg:p-24">
+      <div
+        class="bg-gradient-to-r from-black to-black relative min-h-[500px] md:h-[600px] lg:h-[700px] rounded-[15px] md:rounded-[25px] w-full">
+        <!-- Removed video background here -->
+        <div class="absolute inset-0 bg-black opacity-90 z-0"></div>
+        <!-- Subtle overlay adjusted for better image visibility -->
+        <div class="absolute inset-0 bg-black/10 backdrop-blur-[1px] z-15 overflow-hidden"></div>
+        <!-- Content on top of both the background and image -->
+        <div class="relative z-20 p-6 md:p-12 lg:px-24 text-white h-full flex flex-col">
+          <div class="flex flex-col lg:flex-row items-center lg:justify-between h-full gap-8">
+            <!-- Left Content - Text and CTA -->
+            <div class="max-w-xl">
+              <div class="inline-block px-4 py-1 bg-white/10 backdrop-blur-sm rounded-md text-sm font-mono mb-4">
+                ESTABLISHED 2025 </div>
+              <h1 class="text-4xl md:text-5xl lg:text-7xl font-bold mb-3 text-white">REKALL</h1>
+              <h2 class="text-xl md:text-2xl font-semibold mb-4 md:mb-6 text-white/70">PREMIUM &amp; UNDETECTED</h2>
+              <p class="text-gray-300/80 mb-6 md:mb-8 text-sm md:text-base">We at Rekall stand for quality and
+                undetected cheats combined with excellent support. Started as a small community in 2025, we will soon become
+                one of the most well-known and reputable providers in the cheating scene with thousands of satisfied
+                customers.</p>
+              <div class="flex items-center gap-2 md:gap-4">
+                            <a href="products.html"
+              class="bg-white hover:bg-white/90 px-4 md:px-8 py-2 md:py-3 rounded-lg text-black text-sm md:text-base font-medium border-b-4 border-white/80 transition-all hover:translate-y-1 hover:border-b-2">View
+              Products</a>
+                <a href="https://discord.gg/5PTE9tD5s9"
+                  class="bg-zinc-900 hover:bg-zinc-900 px-4 md:px-8 py-2 md:py-3 rounded-lg text-white text-sm md:text-base font-medium border-b-4 border-zinc-950 transition-all hover:translate-y-1 hover:border-b-2">Join
+                  Discord</a>
+              </div>
+              <div class="mt-6 md:mt-8 flex items-center">
+                <div class="flex -space-x-2">
+
+                </div>
+                <p class="ml-2 text-sm md:text-base gap-2 text-gray-400">
+                  <span class="text-white font-semibold">100+</span> Total Users
+                </p>
+              </div>
+            </div>
+
+            <!-- Right Content - Feature Card -->
+            <div class="w-full sm:w-[350px] md:w-[400px] mt-6 lg:mt-0 flex items-center justify-center">
+              <img id="interactive-look-img" src="./Fractal.Assets2/sadasdad.png"
+                alt="Rekall Feature"
+                class="rounded-2xl shadow-lg border border-zinc-800 max-w-full max-h-[350px] object-contain bg-black will-change-transform cursor-pointer"
+                style="transition: all 0.3s ease-in-out;"
+                onmouseover="this.style.transform='scale(1.05) translateY(-8px) rotate(1deg)'; this.style.boxShadow='0 25px 50px -12px rgba(255, 255, 255, 0.2)';"
+                onmouseout="this.style.transform='scale(1) translateY(0px) rotate(0deg)'; this.style.boxShadow='0 10px 15px -3px rgba(0, 0, 0, 0.1)';">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Status Section (moved up) -->
+  <section class="pt-6 md:pt-8 lg:pt-10 pb-12 md:pb-16 lg:pb-20 container px-4 sm:px-8 md:px-12 lg:px-24 mx-auto"
+    id="products">
+    <div class="text-center mb-10 lg:mb-14">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+        <span class="text-white">Products</span>
+      </h2>
+      <p class="text-gray-400 text-base md:text-lg mb-6">Providing the best you will ever use</p>
+      <!-- Custom Scrollbar -->
+      <div class="relative w-full mb-4">
+        <div class="absolute left-1/2 transform -translate-x-1/2 w-screen h-2 bg-zinc-800 rounded-full overflow-hidden">
+          <div id="scrollbar-thumb" class="h-full bg-white rounded-full transition-all duration-300 cursor-pointer"
+            style="width: 8%; margin-left: 25%;"></div>
+        </div>
+        <div class="flex justify-between text-xs text-white/60 mt-6 px-1">
+          <span>Fortnite</span>
+          <span>Tarkov</span>
+          <span>R6</span>
+          <span>BO6</span>
+          <span>Valorant</span>
+          <span>Marvel</span>
+          <span>Apex</span>
+          <span>Spoofers</span>
+        </div>
+      </div>
+
+      <!-- Infinite Image Loop -->
+      <div class="relative w-full overflow-hidden py-8 carousel-container" style="margin-left: calc(-50vw + 50%); margin-right: calc(-50vw + 50%); width: 100vw; max-width: 100vw;">
+        <div id="carousel-track" class="flex gap-8 justify-start will-change-transform carousel-track"
+          style="width: max-content; transform: translateX(-1851px);">
+          <!-- Fortnite Card -->
+          <div class="relative group flex-shrink-0 rounded-2xl shadow-xl border-4 border-white"
+            style="box-shadow: 0 0 16px 0 rgba(255,255,255,0.15), 0 0 0 2px rgba(255,255,255,0.10);">
+            <img src="./Fractal.Assets2/fortnite.png" alt="Fortnite"
+              style="width:460px !important;height:260px !important;object-fit:cover;"
+              class="object-cover mx-auto shadow-xl rounded-xl">
+            <div
+              class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 rounded-xl">
+              <div class="text-white text-2xl font-bold mb-2">Fortnite</div>
+              <span
+                class="inline-flex items-center gap-1 bg-green-600 text-white text-sm font-semibold px-4 py-1 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                </svg>
+                UNDETECTED
+              </span>
+            </div>
+          </div>
+          <!-- Tarkov Card -->
+          <div class="relative group flex-shrink-0 rounded-2xl shadow-xl border-4 border-white"
+            style="box-shadow: 0 0 16px 0 rgba(255,255,255,0.15), 0 0 0 2px rgba(255,255,255,0.10);">
+            <img src="./Fractal.Assets2/tarkov.png" alt="Tarkov"
+              style="width:460px !important;height:260px !important;object-fit:cover;"
+              class="object-cover mx-auto shadow-xl rounded-xl">
+            <div
+              class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 rounded-xl">
+              <div class="text-white text-2xl font-bold mb-2">Escape From Tarkov</div>
+              <span
+                class="inline-flex items-center gap-1 bg-green-600 text-white text-sm font-semibold px-4 py-1 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                </svg>
+                UNDETECTED
+              </span>
+            </div>
+          </div>
+          <!-- R6 Full Card -->
+          <div class="relative group flex-shrink-0 rounded-2xl shadow-xl border-4 border-white"
+            style="box-shadow: 0 0 16px 0 rgba(255,255,255,0.15), 0 0 0 2px rgba(255,255,255,0.10);">
+            <img src="./Fractal.Assets2/r6-full.png" alt="R6 Full"
+              style="width:460px !important;height:260px !important;object-fit:cover;"
+              class="object-cover mx-auto shadow-xl rounded-xl">
+            <div
+              class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 rounded-xl">
+              <div class="text-white text-2xl font-bold mb-2">R6 Full</div>
+              <span
+                class="inline-flex items-center gap-1 bg-green-600 text-white text-sm font-semibold px-4 py-1 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                </svg>
+                UNDETECTED
+              </span>
+            </div>
+          </div>
+          <!-- Valorant VIP Card -->
+          <div class="relative group flex-shrink-0 rounded-2xl shadow-xl border-4 border-white"
+            style="box-shadow: 0 0 16px 0 rgba(255,255,255,0.15), 0 0 0 2px rgba(255,255,255,0.10);">
+            <img src="./Fractal.Assets2/VALORANT VIP.png" alt="Valorant VIP"
+              style="width:460px !important;height:260px !important;object-fit:cover;"
+              class="object-cover mx-auto shadow-xl rounded-xl">
+            <div
+              class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 rounded-xl">
+              <div class="text-white text-2xl font-bold mb-2">Valorant VIP</div>
+              <span
+                class="inline-flex items-center gap-1 bg-green-600 text-white text-sm font-semibold px-4 py-1 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                </svg>
+                UNDETECTED
+              </span>
+            </div>
+          </div>
+          <!-- R6 Unlock All Card -->
+          <div class="relative group flex-shrink-0 rounded-2xl shadow-xl border-4 border-white"
+            style="box-shadow: 0 0 16px 0 rgba(255,255,255,0.15), 0 0 0 2px rgba(255,255,255,0.10);">
+            <img src="./Fractal.Assets2/r6-unlockall.png" alt="R6 Unlock All"
+              style="width:460px !important;height:260px !important;object-fit:cover;"
+              class="object-cover mx-auto shadow-xl rounded-xl">
+            <div
+              class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 rounded-xl">
+              <div class="text-white text-2xl font-bold mb-2">R6 Unlock All</div>
+              <span
+                class="inline-flex items-center gap-1 bg-green-600 text-white text-sm font-semibold px-4 py-1 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                </svg>
+                UNDETECTED
+              </span>
+            </div>
+          </div>
+          <!-- BO6 Internal Card -->
+          <div class="relative group flex-shrink-0 rounded-2xl shadow-xl border-4 border-white"
+            id="bo6-card" style="box-shadow: 0 0 16px 0 rgba(255,255,255,0.15), 0 0 0 2px rgba(255,255,255,0.10);">
+            <img src="./Fractal.Assets2/bo6-internal.png" alt="BO6 Internal"
+              style="width:460px !important;height:260px !important;object-fit:cover;"
+              class="object-cover mx-auto shadow-xl rounded-xl">
+            <div
+              class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 rounded-xl">
+              <div class="text-white text-2xl font-bold mb-2">BO6 Internal</div>
+              <span
+                class="inline-flex items-center gap-1 bg-green-600 text-white text-sm font-semibold px-4 py-1 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                </svg>
+                UNDETECTED
+              </span>
+            </div>
+          </div>
+          <!-- Valorant Color Bot Card -->
+          <div class="relative group flex-shrink-0 rounded-2xl shadow-xl border-4 border-white"
+            style="box-shadow: 0 0 16px 0 rgba(255,255,255,0.15), 0 0 0 2px rgba(255,255,255,0.10);">
+            <img src="./Fractal.Assets2/val-colorbot.png" alt="Valorant Color Bot"
+              style="width:460px !important;height:260px !important;object-fit:cover;"
+              class="object-cover mx-auto shadow-xl rounded-xl">
+            <div
+              class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 rounded-xl">
+              <div class="text-white text-2xl font-bold mb-2">Valorant Color Bot</div>
+              <span
+                class="inline-flex items-center gap-1 bg-green-600 text-white text-sm font-semibold px-4 py-1 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                </svg>
+                UNDETECTED
+              </span>
+            </div>
+          </div>
+          <!-- Marvel Rivals Card -->
+          <div class="relative group flex-shrink-0 rounded-2xl shadow-xl border-4 border-white"
+            style="box-shadow: 0 0 16px 0 rgba(255,255,255,0.15), 0 0 0 2px rgba(255,255,255,0.10);">
+            <img src="./Fractal.Assets2/marvelrivals.png" alt="Marvel Rivals"
+              style="width:460px !important;height:260px !important;object-fit:cover;"
+              class="object-cover mx-auto shadow-xl rounded-xl">
+            <div
+              class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 rounded-xl">
+              <div class="text-white text-2xl font-bold mb-2">Marvel Rivals</div>
+              <span
+                class="inline-flex items-center gap-1 bg-green-600 text-white text-sm font-semibold px-4 py-1 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                </svg>
+                UNDETECTED
+              </span>
+            </div>
+          </div>
+          <!-- Apex Fractal Card -->
+          <div class="relative group flex-shrink-0 rounded-2xl shadow-xl border-4 border-white"
+            style="box-shadow: 0 0 16px 0 rgba(255,255,255,0.15), 0 0 0 2px rgba(255,255,255,0.10);">
+            <img src="./Fractal.Assets2/apexlegends.png" alt="Apex Rekall"
+              style="width:460px !important;height:260px !important;object-fit:cover;"
+              class="object-cover mx-auto shadow-xl rounded-xl">
+            <div
+              class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 rounded-xl">
+              <div class="text-white text-2xl font-bold mb-2">Apex Rekall</div>
+              <span
+                class="inline-flex items-center gap-1 bg-green-600 text-white text-sm font-semibold px-4 py-1 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                </svg>
+                UNDETECTED
+              </span>
+            </div>
+          </div>
+          <!-- Rust Card -->
+          <div class="relative group flex-shrink-0 rounded-2xl shadow-xl border-4 border-white"
+            style="box-shadow: 0 0 16px 0 rgba(255,255,255,0.15), 0 0 0 2px rgba(255,255,255,0.10);">
+            <img src="./Fractal.Assets2/rust.png" alt="Rust"
+              style="width:460px !important;height:260px !important;object-fit:cover;"
+              class="object-cover mx-auto shadow-xl rounded-xl">
+            <div
+              class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 rounded-xl">
+              <div class="text-white text-2xl font-bold mb-2">Rust</div>
+              <span
+                class="inline-flex items-center gap-1 bg-green-600 text-white text-sm font-semibold px-4 py-1 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                </svg>
+                UNDETECTED
+              </span>
+            </div>
+          </div>
+          <!-- Temp Spoofer Card -->
+          <div class="relative group flex-shrink-0 rounded-2xl shadow-xl border-4 border-white"
+            style="box-shadow: 0 0 16px 0 rgba(255,255,255,0.15), 0 0 0 2px rgba(255,255,255,0.10);">
+            <img src="./Fractal.Assets2/spoofer-sirentemp.png" alt="Temp Spoofer"
+              style="width:460px !important;height:260px !important;object-fit:cover;"
+              class="object-cover mx-auto shadow-xl rounded-xl">
+            <div
+              class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 rounded-xl">
+              <div class="text-white text-2xl font-bold mb-2">Temp Spoofer</div>
+              <span
+                class="inline-flex items-center gap-1 bg-green-600 text-white text-sm font-semibold px-4 py-1 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                </svg>
+                UNDETECTED
+              </span>
+            </div>
+          </div>
+          <!-- Verse Perm Spoofer Card -->
+          <div class="relative group flex-shrink-0 rounded-2xl shadow-xl border-4 border-white"
+            style="box-shadow: 0 0 16px 0 rgba(255,255,255,0.15), 0 0 0 2px rgba(255,255,255,0.10);">
+            <img src="./Fractal.Assets2/spoofer-verseperm.png"
+              alt="Verse Perm Spoofer" style="width:460px !important;height:260px !important;object-fit:cover;"
+              class="object-cover mx-auto shadow-xl rounded-xl">
+            <div
+              class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 rounded-xl">
+              <div class="text-white text-2xl font-bold mb-2">Verse Perm Spoofer</div>
+              <span
+                class="inline-flex items-center gap-1 bg-green-600 text-white text-sm font-semibold px-4 py-1 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                </svg>
+                UNDETECTED
+              </span>
+            </div>
+          </div>
+          <!-- Duplicate cards for infinite loop (exact order as main set) -->
+          <!-- Fortnite Card (Duplicate) -->
+          <div class="relative group flex-shrink-0 rounded-2xl shadow-xl border-4 border-white"
+            style="box-shadow: 0 0 16px 0 rgba(255,255,255,0.15), 0 0 0 2px rgba(255,255,255,0.10);">
+            <img src="./Fractal.Assets2/fortnite.png" alt="Fortnite"
+              style="width:460px !important;height:260px !important;object-fit:cover;"
+              class="object-cover mx-auto shadow-xl rounded-xl">
+            <div
+              class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 rounded-xl">
+              <div class="text-white text-2xl font-bold mb-2">Fortnite</div>
+              <span
+                class="inline-flex items-center gap-1 bg-green-600 text-white text-sm font-semibold px-4 py-1 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                </svg>
+                UNDETECTED
+              </span>
+            </div>
+          </div>
+          <!-- Tarkov Card (Duplicate) -->
+          <div class="relative group flex-shrink-0 rounded-2xl shadow-xl border-4 border-white"
+            style="box-shadow: 0 0 16px 0 rgba(255,255,255,0.15), 0 0 0 2px rgba(255,255,255,0.10);">
+            <img src="./Fractal.Assets2/tarkov.png" alt="Tarkov"
+              style="width:460px !important;height:260px !important;object-fit:cover;"
+              class="object-cover mx-auto shadow-xl rounded-xl">
+            <div
+              class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 rounded-xl">
+              <div class="text-white text-2xl font-bold mb-2">Escape From Tarkov</div>
+              <span
+                class="inline-flex items-center gap-1 bg-green-600 text-white text-sm font-semibold px-4 py-1 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                </svg>
+                UNDETECTED
+              </span>
+            </div>
+          </div>
+          <!-- R6 Full Card (Duplicate) -->
+          <div class="relative group flex-shrink-0 rounded-2xl shadow-xl border-4 border-white"
+            style="box-shadow: 0 0 16px 0 rgba(255,255,255,0.15), 0 0 0 2px rgba(255,255,255,0.10);">
+            <img src="./Fractal.Assets2/r6-full.png" alt="R6 Full"
+              style="width:460px !important;height:260px !important;object-fit:cover;"
+              class="object-cover mx-auto shadow-xl rounded-xl">
+            <div
+              class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 rounded-xl">
+              <div class="text-white text-2xl font-bold mb-2">R6 Full</div>
+              <span
+                class="inline-flex items-center gap-1 bg-green-600 text-white text-sm font-semibold px-4 py-1 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                </svg>
+                UNDETECTED
+              </span>
+            </div>
+          </div>
+          <!-- Valorant VIP Card (Duplicate) -->
+          <div class="relative group flex-shrink-0 rounded-2xl shadow-xl border-4 border-white"
+            style="box-shadow: 0 0 16px 0 rgba(255,255,255,0.15), 0 0 0 2px rgba(255,255,255,0.10);">
+            <img src="./Fractal.Assets2/VALORANT VIP.png" alt="Valorant VIP"
+              style="width:460px !important;height:260px !important;object-fit:cover;"
+              class="object-cover mx-auto shadow-xl rounded-xl">
+            <div
+              class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 rounded-xl">
+              <div class="text-white text-2xl font-bold mb-2">Valorant VIP</div>
+              <span
+                class="inline-flex items-center gap-1 bg-green-600 text-white text-sm font-semibold px-4 py-1 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                </svg>
+                UNDETECTED
+              </span>
+            </div>
+          </div>
+          <!-- R6 Unlock All Card (Duplicate) -->
+          <div class="relative group flex-shrink-0 rounded-2xl shadow-xl border-4 border-white"
+            style="box-shadow: 0 0 16px 0 rgba(255,255,255,0.15), 0 0 0 2px rgba(255,255,255,0.10);">
+            <img src="./Fractal.Assets2/r6-unlockall.png" alt="R6 Unlock All"
+              style="width:460px !important;height:260px !important;object-fit:cover;"
+              class="object-cover mx-auto shadow-xl rounded-xl">
+            <div
+              class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 rounded-xl">
+              <div class="text-white text-2xl font-bold mb-2">R6 Unlock All</div>
+              <span
+                class="inline-flex items-center gap-1 bg-green-600 text-white text-sm font-semibold px-4 py-1 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                </svg>
+                UNDETECTED
+              </span>
+            </div>
+          </div>
+          <!-- BO6 Internal Card (Duplicate) -->
+          <div class="relative group flex-shrink-0 rounded-2xl shadow-xl border-4 border-white"
+            style="box-shadow: 0 0 16px 0 rgba(255,255,255,0.15), 0 0 0 2px rgba(255,255,255,0.10);">
+            <img src="./Fractal.Assets2/bo6-internal.png" alt="BO6 Internal"
+              style="width:460px !important;height:260px !important;object-fit:cover;"
+              class="object-cover mx-auto shadow-xl rounded-xl">
+            <div
+              class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 rounded-xl">
+              <div class="text-white text-2xl font-bold mb-2">BO6 Internal</div>
+              <span
+                class="inline-flex items-center gap-1 bg-green-600 text-white text-sm font-semibold px-4 py-1 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                </svg>
+                UNDETECTED
+              </span>
+            </div>
+          </div>
+          <!-- Valorant Color Bot Card (Duplicate) -->
+          <div class="relative group flex-shrink-0 rounded-2xl shadow-xl border-4 border-white"
+            style="box-shadow: 0 0 16px 0 rgba(255,255,255,0.15), 0 0 0 2px rgba(255,255,255,0.10);">
+            <img src="./Fractal.Assets2/val-colorbot.png" alt="Valorant Color Bot"
+              style="width:460px !important;height:260px !important;object-fit:cover;"
+              class="object-cover mx-auto shadow-xl rounded-xl">
+            <div
+              class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 rounded-xl">
+              <div class="text-white text-2xl font-bold mb-2">Valorant Color Bot</div>
+              <span
+                class="inline-flex items-center gap-1 bg-green-600 text-white text-sm font-semibold px-4 py-1 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                </svg>
+                UNDETECTED
+              </span>
+            </div>
+          </div>
+          <!-- Marvel Rivals Card (Duplicate) -->
+          <div class="relative group flex-shrink-0 rounded-2xl shadow-xl border-4 border-white"
+            style="box-shadow: 0 0 16px 0 rgba(255,255,255,0.15), 0 0 0 2px rgba(255,255,255,0.10);">
+            <img src="./Fractal.Assets2/marvelrivals.png" alt="Marvel Rivals"
+              style="width:460px !important;height:260px !important;object-fit:cover;"
+              class="object-cover mx-auto shadow-xl rounded-xl">
+            <div
+              class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 rounded-xl">
+              <div class="text-white text-2xl font-bold mb-2">Marvel Rivals</div>
+              <span
+                class="inline-flex items-center gap-1 bg-green-600 text-white text-sm font-semibold px-4 py-1 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                </svg>
+                UNDETECTED
+              </span>
+            </div>
+          </div>
+          <!-- Apex Fractal Card (Duplicate) -->
+          <div class="relative group flex-shrink-0 rounded-2xl shadow-xl border-4 border-white"
+            style="box-shadow: 0 0 16px 0 rgba(255,255,255,0.15), 0 0 0 2px rgba(255,255,255,0.10);">
+            <img src="./Fractal.Assets2/apexlegends.png" alt="Apex Fractal"
+              style="width:460px !important;height:260px !important;object-fit:cover;"
+              class="object-cover mx-auto shadow-xl rounded-xl">
+            <div
+              class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 rounded-xl">
+              <div class="text-white text-2xl font-bold mb-2">Apex Fractal</div>
+              <span
+                class="inline-flex items-center gap-1 bg-green-600 text-white text-sm font-semibold px-4 py-1 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                </svg>
+                UNDETECTED
+              </span>
+            </div>
+          </div>
+          <!-- CS2 Predator Card (Duplicate) -->
+          <div class="relative group flex-shrink-0 rounded-2xl shadow-xl border-4 border-white"
+            style="box-shadow: 0 0 16px 0 rgba(255,255,255,0.15), 0 0 0 2px rgba(255,255,255,0.10);">
+            <img src="./Fractal.Assets2/cs2-predator.png" alt="CS2 Predator"
+              style="width:460px !important;height:260px !important;object-fit:cover;"
+              class="object-cover mx-auto shadow-xl rounded-xl" loading="eager">
+            <div
+              class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 rounded-xl">
+              <div class="text-white text-2xl font-bold mb-2">CS2 Predator</div>
+              <span
+                class="inline-flex items-center gap-1 bg-green-600 text-white text-sm font-semibold px-4 py-1 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                </svg>
+                UNDETECTED
+              </span>
+            </div>
+          </div>
+          <!-- Rust Card (Duplicate) -->
+          <div class="relative group flex-shrink-0 rounded-2xl shadow-xl border-4 border-white"
+            style="box-shadow: 0 0 16px 0 rgba(255,255,255,0.15), 0 0 0 2px rgba(255,255,255,0.10);">
+            <img src="./Fractal.Assets2/rust.png" alt="Rust"
+              style="width:460px !important;height:260px !important;object-fit:cover;"
+              class="object-cover mx-auto shadow-xl rounded-xl">
+            <div
+              class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 rounded-xl">
+              <div class="text-white text-2xl font-bold mb-2">Rust</div>
+              <span
+                class="inline-flex items-center gap-1 bg-green-600 text-white text-sm font-semibold px-4 py-1 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                </svg>
+                UNDETECTED
+              </span>
+            </div>
+          </div>
+          <!-- Temp Spoofer Card (Duplicate) -->
+          <div class="relative group flex-shrink-0 rounded-2xl shadow-xl border-4 border-white"
+            style="box-shadow: 0 0 16px 0 rgba(255,255,255,0.15), 0 0 0 2px rgba(255,255,255,0.10);">
+            <img src="./Fractal.Assets2/spoofer-sirentemp.png" alt="Temp Spoofer"
+              style="width:460px !important;height:260px !important;object-fit:cover;"
+              class="object-cover mx-auto shadow-xl rounded-xl">
+            <div
+              class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 rounded-xl">
+              <div class="text-white text-2xl font-bold mb-2">Temp Spoofer</div>
+              <span
+                class="inline-flex items-center gap-1 bg-green-600 text-white text-sm font-semibold px-4 py-1 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                </svg>
+                UNDETECTED
+              </span>
+            </div>
+          </div>
+          <!-- Verse Perm Spoofer Card (Duplicate) -->
+          <div class="relative group flex-shrink-0 rounded-2xl shadow-xl border-4 border-white"
+            style="box-shadow: 0 0 16px 0 rgba(255,255,255,0.15), 0 0 0 2px rgba(255,255,255,0.10);">
+            <img src="./Fractal.Assets2/spoofer-verseperm.png"
+              alt="Verse Perm Spoofer" style="width:460px !important;height:260px !important;object-fit:cover;"
+              class="object-cover mx-auto shadow-xl rounded-xl">
+            <div
+              class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 rounded-xl">
+              <div class="text-white text-2xl font-bold mb-2">Verse Perm Spoofer</div>
+              <span
+                class="inline-flex items-center gap-1 bg-green-600 text-white text-sm font-semibold px-4 py-1 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                </svg>
+                UNDETECTED
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <script>
+        const track = document.getElementById('carousel-track');
+        const scrollbarThumb = document.getElementById('scrollbar-thumb');
+        let position = 0;
+        const speed = 1.2; // Consistent smooth speed
+        let animationFrameId;
+
+        // Calculate card width including gap (460px card + 32px gap)
+        const cardWidth = 492; // 460 + 32
+        const totalUniqueCards = 12; // Number of unique product cards
+        const totalWidth = cardWidth * totalUniqueCards; // Total width of one complete set
+        
+        // Start from a position that allows seamless looping
+        // We'll reset when we've moved exactly one card width past the total
+        const resetPoint = -totalWidth;
+        const startPosition = 0;
+        position = startPosition;
+
+        function updateScrollbar() {
+          // Create a smooth scrollbar animation that loops seamlessly
+          const normalizedPosition = Math.abs(position) % totalWidth;
+          const scrollPercentage = (normalizedPosition / totalWidth) * 100;
+          const thumbPosition = scrollPercentage * 0.8; // Scale to fit scrollbar
+          scrollbarThumb.style.marginLeft = `${thumbPosition}%`;
+        }
+
+        function animate() {
+          position -= speed;
+          
+          // Instant seamless reset - when we reach the reset point, immediately jump back
+          // This works because we have duplicate cards that make the transition invisible
+          if (position <= resetPoint) {
+            position = startPosition;
+          }
+          
+          track.style.transform = `translateX(${position}px)`;
+          updateScrollbar();
+          animationFrameId = requestAnimationFrame(animate);
+        }
+
+        // Initialize position and start animation
+        track.style.transform = `translateX(${position}px)`;
+        animate();
+      </script>
+      
+      <!-- BO6 Modal Popup -->
+      <div id="bo6-modal"
+        class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm transition-opacity duration-300 opacity-0 pointer-events-none">
+        <div class="bg-black border border-white/10 rounded-2xl shadow-2xl p-4 w-full max-w-5xl mx-auto relative">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Internal Option -->
+            <div class="bg-zinc-900 border border-white/10 rounded-xl p-4 flex flex-col gap-2 items-center w-full">
+              <div class="flex items-center justify-between w-full mb-2">
+                <span class="bg-white text-black text-sm font-bold px-3 py-1 rounded-md">INTERNAL</span>
+                <span class="text-white text-lg font-bold">$4.99</span>
+              </div>
+              <div class="text-white font-semibold text-base mb-1 w-full text-center">Internal Cheat</div>
+              <ul class="text-white/80 text-sm list-disc pl-20 mb-2 w-full text-left">
+                <li>Kernel Level Access</li>
+                <li>Highest Performance</li>
+                <li>Advanced Features</li>
+              </ul>
+              <button
+                class="w-full bg-white text-black font-bold py-2 rounded-lg hover:bg-gray-200 transition text-base mt-auto buy-now-btn"
+                data-url="https://fractal.sellhub.cx/product/fortnite-private/">Buy Now</button>
+            </div>
+            <!-- External Option -->
+            <div class="bg-zinc-900 border border-white/10 rounded-xl p-4 flex flex-col gap-2 items-center w-full">
+              <div class="flex items-center justify-between w-full mb-2">
+                <span class="bg-white text-black text-sm font-bold px-3 py-1 rounded-md">EXTERNAL</span>
+                <span class="text-white text-lg font-bold">$3.99</span>
+              </div>
+              <div class="text-white font-semibold text-base mb-1 w-full text-center">External Cheat</div>
+              <ul class="text-white/80 text-sm list-disc pl-20 mb-2 w-full text-left">
+                <li>User Mode Access</li>
+                <li>Lightweight</li>
+                <li>Basic Features</li>
+              </ul>
+              <button
+                class="w-full bg-white text-black font-bold py-2 rounded-lg hover:bg-gray-200 transition text-base mt-auto buy-now-btn"
+                data-url="https://siren.sellhub.cx/product/bo6-external/">Buy Now</button>
+            </div>
+            <!-- Fecurity External Option -->
+            <div class="bg-zinc-900 border border-white/10 rounded-xl p-4 flex flex-col gap-2 items-center w-full">
+              <div class="flex items-center justify-between w-full mb-2">
+                <span class="bg-white text-black text-sm font-bold px-3 py-1 rounded-md">FECURITY</span>
+                <span class="text-white text-lg font-bold">$4.99</span>
+              </div>
+              <div class="text-white font-semibold text-base mb-1 w-full text-center">BO6 Fecurity External</div>
+              <div class="text-white/80 text-sm mb-2 w-full text-center">NO built-in spoofer • SAFEST option right now
+              </div>
+              <ul class="text-white/80 text-sm list-disc pl-20 mb-2 w-full text-left">
+                <li>Undetected</li>
+                <li>Safe &amp; Secure</li>
+                <li>External Access</li>
+              </ul>
+              <button
+                class="w-full bg-white text-black font-bold py-2 rounded-lg hover:bg-gray-200 transition text-base mt-auto buy-now-btn"
+                data-url="https://siren.sellhub.cx/product/bo6-external11/">Buy Now</button>
+            </div>
+            <!-- Steam Account Option -->
+            <div class="bg-zinc-900 border border-white/10 rounded-xl p-4 flex flex-col gap-2 items-center w-full">
+              <div class="flex items-center justify-between w-full mb-2">
+                <span class="bg-white text-black text-sm font-bold px-3 py-1 rounded-md">STEAM</span>
+                <span class="text-white text-lg font-bold">$0.20</span>
+              </div>
+              <div class="text-white font-semibold text-base mb-1 w-full text-center">Steam Account</div>
+              <div class="text-white/80 text-sm mb-2 w-full text-center">Cheapest on the market right now</div>
+              <ul class="text-white/80 text-sm list-disc pl-20 mb-2 w-full text-left">
+                <li>Fresh Steam Account</li>
+                <li>Instant Delivery</li>
+                <li>Lowest Price</li>
+              </ul>
+              <button
+                class="w-full bg-white text-black font-bold py-2 rounded-lg hover:bg-gray-200 transition text-base mt-auto buy-now-btn"
+                data-url="https://siren.sellhub.cx/product/phone-verified-steam/">Buy Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Rust Modal Popup -->
+      <div id="rust-modal"
+        class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm transition-opacity duration-300 opacity-0 pointer-events-none">
+        <div class="bg-black border border-white/10 rounded-2xl shadow-2xl p-4 w-full max-w-xl mx-auto relative">
+          <div class="flex flex-col gap-4 items-center">
+            <!-- Rust External Card -->
+            <div class="bg-zinc-900 border border-white/10 rounded-xl p-4 flex flex-col gap-2 items-center w-full">
+              <div class="flex items-center justify-between w-full mb-2">
+                <span class="bg-white text-black text-sm font-bold px-3 py-1 rounded-md">EXTERNAL</span>
+                <span class="text-white text-lg font-bold">$6.99</span>
+              </div>
+              <div class="text-white font-semibold text-base mb-1 w-full text-center">Rust External</div>
+              <ul class="text-white/80 text-sm list-disc pl-8 mb-2 w-full text-left">
+                <li>Undetected</li>
+                <li>ESP, Aimbot, More</li>
+              </ul>
+              <button
+                class="w-full bg-white text-black font-bold py-2 rounded-lg hover:bg-gray-200 transition text-base mt-auto buy-now-btn"
+                data-url="https://siren.sellhub.cx/product/private/">Buy Now</button>
+            </div>
+            <!-- Rust Internal Card -->
+            <div class="bg-zinc-900 border border-white/10 rounded-xl p-4 flex flex-col gap-2 items-center w-full">
+              <div class="flex items-center justify-between w-full mb-2">
+                <span class="bg-white text-black text-sm font-bold px-3 py-1 rounded-md">INTERNAL</span>
+                <span class="text-white text-lg font-bold">$9.99</span>
+              </div>
+              <div class="text-white font-semibold text-base mb-1 w-full text-center">Rust Internal</div>
+              <ul class="text-white/80 text-sm list-disc pl-8 mb-2 w-full text-left">
+                <li>Advanced Features</li>
+                <li>ESP, Aimbot, More</li>
+                <li>Frequent Updates</li>
+              </ul>
+              <button
+                class="w-full bg-white text-black font-bold py-2 rounded-lg hover:bg-gray-200 transition text-base mt-auto buy-now-btn"
+                data-url="https://siren.sellhub.cx/product/Fluent-Rust/">Buy Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- R6 Modal Popup -->
+      <div id="r6-modal"
+        class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm transition-opacity duration-300 opacity-0 pointer-events-none">
+        <div class="bg-black border border-white/10 rounded-2xl shadow-2xl p-4 w-full max-w-xl mx-auto relative">
+          <div class="flex flex-col gap-4 items-center">
+            <!-- R6 External Card -->
+            <div class="bg-zinc-900 border border-white/10 rounded-xl p-4 flex flex-col gap-2 items-center w-full">
+              <div class="flex items-center justify-between w-full mb-2">
+                <span class="bg-white text-black text-sm font-bold px-3 py-1 rounded-md">EXTERNAL</span>
+                <span class="text-white text-lg font-bold">$4.99</span>
+              </div>
+              <div class="text-white font-semibold text-base mb-1 w-full text-center">R6 External</div>
+              <ul class="text-white/80 text-sm list-disc pl-8 mb-2 w-full text-left">
+                <li>Undetected</li>
+                <li>ESP, Aimbot, More</li>
+                <li>User Mode Access</li>
+              </ul>
+              <button
+                class="w-full bg-white text-black font-bold py-2 rounded-lg hover:bg-gray-200 transition text-base mt-auto buy-now-btn"
+                data-url="https://siren.sellhub.cx/product/Crusader/">Buy Now</button>
+            </div>
+            <!-- R6 Internal Card -->
+            <div class="bg-zinc-900 border border-white/10 rounded-xl p-4 flex flex-col gap-2 items-center w-full">
+              <div class="flex items-center justify-between w-full mb-2">
+                <span class="bg-white text-black text-sm font-bold px-3 py-1 rounded-md">INTERNAL</span>
+                <span class="text-white text-lg font-bold">$6.99</span>
+              </div>
+              <div class="text-white font-semibold text-base mb-1 w-full text-center">R6 Internal</div>
+              <ul class="text-white/80 text-sm list-disc pl-8 mb-2 w-full text-left">
+                <li>Advanced Features</li>
+                <li>ESP, Aimbot, More</li>
+                <li>Kernel Level Access</li>
+              </ul>
+              <button
+                class="w-full bg-white text-black font-bold py-2 rounded-lg hover:bg-gray-200 transition text-base mt-auto buy-now-btn"
+                data-url="https://siren.sellhub.cx/product/UAr6/">Buy Now</button>
+            </div>
+            <!-- R6 Zero Day Card -->
+            <div class="bg-zinc-900 border border-white/10 rounded-xl p-4 flex flex-col gap-2 items-center w-full">
+              <div class="flex items-center justify-between w-full mb-2">
+                <span class="bg-white text-black text-sm font-bold px-3 py-1 rounded-md">ZERO DAY</span>
+                <span class="text-white text-lg font-bold">$5.99</span>
+              </div>
+              <div class="text-white font-semibold text-base mb-1 w-full text-center">Zero Day R6</div>
+              <ul class="text-white/80 text-sm list-disc pl-8 mb-2 w-full text-left">
+                <li>Undetected</li>
+                <li>Advanced Features</li>
+                <li>Zero Day Exploits</li>
+              </ul>
+              <button
+                class="w-full bg-white text-black font-bold py-2 rounded-lg hover:bg-gray-200 transition text-base mt-auto buy-now-btn"
+                data-url="https://siren.sellhub.cx/product/Zero-Day-R6/">Buy Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Iframe Modal Popup -->
+      <div id="iframe-modal"
+        class="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm transition-opacity duration-300 opacity-0 pointer-events-none">
+        <div
+          class="bg-black border border-white/10 rounded-2xl shadow-2xl p-2 w-full max-w-5xl mx-auto relative flex flex-col items-center">
+          <button id="close-iframe-modal"
+            class="absolute top-3 right-3 text-white/70 hover:text-white text-2xl font-bold">×</button>
+          <iframe id="buy-iframe" src="./Fractal.Assets2/saved_resource.html"
+            class="w-full h-[850px] rounded-xl border-none" style="min-height:700px;"></iframe>
+        </div>
+      </div>
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          // Function to handle modal interactions
+          function setupModal(modalId, cardSelector) {
+            const modal = document.getElementById(modalId);
+            const cards = document.querySelectorAll(cardSelector);
+
+            cards.forEach(card => {
+              card.closest('.group').addEventListener('click', () => {
+                modal.classList.remove('opacity-0', 'pointer-events-none');
+                modal.classList.add('opacity-100');
+              });
+            });
+
+            modal.addEventListener('click', (e) => {
+              if (e.target === modal) {
+                modal.classList.add('opacity-0', 'pointer-events-none');
+                modal.classList.remove('opacity-100');
+              }
+            });
+          }
+
+          // Setup all product modals
+          setupModal('bo6-modal', 'img[alt="BO6"]');
+          setupModal('r6-modal', 'img[alt="R6"]');
+          setupModal('spoofer-modal', 'img[alt="Spoofer"]');
+          setupModal('apex-modal', 'img[alt="Apex"]');
+
+          // Iframe modal logic
+          const iframeModal = document.getElementById('iframe-modal');
+          const buyIframe = document.getElementById('buy-iframe');
+          const closeIframeModal = document.getElementById('close-iframe-modal');
+
+          // Function to show iframe modal
+          function showIframeModal(url) {
+            buyIframe.src = url;
+            iframeModal.classList.remove('opacity-0', 'pointer-events-none');
+            iframeModal.classList.add('opacity-100');
+            document.body.style.overflow = 'hidden';
+          }
+
+          // Function to hide iframe modal
+          function hideIframeModal() {
+            iframeModal.classList.add('opacity-0', 'pointer-events-none');
+            iframeModal.classList.remove('opacity-100');
+            buyIframe.src = '';
+            document.body.style.overflow = '';
+          }
+
+          // Handle Buy Now buttons in selection modals
+          document.querySelectorAll('.buy-now-btn').forEach(btn => {
+            btn.addEventListener('click', function (e) {
+              e.preventDefault();
+              e.stopPropagation();
+              const url = btn.getAttribute('data-url');
+
+              // Hide the current selection modal
+              const currentModal = btn.closest('[id$="-modal"]');
+              if (currentModal && currentModal.id !== 'iframe-modal') {
+                currentModal.classList.add('opacity-0', 'pointer-events-none');
+                currentModal.classList.remove('opacity-100');
+              }
+
+              // Show the iframe modal
+              showIframeModal(url);
+            });
+          });
+
+          closeIframeModal.addEventListener('click', () => {
+            hideIframeModal();
+          });
+
+          iframeModal.addEventListener('click', (e) => {
+            if (e.target === iframeModal) {
+              hideIframeModal();
+            }
+          });
+        });
+      </script>
+      </div>
+    </div>
+  </section>
+  <!-- Why Choose Fractal Section (moved down) -->
+  <section class="py-12 md:py-16 lg:py-20" id="why">
+    <div class="container px-4 sm:px-8 md:px-12 lg:px-24 mx-auto">
+      <div class="text-center mb-10 lg:mb-14">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">Why Choose <span
+            class="text-white">Rekall</span></h2>
+        <p class="text-gray-400 max-w-2xl text-base lg:text-lg mt-2 mx-auto">Providing cheats for more than 3 years.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Feature Card 1 -->
+        <div
+          class="bg-zinc-900/60 backdrop-blur-sm p-8 rounded-2xl relative overflow-hidden group transition-all duration-300 hover:-translate-y-1 border border-zinc-800/50 hover:border-white hover:shadow-[0_0_15px_rgba(255,255,255,0.3)]">
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          </div>
+          <div class="relative z-10">
+            <div class="bg-white/10 p-4 rounded-xl inline-block mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z">
+                </path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">Undetected Cheats</h3>
+            <p class="text-gray-400 mb-6">Thanks to our security first design and a unique bypass, our internal and external cheats
+              remain undetected and safe to use.</p>
+          </div>
+        </div>
+        <!-- Feature Card 2 -->
+        <div
+          class="bg-zinc-900/60 backdrop-blur-sm p-8 rounded-2xl relative overflow-hidden group transition-all duration-300 hover:-translate-y-1 border border-zinc-800/50 hover:border-white hover:shadow-[0_0_15px_rgba(255,255,255,0.3)]">
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          </div>
+          <div class="relative z-10">
+            <div class="bg-white/10 p-4 rounded-xl inline-block mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
+                </path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">Small Community</h3>
+            <p class="text-gray-400 mb-6">We have a small userbase.</p>
+          </div>
+        </div>
+        <!-- Feature Card 3 -->
+        <div
+          class="bg-zinc-900/60 backdrop-blur-sm p-8 rounded-2xl relative overflow-hidden group transition-all duration-300 hover:-translate-y-1 border border-zinc-800/50 hover:border-white hover:shadow-[0_0_15px_rgba(255,255,255,0.3)]">
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          </div>
+          <div class="relative z-10">
+            <div class="bg-white/10 p-4 rounded-xl inline-block mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z">
+                </path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">Leading Provider</h3>
+            <p class="text-gray-400 mb-6">Established in mid 2025, we are one of the most trusted cheat providers
+              for EAC, BE and Ricochet protected games.</p>
+          </div>
+        </div>
+        <!-- Feature Card 4 -->
+        <div
+          class="bg-zinc-900/60 backdrop-blur-sm p-8 rounded-2xl relative overflow-hidden group transition-all duration-300 hover:-translate-y-1 border border-zinc-800/50 hover:border-white hover:shadow-[0_0_15px_rgba(255,255,255,0.3)]">
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          </div>
+          <div class="relative z-10">
+            <div class="bg-white/10 p-4 rounded-xl inline-block mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z">
+                </path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">Instant Access</h3>
+            <p class="text-gray-400 mb-6">Signing up and checking out is simple, fast and easy. Accounts are upgraded
+              automatically and directly upon payment.</p>
+          </div>
+        </div>
+        <!-- Feature Card 5 -->
+        <div
+          class="bg-zinc-900/60 backdrop-blur-sm p-8 rounded-2xl relative overflow-hidden group transition-all duration-300 hover:-translate-y-1 border border-zinc-800/50 hover:border-white hover:shadow-[0_0_15px_rgba(255,255,255,0.3)]">
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          </div>
+          <div class="relative z-10">
+            <div class="bg-white/10 p-4 rounded-xl inline-block mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4">
+                </path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">Easy to Use</h3>
+            <p class="text-gray-400 mb-6">Getting our Cheats running only takes a few minutes. We provide extensive
+              guides and tutorials to perform.</p>
+          </div>
+        </div>
+        <!-- Feature Card 6 -->
+        <div
+          class="bg-zinc-900/60 backdrop-blur-sm p-8 rounded-2xl relative overflow-hidden group transition-all duration-300 hover:-translate-y-1 border border-zinc-800/50 hover:border-white hover:shadow-[0_0_15px_rgba(255,255,255,0.3)]">
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          </div>
+          <div class="relative z-10">
+            <div class="bg-white/10 p-4 rounded-xl inline-block mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z">
+                </path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">Customer Support</h3>
+            <p class="text-gray-400 mb-6">It is important to be in contact with the customer, there from our staff is
+              24/7 active on our discord.</p>
+          </div>
+        </div>
+      </div>
+      <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Stat 1 -->
+        <div
+          class="bg-zinc-900/60 backdrop-blur-sm p-8 rounded-2xl border border-zinc-800/50 text-center group hover:border-white transition-all duration-300 hover:shadow-[0_0_15px_rgba(255,255,255,0.3)]">
+          <div class="text-4xl font-bold text-white mb-2">
+            <span class="counter" data-target="100" data-suffix="+">0+</span>
+          </div>
+          <p class="text-gray-400">Total Users</p>
+        </div>
+        <!-- Stat 2 -->
+        <div
+          class="bg-zinc-900/60 backdrop-blur-sm p-8 rounded-2xl border border-zinc-800/50 text-center group hover:border-white transition-all duration-300 hover:shadow-[0_0_15px_rgba(255,255,255,0.3)]">
+          <div class="text-4xl font-bold text-white mb-2">
+            <span class="counter" data-target="12" data-suffix="+">0+</span>
+          </div>
+          <p class="text-gray-400">Supported Games</p>
+        </div>
+        <!-- Stat 3 -->
+        <div
+          class="bg-zinc-900/60 backdrop-blur-sm p-8 rounded-2xl border border-zinc-800/50 text-center group hover:border-white transition-all duration-300 hover:shadow-[0_0_15px_rgba(255,255,255,0.3)]">
+          <div class="text-4xl font-bold text-white mb-2">
+            <span class="counter" data-target="3" data-suffix="+">0+</span>
+          </div>
+          <p class="text-gray-400">Years Experience</p>
+        </div>
+        <!-- Stat 4 -->
+        <div
+          class="bg-zinc-900/60 backdrop-blur-sm p-8 rounded-2xl border border-zinc-800/50 text-center group hover:border-white transition-all duration-300 hover:shadow-[0_0_15px_rgba(255,255,255,0.3)]">
+          <div class="text-4xl font-bold text-white mb-2">
+            <span class="counter" data-target="100" data-suffix="%">0%</span>
+          </div>
+          <p class="text-gray-400">Customer Satisfaction</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Video Introduction Section -->
+  <section class="py-12 md:py-16 lg:py-20 relative overflow-hidden" id="video">
+    <!-- Background with diagonal pattern overlay -->
+    <div class="absolute inset-0 bg-black opacity-90 z-0">
+      <div class="absolute inset-0 bg-[url(&#39;/assets/img/diagonal-pattern.png&#39;)] opacity-5"></div>
+    </div>
+
+
+    <div class="container px-4 sm:px-8 md:px-12 lg:px-24 mx-auto relative z-10">
+      <!-- Section Header -->
+      <div class="text-center mb-8 lg:mb-10">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-3 md:mb-4">Video Showcase</h2>
+        <p class="text-gray-400 max-w-3xl mx-auto text-sm md:text-base">Dominate the competition with unparalleled
+          precision and power.</p>
+      </div>
+
+      <!-- Video Showcase -->
+      <div class="max-w-4xl mx-auto relative">
+        <!-- Preserve original embed without rendering -->
+        <template id="video-embed-template">
+          <!-- Stronger white glow behind video -->
+          <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+            <div class="w-[110%] h-[110%] bg-white opacity-70 blur-[80px] rounded-2xl"></div>
+          </div>
+          <!-- Embedded YouTube Video -->
+          <div class="relative z-10 rounded-lg overflow-hidden shadow-[0_0_40px_rgba(255,255,255,0.35)] ring-4 ring-white/40">
+            <div class="relative w-full" style="padding-bottom: 56.25%; /* 16:9 aspect ratio */">
+              <iframe 
+                class="absolute top-0 left-0 w-full h-full"
+                src="https://www.youtube.com/embed/Bs1LQbAhqZk?rel=0&amp;modestbranding=1&amp;showinfo=0&amp;controls=1&amp;autoplay=0"
+                title="Fractal Showcase"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+        </template>
+        <!-- Media embed temporarily disabled (YouTube iframe removed) -->
+        <div class="relative z-10 rounded-lg overflow-hidden border border-white/20 bg-black/40 text-white/70 flex items-center justify-center h-48 md:h-64">
+          No Media At The Moment
+        </div>
+        <!-- "Latest Showcase" Badge -->
+        <div
+          class="absolute -top-4 -right-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white px-4 py-2 rounded-lg text-sm shadow-[0_0_15px_rgba(255,255,255,0.2)] z-10">
+          Latest Showcase
+        </div>
+      </div>
+
+      <!-- Feature Highlights Under Video -->
+      <div class="max-w-4xl mx-auto mt-10 grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div class="bg-[#141419]/50 p-4 rounded-lg border border-[#1C1C26]/50 hover:border-white/30 transition-all">
+          <div class="flex items-center gap-3">
+            <div class="text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <span class="text-white">Fast Support</span>
+          </div>
+        </div>
+
+        <div class="bg-[#141419]/50 p-4 rounded-lg border border-[#1C1C26]/50 hover:border-white/30 transition-all">
+          <div class="flex items-center gap-3">
+            <div class="text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <span class="text-white">Quick Updates</span>
+          </div>
+        </div>
+
+        <div class="bg-[#141419]/50 p-4 rounded-lg border border-[#1C1C26]/50 hover:border-white/30 transition-all">
+          <div class="flex items-center gap-3">
+            <div class="text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <span class="text-white">Highly Secured</span>
+          </div>
+        </div>
+
+        <div class="bg-[#141419]/50 p-4 rounded-lg border border-[#1C1C26]/50 hover:border-white/30 transition-all">
+          <div class="flex items-center gap-3">
+            <div class="text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <span class="text-white">Fast Performance</span>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+  <!-- Unique Footer Design -->
+  <footer class="bg-zinc-900 mt-12 md:mt-16 lg:mt-24 pt-12 md:pt-16 lg:pt-20 pb-0">
+    <div class="mx-auto px-4 sm:px-8 md:px-12 lg:px-24">
+      <!-- Main footer content with more spacing -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 md:gap-x-8 lg:gap-x-12 gap-y-8 md:gap-y-10 mb-12 md:mb-16">
+        <!-- Column 1: Logo and social -->
+        <div>
+          <img src="./Fractal.Assets2/logo.png" alt="Fractal Logo" class="h-10 md:h-12 mb-4 md:mb-6">
+          <p class="text-gray-400 mb-6">Undetected products since 2025</p>
+        </div>
+        
+        <!-- Column 2: Our Products -->
+        <div>
+          <h3 class="text-white font-medium text-lg mb-4 md:mb-6">Our Products</h3>
+          <ul class="space-y-3">
+            <li>
+              <a href="products.html" class="text-gray-400 hover:text-white transition-colors">View Products</a>
+            </li>
+          </ul>
+        </div>
+        
+        <!-- Column 3: Informations -->
+        <div>
+          <h3 class="text-white font-medium text-lg mb-4 md:mb-6">Information</h3>
+          <ul class="space-y-3">
+            <li>
+              <a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a>
+            </li>
+            <li>
+              <a href="terms.html" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
+            </li>
+          </ul>
+        </div>
+        
+        <!-- Column 4: Join Discord -->
+        <div>
+          <h3 class="text-white font-medium text-lg mb-4 md:mb-6">Join Our Discord</h3>
+          <p class="text-gray-400 mb-6 md:mb-12">Join our community to get support, <br class="hidden md:block"> updates and connect with other users.</p>
+          <a href="https://discord.gg/5PTE9tD5s9" class="bg-zinc-800 hover:bg-zinc-800/80 px-6 md:px-8 py-3 rounded-lg text-white font-medium border-b-4 border-zinc-950 transition-all hover:translate-y-1 hover:border-b-2">Join Discord</a>
+        </div>
+      </div>
+      
+      <!-- Copyright section -->
+      <div class="border-t border-zinc-800 py-6 md:py-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-500 text-xs md:text-sm mb-4 md:mb-0 text-center md:text-left">
+          Copyright © 2025 Rekall - All trademarks, logos, screenshots, and gameplay are property of their respective owners.
+        </p>
+        <div class="flex items-center space-x-6">
+          <span class="text-gray-500 text-xs md:text-sm flex gap-2 items-center">
+            Created By Rekall Development
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- White bottom bar -->
+    <div class="bg-white/10 py-1">
+      <div class="container mx-auto px-4 sm:px-8 md:px-12 lg:px-24 flex justify-center">
+        <p class="text-white/80 text-xs">Rekall</p>
+      </div>
+    </div>
+  </footer>
+  <script>
+    // Counter animation
+    const counters = document.querySelectorAll('.counter');
+    counters.forEach(counter => {
+      const target = parseInt(counter.getAttribute('data-target'));
+      const suffix = counter.getAttribute('data-suffix');
+      const duration = 3000; // Longer duration for smoother animation
+      // Calculate frames for smoother animation
+      const frames = 100;
+      const increment = target / frames;
+      let current = 0;
+      let frame = 0;
+      const updateCounter = () => {
+        frame++;
+        // Use easeOutQuad for smoother animation
+        const progress = 1 - Math.pow(1 - frame / frames, 2);
+        current = Math.floor(target * progress);
+        if (frame <= frames) {
+          counter.textContent = current + suffix;
+          requestAnimationFrame(updateCounter);
+        } else {
+          counter.textContent = target + suffix;
+        }
+      };
+      // Start animation when element is in viewport
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            updateCounter();
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+      observer.observe(counter);
+    });
+  </script>
+  <script src="./Fractal.Assets2/swiper-bundle.min.js.download"></script>
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      effect: "cards",
+      grabCursor: true,
+      initialSlide: 1, // Start with the middle card
+      cardsEffect: {
+        slideShadows: true,
+        perSlideOffset: 8,
+        perSlideRotate: 2,
+      },
+    });
+  </script>
+  <!-- JavaScript fallback for browsers that don't support CSS scroll-behavior -->
+  <script>
+    // Check if browser supports CSS smooth scroll
+    if (typeof CSS === 'undefined' || !CSS.supports || !CSS.supports('scroll-behavior', 'smooth')) {
+      // Your JS smooth scroll code here (the script from my previous response)
+      document.addEventListener('DOMContentLoaded', function () {
+        // ... JavaScript smooth scrolling code for older browsers
+      });
+    }
+  </script>
+
+  <!-- Add this at the end of your body tag -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Mobile menu functionality
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileMenuContainer = document.getElementById('mobile-menu-container');
+
+      let isMenuOpen = false;
+
+      mobileMenuButton.addEventListener('click', function () {
+        isMenuOpen = !isMenuOpen;
+
+        if (isMenuOpen) {
+          mobileMenu.classList.remove('hidden');
+
+          // Staggered animation
+          setTimeout(() => {
+            mobileMenuContainer.classList.remove('-translate-y-1', 'opacity-0');
+            mobileMenuContainer.classList.add('translate-y-0', 'opacity-100');
+
+            // Change button icon to X
+            mobileMenuButton.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          `;
+          }, 10);
+        } else {
+          // Reverse animation
+          mobileMenuContainer.classList.add('-translate-y-1', 'opacity-0');
+          mobileMenuContainer.classList.remove('translate-y-0', 'opacity-100');
+
+          // Change button icon back to hamburger
+          mobileMenuButton.innerHTML = `
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        `;
+
+          // Hide menu after animation completes
+          setTimeout(() => {
+            mobileMenu.classList.add('hidden');
+          }, 300);
+        }
+      });
+
+      // Close mobile menu when clicking nav links
+      const mobileLinks = mobileMenu.querySelectorAll('a');
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          // Don't instantly close for hash links to allow smooth scrolling
+          setTimeout(() => {
+            mobileMenuButton.click();
+          }, 100);
+        });
+      });
+
+      // Add smooth scrolling for anchor links
+      document.querySelector('html').style.scrollBehavior = 'smooth';
+    });
+  </script>
+  <script>
+    // Carousel logic - replaced with scrollbar functionality
+  </script>
+  <!-- Downloads Modal -->
+  <div id="downloads-modal"
+    class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm transition-opacity duration-300 opacity-0 pointer-events-none">
+    <div class="bg-black border border-white/10 rounded-2xl shadow-2xl p-6 w-full max-w-md mx-auto relative">
+      <div class="text-center">
+        <h3 class="text-white text-xl font-bold mb-4">Get Your Download</h3>
+        <p class="text-gray-300 mb-6">/docs inside your ticket <a href="https://discord.gg/5PTE9tD5s9"
+            target="_blank" class="text-white hover:underline">discord.gg/5PTE9tD5s9</a> to receive your download.</p>
+        <a href="https://discord.gg/5PTE9tD5s9" target="_blank"
+          class="inline-block bg-zinc-800 hover:bg-zinc-800/80 px-6 py-3 rounded-lg text-white font-medium border-b-4 border-zinc-950 transition-all hover:translate-y-1 hover:border-b-2">Join
+          Discord</a>
+      </div>
+    </div>
+  </div>
+  <script>
+    function showDownloadsModal() {
+      const modal = document.getElementById('downloads-modal');
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      modal.classList.add('opacity-100');
+      document.body.style.overflow = 'hidden'; // Prevent body scrolling
+    }
+
+    function hideDownloadsModal() {
+      const modal = document.getElementById('downloads-modal');
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      modal.classList.remove('opacity-100');
+      document.body.style.overflow = ''; // Restore body scrolling
+    }
+
+    // Close modal when clicking outside
+    document.getElementById('downloads-modal').addEventListener('click', function (e) {
+      if (e.target === this) {
+        hideDownloadsModal();
+      }
+    });
+  </script>
+  <!-- Spoofer Modal Popup -->
+  <div id="spoofer-modal"
+    class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm transition-opacity duration-300 opacity-0 pointer-events-none">
+    <div class="bg-black border border-white/10 rounded-2xl shadow-2xl p-4 w-full max-w-xl mx-auto relative">
+      <div class="flex flex-col gap-4 items-center">
+        <!-- Perm Spoofer Option -->
+        <div class="bg-zinc-900 border border-white/10 rounded-xl p-4 flex flex-col gap-2 items-center w-full">
+          <div class="flex items-center justify-between w-full mb-2">
+            <span class="bg-white text-black text-sm font-bold px-3 py-1 rounded-md">PERM SPOOFER</span>
+            <span class="text-white text-lg font-bold">$21.99</span>
+          </div>
+          <div class="text-white font-semibold text-base mb-1 w-full text-center">Permanent Spoofer</div>
+          <ul class="text-white/80 text-sm list-disc pl-20 mb-2 w-full text-left">
+            <li>Permanent HWID Spoof</li>
+            <li>Works on all games</li>
+            <li>One-time use</li>
+          </ul>
+          <button
+            class="w-full bg-white text-black font-bold py-2 rounded-lg hover:bg-gray-200 transition text-base mt-auto buy-now-btn"
+            data-url="https://siren.sellhub.cx/product/Perm-Spoofer">Buy Now</button>
+        </div>
+        <!-- Temp Spoofer Option -->
+        <div class="bg-zinc-900 border border-white/10 rounded-xl p-4 flex flex-col gap-2 items-center w-full">
+          <div class="flex items-center justify-between w-full mb-2">
+            <span class="bg-white text-black text-sm font-bold px-3 py-1 rounded-md">TEMP SPOOFER</span>
+            <span class="text-white text-lg font-bold">$4.99</span>
+          </div>
+          <div class="text-white font-semibold text-base mb-1 w-full text-center">Temporary Spoofer</div>
+          <ul class="text-white/80 text-sm list-disc pl-20 mb-2 w-full text-left">
+            <li>Temporary HWID Spoof</li>
+            <li>Works until restart</li>
+            <li>All games supported</li>
+          </ul>
+          <button
+            class="w-full bg-white text-black font-bold py-2 rounded-lg hover:bg-gray-200 transition text-base mt-auto buy-now-btn"
+            data-url="https://siren.sellhub.cx/product/temp-spoofer/">Buy Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Apex Modal Popup -->
+  <div id="apex-modal"
+    class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm transition-opacity duration-300 opacity-0 pointer-events-none">
+    <div class="bg-black border border-white/10 rounded-2xl shadow-2xl p-4 w-full max-w-xl mx-auto relative">
+      <div class="flex flex-col gap-4 items-center">
+        <div class="bg-zinc-900 border border-white/10 rounded-xl p-4 flex flex-col gap-2 items-center w-full">
+          <div class="flex items-center justify-between w-full mb-2">
+            <span class="bg-white text-black text-sm font-bold px-3 py-1 rounded-md">EXTERNAL</span>
+            <span class="text-white text-lg font-bold">$2.99</span>
+          </div>
+          <div class="text-white font-semibold text-base mb-1 w-full text-center">Apex External</div>
+          <ul class="text-white/80 text-sm list-disc pl-20 mb-2 w-full text-left">
+            <li>Undetected</li>
+            <li>ESP, Aimbot, More</li>
+          </ul>
+          <button
+            class="w-full bg-white text-black font-bold py-2 rounded-lg hover:bg-gray-200 transition text-base mt-auto buy-now-btn"
+            data-url="https://siren.sellhub.cx/product/Apex-External">Buy Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Spoofer modal logic
+    const spooferModal = document.getElementById('spoofer-modal');
+    const spooferCards = Array.from(document.querySelectorAll('#carousel-track > .group.cursor-pointer')).filter(card => {
+      const img = card.querySelector('img');
+      return img && img.getAttribute('alt') === 'Spoofer';
+    });
+    spooferCards.forEach(card => {
+      card.addEventListener('click', () => {
+        spooferModal.classList.remove('opacity-0', 'pointer-events-none');
+        spooferModal.classList.add('opacity-100');
+      });
+    });
+    spooferModal.addEventListener('click', (e) => {
+      if (e.target === spooferModal) {
+        spooferModal.classList.add('opacity-0', 'pointer-events-none');
+        spooferModal.classList.remove('opacity-100');
+      }
+    });
+
+
+    // Apex modal logic
+    const apexModal = document.getElementById('apex-modal');
+    const apexCards = Array.from(document.querySelectorAll('#carousel-track > .group.cursor-pointer')).filter(card => {
+      const img = card.querySelector('img');
+      return img && img.getAttribute('alt') === 'Apex';
+    });
+    apexCards.forEach(card => {
+      card.addEventListener('click', () => {
+        apexModal.classList.remove('opacity-0', 'pointer-events-none');
+        apexModal.classList.add('opacity-100');
+      });
+    });
+    apexModal.addEventListener('click', (e) => {
+      if (e.target === apexModal) {
+        apexModal.classList.add('opacity-0', 'pointer-events-none');
+        apexModal.classList.remove('opacity-100');
+      }
+    });
+
+    // R6 modal logic
+    const r6Modal = document.getElementById('r6-modal');
+    const r6Cards = Array.from(document.querySelectorAll('#carousel-track > .group.cursor-pointer')).filter(card => {
+      const img = card.querySelector('img');
+      return img && img.getAttribute('alt') === 'R6';
+    });
+    r6Cards.forEach(card => {
+      card.addEventListener('click', () => {
+        r6Modal.classList.remove('opacity-0', 'pointer-events-none');
+        r6Modal.classList.add('opacity-100');
+      });
+    });
+    r6Modal.addEventListener('click', (e) => {
+      if (e.target === r6Modal) {
+        r6Modal.classList.add('opacity-0', 'pointer-events-none');
+        r6Modal.classList.remove('opacity-100');
+      }
+    });
+  </script>
+  <!-- R6 Modal Popup -->
+  <div id="r6-modal"
+    class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm transition-opacity duration-300 opacity-0 pointer-events-none">
+    <div class="bg-black border border-white/10 rounded-2xl shadow-2xl p-4 w-full max-w-xl mx-auto relative">
+      <div class="flex flex-col gap-4 items-center">
+        <!-- R6 External Card -->
+        <div class="bg-zinc-900 border border-white/10 rounded-xl p-4 flex flex-col gap-2 items-center w-full">
+          <div class="flex items-center justify-between w-full mb-2">
+            <span class="bg-white text-black text-sm font-bold px-3 py-1 rounded-md">EXTERNAL</span>
+            <span class="text-white text-lg font-bold">$4.99</span>
+          </div>
+          <div class="text-white font-semibold text-base mb-1 w-full text-center">R6 External</div>
+          <ul class="text-white/80 text-sm list-disc pl-8 mb-2 w-full text-left">
+            <li>Undetected</li>
+            <li>ESP, Aimbot, More</li>
+            <li>User Mode Access</li>
+          </ul>
+          <button
+            class="w-full bg-white text-black font-bold py-2 rounded-lg hover:bg-gray-200 transition text-base mt-auto buy-now-btn"
+            data-url="https://siren.sellhub.cx/product/Crusader/">Buy Now</button>
+        </div>
+        <!-- R6 Internal Card -->
+        <div class="bg-zinc-900 border border-white/10 rounded-xl p-4 flex flex-col gap-2 items-center w-full">
+          <div class="flex items-center justify-between w-full mb-2">
+            <span class="bg-white text-black text-sm font-bold px-3 py-1 rounded-md">INTERNAL</span>
+            <span class="text-white text-lg font-bold">$6.99</span>
+          </div>
+          <div class="text-white font-semibold text-base mb-1 w-full text-center">R6 Internal</div>
+          <ul class="text-white/80 text-sm list-disc pl-8 mb-2 w-full text-left">
+            <li>Advanced Features</li>
+            <li>ESP, Aimbot, More</li>
+            <li>Kernel Level Access</li>
+          </ul>
+          <button
+            class="w-full bg-white text-black font-bold py-2 rounded-lg hover:bg-gray-200 transition text-base mt-auto buy-now-btn"
+            data-url="https://siren.sellhub.cx/product/UAr6/">Buy Now</button>
+        </div>
+        <!-- R6 Zero Day Card -->
+        <div class="bg-zinc-900 border border-white/10 rounded-xl p-4 flex flex-col gap-2 items-center w-full">
+          <div class="flex items-center justify-between w-full mb-2">
+            <span class="bg-white text-black text-sm font-bold px-3 py-1 rounded-md">ZERO DAY</span>
+            <span class="text-white text-lg font-bold">$5.99</span>
+          </div>
+          <div class="text-white font-semibold text-base mb-1 w-full text-center">Zero Day R6</div>
+          <ul class="text-white/80 text-sm list-disc pl-8 mb-2 w-full text-left">
+            <li>Undetected</li>
+            <li>Advanced Features</li>
+            <li>Zero Day Exploits</li>
+          </ul>
+          <button
+            class="w-full bg-white text-black font-bold py-2 rounded-lg hover:bg-gray-200 transition text-base mt-auto buy-now-btn"
+            data-url="https://siren.sellhub.cx/product/Zero-Day-R6/">Buy Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    // ... existing code ...
+    // Modal logic
+    document.addEventListener('DOMContentLoaded', () => {
+      const modals = {
+        'bo6-modal': 'img[alt="BO6"]',
+        'spoofer-modal': 'img[alt="Spoofer"]',
+        'apex-modal': 'img[alt="Apex"]'
+      };
+
+      Object.entries(modals).forEach(([modalId, cardSelector]) => {
+        const modal = document.getElementById(modalId);
+        const cards = document.querySelectorAll(cardSelector);
+
+        cards.forEach(card => {
+          card.closest('.group').addEventListener('click', () => {
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.classList.add('opacity-100');
+          });
+        });
+
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) {
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            modal.classList.remove('opacity-100');
+          }
+        });
+      });
+    });
+
+    // Iframe modal logic
+    const iframeModal = document.getElementById('iframe-modal');
+    const iframeButton = document.getElementById('iframe-button');
+    if (iframeButton && iframeModal) {
+      iframeButton.addEventListener('click', () => {
+        iframeModal.classList.remove('opacity-0', 'pointer-events-none');
+        iframeModal.classList.add('opacity-100');
+      });
+      iframeModal.addEventListener('click', (e) => {
+        if (e.target === iframeModal) {
+          iframeModal.classList.add('opacity-0', 'pointer-events-none');
+          iframeModal.classList.remove('opacity-100');
+        }
+      });
+    }
+  </script>
+
+
+
+  <!-- Job Application Modals and JS -->
+  <div id="job-modal-overlay" class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm transition-opacity duration-300 opacity-0 pointer-events-none">
+    <div id="job-modal-container" class="bg-zinc-900 border border-white/10 rounded-2xl shadow-2xl p-6 w-full max-w-xl mx-auto relative" style="width:600px; max-width:95vw; height:80vh; max-height:700px; overflow-y:auto; color:white;">
+      <button onclick="hideJobModal()" class="absolute top-4 right-4 text-white/50 hover:text-white text-2xl">&times;</button>
+      <div id="job-modal-content"></div>
+    </div>
+  </div>
+  <script>
+  function showJobForm(jobType) {
+  const overlay = document.getElementById('job-modal-overlay');
+  overlay.style.display = 'flex';
+  const content = document.getElementById('job-modal-content');
+    let formHtml = '';
+    if (jobType === 'media-creator') {
+      formHtml = `
+        <h2 class='text-2xl font-bold text-white mb-2'>Apply: Media Creator</h2>
+        <div class='mb-4 text-white/90 text-sm'>
+          <p class='mb-2'>Rekall is seeking talented and creative content creators for YouTube and TikTok. Develop and execute content strategies that drive engagement and views. Earn up to 15$ per 1000 views on YouTube (not TikTok). If you love social media, video production, and making compelling content, we want you!</p>
+          <b class='block mt-2 mb-1'>What You'll Do:</b>
+          <ul class='list-disc list-inside mb-2'>
+            <li>Create engaging content for YouTube and/or TikTok platforms.</li>
+            <li>Develop strategies to increase views and engagement.</li>
+            <li>Monitor and analyze audience metrics to optimize content.</li>
+            <li>Collaborate with the team on content strategies.</li>
+          </ul>
+          <b class='block mt-2 mb-1'>What You'll Need:</b>
+          <ul class='list-disc list-inside mb-2'>
+            <li>Good video editing skills.</li>
+            <li>Excellent communication and collaboration skills.</li>
+            <li>Proficiency with YouTube and TikTok.</li>
+            <li>Knowledge of current social media trends.</li>
+          </ul>
+          <b class='block mt-2 mb-1'>What We Offer:</b>
+          <ul class='list-disc list-inside mb-2'>
+            <li>Up to 15$ per 1000 YouTube views (different rate for TikTok).</li>
+            <li>Free access to all our cheats (Premium subscription).</li>
+            <li>Opportunities for professional growth and development.</li>
+          </ul>
+        </div>
+        <form id='jobForm' class='space-y-4'>
+          <input type='hidden' name='job' value='Media Creator'>
+          <div><label class='block text-white/80 mb-1'>Full Name</label><input name='name' required class='w-full p-2 rounded bg-zinc-800 text-white'></div>
+          <div><label class='block text-white/80 mb-1'>Email</label><input name='email' type='email' required class='w-full p-2 rounded bg-zinc-800 text-white'></div>
+          <div><label class='block text-white/80 mb-1'>Discord (optional)</label><input name='discord' class='w-full p-2 rounded bg-zinc-800 text-white'></div>
+          <div><label class='block text-white/80 mb-1'>Why do you want to join?</label><textarea name='message' required class='w-full p-2 rounded bg-zinc-800 text-white'></textarea></div>
+          <button type='submit' class='w-full bg-white text-black font-bold py-2 rounded hover:bg-zinc-100 transition'>Submit Application</button>
+        </form>`;
+    } else if (jobType === 'reseller') {
+      formHtml = `
+        <h2 class='text-2xl font-bold text-white mb-2'>Apply: Reseller</h2>
+        <div class='mb-4 text-white/90 text-sm'>
+          <p class='mb-2'>Become an official Rekall reseller! Get access to bulk discounts, priority support, and exclusive resources to grow your business. If you have an audience, a Discord server, or a community and want to make money selling Rekall products, this is for you.</p>
+          <b class='block mt-2 mb-1'>What You'll Do:</b>
+          <ul class='list-disc list-inside mb-2'>
+            <li>Promote and sell Rekall products to your audience.</li>
+            <li>Provide basic customer support to your buyers.</li>
+            <li>Work with our team to ensure a smooth experience for your customers.</li>
+          </ul>
+          <b class='block mt-2 mb-1'>What You'll Need:</b>
+          <ul class='list-disc list-inside mb-2'>
+            <li>An active Discord server, website, or social media following.</li>
+            <li>Strong communication and marketing skills.</li>
+            <li>Honesty, reliability, and professionalism.</li>
+          </ul>
+          <b class='block mt-2 mb-1'>What We Offer:</b>
+          <ul class='list-disc list-inside mb-2'>
+            <li><b>Free Reseller:</b> Get 15% off all products and free access to the reseller panel.</li>
+            <li><b>Pro Reseller:</b> Pay $50 one-time and get 50% off all products, plus free panel access.</li>
+            <li>Bulk discounts and high profit margins.</li>
+            <li>Priority support for you and your customers.</li>
+            <li>Exclusive reseller resources and tools.</li>
+            <li>Potential to earn a lot—top resellers make $1000s/month.</li>
+          </ul>
+        </div>
+        <form id='jobForm' class='space-y-4'>
+          <input type='hidden' name='job' value='Reseller'>
+          <div><label class='block text-white/80 mb-1'>Full Name</label><input name='name' required class='w-full p-2 rounded bg-zinc-800 text-white'></div>
+          <div><label class='block text-white/80 mb-1'>Email</label><input name='email' type='email' required class='w-full p-2 rounded bg-zinc-800 text-white'></div>
+          <div><label class='block text-white/80 mb-1'>Discord (required)</label><input name='discord' required class='w-full p-2 rounded bg-zinc-800 text-white'></div>
+          <div><label class='block text-white/80 mb-1'>Tell us about your audience/community</label><textarea name='message' required class='w-full p-2 rounded bg-zinc-800 text-white'></textarea></div>
+          <button type='submit' class='w-full bg-white text-black font-bold py-2 rounded hover:bg-zinc-100 transition'>Submit Application</button>
+        </form>`;
+    } else if (jobType === 'cheat-developer') {
+      formHtml = `
+        <h2 class='text-2xl font-bold text-white mb-2'>Apply: Cheat Developer</h2>
+        <div class='mb-4 text-white/90 text-sm'>
+          <p class='mb-2'>Join Rekall as an experienced and highly skilled cheat developer. Use your expertise to develop new cheats and maintain existing ones for popular games. Work with a passionate team to ensure our cheats are effective and undetected.</p>
+          <b class='block mt-2 mb-1'>What You'll Do:</b>
+          <ul class='list-disc list-inside mb-2'>
+            <li>Windows kernel and user level software development.</li>
+            <li>Reverse engineering of games and anti-cheats.</li>
+            <li>Technical analysis of anti-cheat systems.</li>
+            <li>Deobfuscation and analysis of protection techniques.</li>
+            <li>Deep dive into Windows internals and undocumented APIs.</li>
+            <li>Collaborate with the engineering team.</li>
+          </ul>
+          <b class='block mt-2 mb-1'>What You'll Need:</b>
+          <ul class='list-disc list-inside mb-2'>
+            <li>Passion for making cheats and learning new things.</li>
+            <li>Strong C/C++ and assembly knowledge.</li>
+            <li>Deep knowledge of Windows OS internals and kernel-level driver dev.</li>
+            <li>High experience in reverse engineering and debugging.</li>
+            <li>Optional: Experience with Intel VT-x & AMD SVM virtualization.</li>
+            <li>Strong logic, algorithms, and optimization skills.</li>
+            <li>Excellent communication skills.</li>
+          </ul>
+          <b class='block mt-2 mb-1'>What We Offer:</b>
+          <ul class='list-disc list-inside mb-2'>
+            <li>Work from home, higher than average market pay.</li>
+            <li>Join a leading team of enthusiasts.</li>
+            <li>Professional growth and development.</li>
+            <li>Improve your skills and work with passionate people.</li>
+            <li>Be part of a well-known project with an active community.</li>
+          </ul>
+        </div>
+        <form id='jobForm' class='space-y-4'>
+          <input type='hidden' name='job' value='Cheat Developer'>
+          <div><label class='block text-white/80 mb-1'>Full Name</label><input name='name' required class='w-full p-2 rounded bg-zinc-800 text-white'></div>
+          <div><label class='block text-white/80 mb-1'>Email</label><input name='email' type='email' required class='w-full p-2 rounded bg-zinc-800 text-white'></div>
+          <div><label class='block text-white/80 mb-1'>Discord (optional)</label><input name='discord' class='w-full p-2 rounded bg-zinc-800 text-white'></div>
+          <div><label class='block text-white/80 mb-1'>Describe your experience with cheat development</label><textarea name='message' required class='w-full p-2 rounded bg-zinc-800 text-white'></textarea></div>
+          <button type='submit' class='w-full bg-white text-black font-bold py-2 rounded hover:bg-zinc-100 transition'>Submit Application</button>
+        </form>`;
+    } else if (jobType === 'web-developer') {
+      formHtml = `
+        <h2 class='text-2xl font-bold text-white mb-2'>Apply: Web Developer</h2>
+        <div class='mb-4 text-white/90 text-sm'>
+          <p class='mb-2'>We're looking for a skilled web developer to join Rekall! Help us build and maintain our web presence, create new features, and work with a team that values innovation and security. (You can customize this section with more details if you want!)</p>
+          <b class='block mt-2 mb-1'>What You'll Do:</b>
+          <ul class='list-disc list-inside mb-2'>
+            <li>Design, develop, and maintain our main website and web tools.</li>
+            <li>Work with designers to implement beautiful, responsive UIs.</li>
+            <li>Optimize for performance, accessibility, and security.</li>
+            <li>Collaborate with the team on new features and improvements.</li>
+          </ul>
+          <b class='block mt-2 mb-1'>What You'll Need:</b>
+          <ul class='list-disc list-inside mb-2'>
+            <li>Strong HTML, CSS, and JavaScript skills.</li>
+            <li>Experience with modern frameworks (React, Vue, etc.) is a plus.</li>
+            <li>Understanding of web security best practices.</li>
+            <li>Good communication and teamwork skills.</li>
+          </ul>
+          <b class='block mt-2 mb-1'>What We Offer:</b>
+          <ul class='list-disc list-inside mb-2'>
+            <li>Competitive pay and flexible hours.</li>
+            <li>Work remotely with a passionate team.</li>
+            <li>Opportunities for learning and growth.</li>
+          </ul>
+        </div>
+        <form id='jobForm' class='space-y-4'>
+          <input type='hidden' name='job' value='Web Developer'>
+          <div><label class='block text-white/80 mb-1'>Full Name</label><input name='name' required class='w-full p-2 rounded bg-zinc-800 text-white'></div>
+          <div><label class='block text-white/80 mb-1'>Email</label><input name='email' type='email' required class='w-full p-2 rounded bg-zinc-800 text-white'></div>
+          <div><label class='block text-white/80 mb-1'>Discord (optional)</label><input name='discord' class='w-full p-2 rounded bg-zinc-800 text-white'></div>
+          <div><label class='block text-white/80 mb-1'>Describe your web dev experience</label><textarea name='message' required class='w-full p-2 rounded bg-zinc-800 text-white'></textarea></div>
+          <button type='submit' class='w-full bg-white text-black font-bold py-2 rounded hover:bg-zinc-100 transition'>Submit Application</button>
+        </form>`;
+    }
+    content.innerHTML = formHtml;
+    overlay.classList.remove('opacity-0', 'pointer-events-none');
+    overlay.classList.add('opacity-100');
+    const form = document.getElementById('jobForm');
+    if (form) {
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const formData = new FormData(form);
+        const submitButton = form.querySelector('button[type="submit"]');
+        const statusMessage = document.createElement('div');
+        form.appendChild(statusMessage);
+        if (!formData.get('name') || !formData.get('email') || !formData.get('message')) {
+          statusMessage.textContent = 'Please fill in all fields.';
+          statusMessage.className = 'text-red-500 text-sm mt-2';
+          return;
+        }
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(formData.get('email'))) {
+          statusMessage.textContent = 'Please enter a valid email address.';
+          statusMessage.className = 'text-red-500 text-sm mt-2';
+          return;
+        }
+        submitButton.disabled = true;
+        submitButton.innerHTML = 'Sending...';
+        statusMessage.textContent = '';
+        try {
+          const response = await fetch('/.netlify/functions/submit-form', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              name: formData.get('name'),
+              email: formData.get('email'),
+              subject: formData.get('job'),
+              message: formData.get('message'),
+              discord: formData.get('discord') || ''
+            })
+          });
+          const data = await response.json();
+          if (response.ok) {
+            statusMessage.textContent = 'Application sent successfully!';
+            statusMessage.className = 'text-green-500 text-sm mt-2';
+            submitButton.innerHTML = 'Sent!';
+            submitButton.classList.add('bg-green-500', 'hover:bg-green-600');
+            form.reset();
+          } else {
+            throw new Error(data.error || 'Failed to send application');
+          }
+        } catch (error) {
+          statusMessage.textContent = 'Failed to send application. Please try again later.';
+          statusMessage.className = 'text-red-500 text-sm mt-2';
+        } finally {
+          if (!submitButton.classList.contains('bg-green-500')) {
+            submitButton.disabled = false;
+            submitButton.innerHTML = 'Submit Application';
+          }
+          setTimeout(() => {
+            statusMessage.textContent = '';
+            if (submitButton.classList.contains('bg-green-500')) {
+              submitButton.disabled = false;
+              submitButton.innerHTML = 'Submit Application';
+              submitButton.classList.remove('bg-green-500', 'hover:bg-green-600');
+            }
+          }, 5000);
+        }
+      });
+    }
+  }
+  function hideJobModal() {
+    const overlay = document.getElementById('job-modal-overlay');
+    document.getElementById('job-modal-content').innerHTML = '';
+    overlay.style.display = 'none';
+    overlay.classList.remove('opacity-100');
+  }
+  </script>
+
+  <!--Start of Tawk.to Script-->
+  <script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/6884396f828524191a31a205/1j1280mug';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>
+  <!--End of Tawk.to Script-->
+  
+  <!-- Maintenance Mode Script -->
+  <script src="js/maintenance.js"></script>
+</body>
+
+</html>
