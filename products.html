@@ -271,6 +271,7 @@
         if (!res.ok) return;
         const data = await res.json();
         window.PRODUCT_STATUS = data.products || {};
+        console.log('Loaded product status:', window.PRODUCT_STATUS);
         // Apply status labels/colors to product cards
         const titleToKey = (t) => {
           const s = t.trim().toLowerCase();
@@ -299,6 +300,7 @@
             const key = title ? titleToKey(title.textContent) : null;
             if (!key || !window.PRODUCT_STATUS[key] || !statusBadge) return;
             const stVal = window.PRODUCT_STATUS[key].status || 'UNDETECTED';
+            console.log(`Updating ${title.textContent} with status: ${stVal}`);
             // Normalize classes
             statusBadge.classList.remove('bg-green-500/20','border-green-500/40','text-green-500');
             statusBadge.classList.remove('bg-amber-500/20','border-amber-500/40','text-amber-500');
@@ -1759,7 +1761,7 @@
         const key = modalTitleToKey(title ? title.textContent : '');
         const st = (window.PRODUCT_STATUS && key && window.PRODUCT_STATUS[key]) || null;
         if (st && Object.prototype.hasOwnProperty.call(st, 'available')) {
-          setModalAvailability(modal, st.available !== false);
+          setModalAvailability(modal, st.available === true);
         }
       } catch (e) { /* noop */ }
     }

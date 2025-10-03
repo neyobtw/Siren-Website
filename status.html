@@ -529,6 +529,8 @@
                 const key = title ? nameToKey(title.textContent) : null;
                 if (!key || !STATUS[key] || !badge) return;
                 const stVal = STATUS[key].status || 'UNDETECTED';
+
+                // Update badge colors and text
                 badge.classList.remove('bg-green-500/20','border-green-500/40','text-green-500');
                 badge.classList.remove('bg-amber-500/20','border-amber-500/40','text-amber-500');
                 badge.classList.remove('bg-red-500/20','border-red-500/40','text-red-500');
@@ -543,26 +545,24 @@
                 if (text) text.textContent = stVal;
 
                 // Update dot color (the tiny rounded span in the badge)
-const dot =
-  badge.querySelector('.status-dot') ||
-  badge.querySelector('span.w-1.5.h-1.5.rounded-full');
-
-if (dot) {
-  dot.classList.remove('bg-green-500','bg-amber-500','bg-red-500');
-  if (stVal === 'UNDETECTED') {
-    dot.classList.add('bg-green-500');
-  } else if (stVal === 'UPDATING') {
-    dot.classList.add('bg-amber-500');
-  } else {
-    dot.classList.add('bg-red-500');
-  }
-}
+                const dot = badge.querySelector('.status-dot') || badge.querySelector('span.w-1.5.h-1.5.rounded-full');
+                if (dot) {
+                  dot.classList.remove('bg-green-500','bg-amber-500','bg-red-500');
+                  if (stVal === 'UNDETECTED') {
+                    dot.classList.add('bg-green-500');
+                  } else if (stVal === 'UPDATING') {
+                    dot.classList.add('bg-amber-500');
+                  } else {
+                    dot.classList.add('bg-red-500');
+                  }
+                }
 
                 // Also update the visual card colors (top gradient bar + card background tint)
                 const topBar = card.querySelector('.h-1.rounded-full');
                 if (topBar) {
+                  // Reset gradient classes
                   Array.from(topBar.classList).forEach(cls => {
-                    if (/^from-(green|amber|red)-500$/.test(cls) || /^to-(green|amber|red)-4\d\d$/.test(cls)) {
+                    if (/^from-/.test(cls) || /^to-/.test(cls)) {
                       topBar.classList.remove(cls);
                     }
                   });
@@ -575,6 +575,7 @@ if (dot) {
                   }
                 }
 
+                // Update card background tint
                 Array.from(card.classList).forEach(cls => {
                   if (/^from-(green|amber|red)-500\/15$/.test(cls)) {
                     card.classList.remove(cls);
