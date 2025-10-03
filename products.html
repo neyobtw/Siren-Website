@@ -296,74 +296,103 @@
         };
         const grid = document.getElementById('products-grid');
         if (grid) {
+          console.log('🔍 Found products grid, processing', grid.children.length, 'cards');
           const cards = grid.querySelectorAll('.group');
-          cards.forEach(card => {
-            const title = card.querySelector('h3');
-            const statusBadge = card.querySelector('.flex.items-center.justify-between .bg-green-500/20, .flex.items-center.justify-between .bg-amber-500/20, .flex.items-center.justify-between .bg-red-500/20') || card.querySelector('.flex.items-center.justify-between > div');
-            const key = title ? titleToKey(title.textContent) : null;
-            if (!key || !window.PRODUCT_STATUS[key] || !statusBadge) return;
-            const stVal = window.PRODUCT_STATUS[key].status || 'UNDETECTED';
-            console.log(`Updating ${title.textContent} with status: ${stVal}`);
-            // Normalize classes
-            statusBadge.classList.remove('bg-green-500/20','border-green-500/40','text-green-500');
-            statusBadge.classList.remove('bg-amber-500/20','border-amber-500/40','text-amber-500');
-            statusBadge.classList.remove('bg-red-500/20','border-red-500/40','text-red-500');
-            if (stVal === 'UNDETECTED') {
-              statusBadge.classList.add('bg-green-500/20','border-green-500/40','text-green-500');
-            } else if (stVal === 'UPDATING') {
-              statusBadge.classList.add('bg-amber-500/20','border-amber-500/40','text-amber-500');
-            } else {
-              statusBadge.classList.add('bg-red-500/20','border-red-500/40','text-red-500');
-            }
-            const badgeText = statusBadge.querySelector('span:last-child');
-            if (badgeText) badgeText.textContent = stVal;
+          console.log('🔍 Found', cards.length, 'product cards to process');
 
-            // Update inner status dot if present
+          cards.forEach((card, index) => {
+            const title = card.querySelector('h3');
+            if (!title) {
+              console.log(`⚠️ Card ${index} has no title element`);
+              return;
+            }
+
+            const productName = title.textContent.trim();
+            console.log(`📋 Processing card ${index}: "${productName}"`);
+
+            // Find status badge - use more specific selector
+            const statusSection = card.querySelector('.flex.items-center.justify-between');
+            if (!statusSection) {
+              console.log(`⚠️ Card ${index} (${productName}) has no status section`);
+              return;
+            }
+
+            const statusBadge = statusSection.querySelector('div[class*="bg-green-500/20"], div[class*="bg-amber-500/20"], div[class*="bg-red-500/20"]');
+            if (!statusBadge) {
+              console.log(`⚠️ Card ${index} (${productName}) has no status badge`);
+              return;
+            }
+
+            const key = titleToKey(productName);
+            if (!key) {
+              console.log(`⚠️ Card ${index} (${productName}) - no key mapping found`);
+              return;
+            }
+
+            if (!window.PRODUCT_STATUS[key]) {
+              console.log(`⚠️ Card ${index} (${productName}) - no status data for key: ${key}`);
+              return;
+            }
+
+            const stVal = window.PRODUCT_STATUS[key].status || 'UNDETECTED';
+            const available = window.PRODUCT_STATUS[key].available !== false;
+            console.log(`🎯 Card ${index} (${productName}) -> Status: ${stVal}, Available: ${available}`);
+
+            // UPDATE STATUS BADGE
+            console.log(`🔄 Updating badge for ${productName} to ${stVal}`);
+            statusBadge.className = statusBadge.className
+              .replace(/bg-green-500\/20/g, stVal === 'UNDETECTED' ? 'bg-green-500/20' : stVal === 'UPDATING' ? 'bg-amber-500/20' : 'bg-red-500/20')
+              .replace(/bg-amber-500\/20/g, stVal === 'UNDETECTED' ? 'bg-green-500/20' : stVal === 'UPDATING' ? 'bg-amber-500/20' : 'bg-red-500/20')
+              .replace(/bg-red-500\/20/g, stVal === 'UNDETECTED' ? 'bg-green-500/20' : stVal === 'UPDATING' ? 'bg-amber-500/20' : 'bg-red-500/20')
+              .replace(/border-green-500\/40/g, stVal === 'UNDETECTED' ? 'border-green-500/40' : stVal === 'UPDATING' ? 'border-amber-500/40' : 'border-red-500/40')
+              .replace(/border-amber-500\/40/g, stVal === 'UNDETECTED' ? 'border-green-500/40' : stVal === 'UPDATING' ? 'border-amber-500/40' : 'border-red-500/40')
+              .replace(/border-red-500\/40/g, stVal === 'UNDETECTED' ? 'border-green-500/40' : stVal === 'UPDATING' ? 'border-amber-500/40' : 'border-red-500/40')
+              .replace(/text-green-500/g, stVal === 'UNDETECTED' ? 'text-green-500' : stVal === 'UPDATING' ? 'text-amber-500' : 'text-red-500')
+              .replace(/text-amber-500/g, stVal === 'UNDETECTED' ? 'text-green-500' : stVal === 'UPDATING' ? 'text-amber-500' : 'text-red-500')
+              .replace(/text-red-500/g, stVal === 'UNDETECTED' ? 'text-green-500' : stVal === 'UPDATING' ? 'text-amber-500' : 'text-red-500');
+
+            // Update status text
+            const badgeText = statusBadge.querySelector('span:last-child');
+            if (badgeText) {
+              badgeText.textContent = stVal;
+              console.log(`✅ Updated badge text: ${badgeText.textContent}`);
+            }
+
+            // UPDATE STATUS DOT
             const dot = statusBadge.querySelector('span.w-1.5.h-1.5.rounded-full');
             if (dot) {
-              dot.classList.remove('bg-green-500','bg-amber-500','bg-red-500');
-              if (stVal === 'UNDETECTED') {
-                dot.classList.add('bg-green-500');
-              } else if (stVal === 'UPDATING') {
-                dot.classList.add('bg-amber-500');
-              } else {
-                dot.classList.add('bg-red-500');
-              }
+              dot.className = dot.className
+                .replace(/bg-green-500/g, stVal === 'UNDETECTED' ? 'bg-green-500' : stVal === 'UPDATING' ? 'bg-amber-500' : 'bg-red-500')
+                .replace(/bg-amber-500/g, stVal === 'UNDETECTED' ? 'bg-green-500' : stVal === 'UPDATING' ? 'bg-amber-500' : 'bg-red-500')
+                .replace(/bg-red-500/g, stVal === 'UNDETECTED' ? 'bg-green-500' : stVal === 'UPDATING' ? 'bg-amber-500' : 'bg-red-500');
+              console.log(`✅ Updated status dot color`);
             }
 
-            // Also update visual card colors (top gradient bar + card background tint)
+            // UPDATE TOP GRADIENT BAR
             const topBar = card.querySelector('.h-1.rounded-full');
-            // Reset possible gradient classes robustly
             if (topBar) {
-              Array.from(topBar.classList).forEach(cls => {
-                // Remove any gradient color sources/targets to avoid conflicts
-                if (/^from-/.test(cls) || /^to-/.test(cls)) {
-                  topBar.classList.remove(cls);
-                }
-              });
-              if (stVal === 'UNDETECTED') {
-                topBar.classList.add('from-green-500','to-green-400');
-              } else if (stVal === 'UPDATING') {
-                topBar.classList.add('from-amber-500','to-amber-400');
-              } else {
-                topBar.classList.add('from-red-500','to-red-400');
-              }
+              topBar.className = topBar.className
+                .replace(/from-green-500/g, stVal === 'UNDETECTED' ? 'from-green-500' : stVal === 'UPDATING' ? 'from-amber-500' : 'from-red-500')
+                .replace(/from-amber-500/g, stVal === 'UNDETECTED' ? 'from-green-500' : stVal === 'UPDATING' ? 'from-amber-500' : 'from-red-500')
+                .replace(/from-red-500/g, stVal === 'UNDETECTED' ? 'from-green-500' : stVal === 'UPDATING' ? 'from-amber-500' : 'from-red-500')
+                .replace(/to-green-400/g, stVal === 'UNDETECTED' ? 'to-green-400' : stVal === 'UPDATING' ? 'to-amber-400' : 'to-red-400')
+                .replace(/to-amber-400/g, stVal === 'UNDETECTED' ? 'to-green-400' : stVal === 'UPDATING' ? 'to-amber-400' : 'to-red-400')
+                .replace(/to-red-400/g, stVal === 'UNDETECTED' ? 'to-green-400' : stVal === 'UPDATING' ? 'to-amber-400' : 'to-red-400');
+              console.log(`✅ Updated gradient bar colors`);
             }
 
-            // Card background tint class lives on the card container itself (e.g., from-green-500/15 etc.)
-            Array.from(card.classList).forEach(cls => {
-              if (/^from-(green|amber|red)-500\/15$/.test(cls)) {
-                card.classList.remove(cls);
-              }
-            });
-            if (stVal === 'UNDETECTED') {
-              card.classList.add('from-green-500/15');
-            } else if (stVal === 'UPDATING') {
-              card.classList.add('from-amber-500/15');
-            } else {
-              card.classList.add('from-red-500/15');
-            }
+            // UPDATE CARD BACKGROUND
+            card.className = card.className
+              .replace(/from-green-500\/15/g, stVal === 'UNDETECTED' ? 'from-green-500/15' : stVal === 'UPDATING' ? 'from-amber-500/15' : 'from-red-500/15')
+              .replace(/from-amber-500\/15/g, stVal === 'UNDETECTED' ? 'from-green-500/15' : stVal === 'UPDATING' ? 'from-amber-500/15' : 'from-red-500/15')
+              .replace(/from-red-500\/15/g, stVal === 'UNDETECTED' ? 'from-green-500/15' : stVal === 'UPDATING' ? 'from-amber-500/15' : 'from-red-500/15');
+
+            console.log(`🎉 Successfully updated ${productName} to ${stVal} status`);
           });
+
+          console.log('🎉 All product cards processed!');
+        } else {
+          console.error('❌ Products grid not found!');
         }
       } catch (e) {
         // Ignore fetch errors silently
