@@ -1,9 +1,9 @@
 {
-  "lastUpdated": "2025-10-03T08:07:11.331Z",
+  "lastUpdated": "2025-10-03T08:30:31.793Z",
   "products": {
     "fortnite": {
-      "status": "UNDETECTED",
-      "available": true
+      "status": "UPDATING",
+      "available": false
     },
     "fortnite_lite": {
       "status": "UNDETECTED",
