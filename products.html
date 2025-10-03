@@ -316,7 +316,7 @@
             if (badgeText) badgeText.textContent = stVal;
 
             // Update inner status dot if present
-            const dot = statusBadge.querySelector('.status-dot') || statusBadge.querySelector('span[class*="bg-"]');
+            const dot = statusBadge.querySelector('span.w-1.5.h-1.5.rounded-full');
             if (dot) {
               dot.classList.remove('bg-green-500','bg-amber-500','bg-red-500');
               if (stVal === 'UNDETECTED') {
