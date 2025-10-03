@@ -3,7 +3,7 @@
   "products": {
     "fortnite": { "status": "UNDETECTED", "available": true },
     "fortnite_lite": { "status": "UNDETECTED", "available": true },
-    "rust": { "status": "UPDATING", "available": false },
+    "rust": { "status": "UNDETECTED", "available": true },
     "r6_full": { "status": "UNDETECTED", "available": true },
     "r6_unlock_all": { "status": "UNDETECTED", "available": true },
     "bo6_internal": { "status": "UNDETECTED", "available": true },
