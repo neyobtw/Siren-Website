@@ -351,27 +351,36 @@
               .replace(/text-amber-500/g, stVal === 'UNDETECTED' ? 'text-green-500' : stVal === 'UPDATING' ? 'text-amber-500' : 'text-red-500')
               .replace(/text-red-500/g, stVal === 'UNDETECTED' ? 'text-green-500' : stVal === 'UPDATING' ? 'text-amber-500' : 'text-red-500');
 
-            // Update status text
-            const badgeText = statusBadge.querySelector('span:last-child');
-            if (badgeText) {
-              badgeText.textContent = stVal;
-              console.log(`✅ Updated badge text: ${badgeText.textContent}`);
-            }
+            // UPDATE STATUS DOT FIRST - USE INLINE STYLES WITH !important
+            const allSpans = statusBadge.querySelectorAll('span');
+            let dot = null;
+            let badgeText = null;
+            
+            allSpans.forEach(span => {
+              if (span.classList.contains('rounded-full') || span.className.includes('w-1.5')) {
+                dot = span;
+              } else if (span.textContent && (span.textContent.includes('UNDETECTED') || span.textContent.includes('UPDATING') || span.textContent.includes('DETECTED'))) {
+                badgeText = span;
+              }
+            });
 
-            // UPDATE STATUS DOT - USE INLINE STYLES WITH !important AND FALLBACK SELECTORS
-            const dot = statusBadge.querySelector('span.w-1.5.h-1.5.rounded-full')
-                       || statusBadge.querySelector('span.rounded-full')
-                       || statusBadge.querySelector('span');
             if (dot) {
               console.log(`🔄 Updating dot for ${productName}`);
-              // Clean lingering utility classes
               dot.classList.remove('bg-green-500', 'bg-amber-500', 'bg-red-500');
               const dotColor = stVal === 'UNDETECTED' ? '#22c55e' : (stVal === 'UPDATING' ? '#f59e0b' : '#ef4444');
               try { dot.style.removeProperty('background-color'); } catch(e) {}
               dot.style.setProperty('background-color', dotColor, 'important');
-              console.log(`✅ Updated dot to ${stVal} color`);
+              console.log(`✅ Updated dot to ${stVal} color - applied ${dotColor}`);
             } else {
               console.log(`⚠️ No dot found for ${productName}`);
+            }
+
+            // Update status text
+            if (badgeText) {
+              badgeText.textContent = stVal;
+              console.log(`✅ Updated badge text: ${badgeText.textContent}`);
+            } else {
+              console.log(`⚠️ No badge text span found for ${productName}`);
             }
 
             // UPDATE TOP GRADIENT BAR - USE INLINE STYLES WITH !important
