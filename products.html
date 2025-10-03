@@ -361,33 +361,67 @@
             // UPDATE STATUS DOT
             const dot = statusBadge.querySelector('span.w-1.5.h-1.5.rounded-full');
             if (dot) {
-              dot.className = dot.className
-                .replace(/bg-green-500/g, stVal === 'UNDETECTED' ? 'bg-green-500' : stVal === 'UPDATING' ? 'bg-amber-500' : 'bg-red-500')
-                .replace(/bg-amber-500/g, stVal === 'UNDETECTED' ? 'bg-green-500' : stVal === 'UPDATING' ? 'bg-amber-500' : 'bg-red-500')
-                .replace(/bg-red-500/g, stVal === 'UNDETECTED' ? 'bg-green-500' : stVal === 'UPDATING' ? 'bg-amber-500' : 'bg-red-500');
+              console.log(`🔄 Updating dot for ${productName}`);
+              console.log(`   Dot before: ${dot.className}`);
+
+              dot.classList.remove('bg-green-500', 'bg-amber-500', 'bg-red-500');
+
+              if (stVal === 'UNDETECTED') {
+                dot.classList.add('bg-green-500');
+              } else if (stVal === 'UPDATING') {
+                dot.classList.add('bg-amber-500');
+              } else {
+                dot.classList.add('bg-red-500');
+              }
+
+              console.log(`   Dot after: ${dot.className}`);
               console.log(`✅ Updated status dot color`);
+            } else {
+              console.log(`⚠️ No dot found for ${productName}`);
             }
 
             // UPDATE TOP GRADIENT BAR
             const topBar = card.querySelector('.h-1.rounded-full');
             if (topBar) {
-              topBar.className = topBar.className
-                .replace(/from-green-500/g, stVal === 'UNDETECTED' ? 'from-green-500' : stVal === 'UPDATING' ? 'from-amber-500' : 'from-red-500')
-                .replace(/from-amber-500/g, stVal === 'UNDETECTED' ? 'from-green-500' : stVal === 'UPDATING' ? 'from-amber-500' : 'from-red-500')
-                .replace(/from-red-500/g, stVal === 'UNDETECTED' ? 'from-green-500' : stVal === 'UPDATING' ? 'from-amber-500' : 'from-red-500')
-                .replace(/to-green-400/g, stVal === 'UNDETECTED' ? 'to-green-400' : stVal === 'UPDATING' ? 'to-amber-400' : 'to-red-400')
-                .replace(/to-amber-400/g, stVal === 'UNDETECTED' ? 'to-green-400' : stVal === 'UPDATING' ? 'to-amber-400' : 'to-red-400')
-                .replace(/to-red-400/g, stVal === 'UNDETECTED' ? 'to-green-400' : stVal === 'UPDATING' ? 'to-amber-400' : 'to-red-400');
+              console.log(`🔄 Updating gradient bar for ${productName}`);
+              console.log(`   Bar before: ${topBar.className}`);
+
+              // Remove existing gradient classes
+              topBar.classList.remove('from-green-500', 'from-amber-500', 'from-red-500', 'to-green-400', 'to-amber-400', 'to-red-400');
+
+              // Add new gradient classes
+              if (stVal === 'UNDETECTED') {
+                topBar.classList.add('from-green-500', 'to-green-400');
+              } else if (stVal === 'UPDATING') {
+                topBar.classList.add('from-amber-500', 'to-amber-400');
+              } else {
+                topBar.classList.add('from-red-500', 'to-red-400');
+              }
+
+              console.log(`   Bar after: ${topBar.className}`);
               console.log(`✅ Updated gradient bar colors`);
+            } else {
+              console.log(`⚠️ No gradient bar found for ${productName}`);
             }
 
-            // UPDATE CARD BACKGROUND
-            card.className = card.className
-              .replace(/from-green-500\/15/g, stVal === 'UNDETECTED' ? 'from-green-500/15' : stVal === 'UPDATING' ? 'from-amber-500/15' : 'from-red-500/15')
-              .replace(/from-amber-500\/15/g, stVal === 'UNDETECTED' ? 'from-green-500/15' : stVal === 'UPDATING' ? 'from-amber-500/15' : 'from-red-500/15')
-              .replace(/from-red-500\/15/g, stVal === 'UNDETECTED' ? 'from-green-500/15' : stVal === 'UPDATING' ? 'from-amber-500/15' : 'from-red-500/15');
+            // UPDATE CARD BACKGROUND - Use more reliable method
+            console.log(`🔄 Updating card background for ${productName}`);
+            console.log(`   Card before: ${card.className}`);
 
-            console.log(`🎉 Successfully updated ${productName} to ${stVal} status`);
+            // Force remove all background classes first
+            card.classList.remove('from-green-500/15', 'from-amber-500/15', 'from-red-500/15');
+
+            // Force add the correct one
+            if (stVal === 'UNDETECTED') {
+              card.classList.add('from-green-500/15');
+            } else if (stVal === 'UPDATING') {
+              card.classList.add('from-amber-500/15');
+            } else {
+              card.classList.add('from-red-500/15');
+            }
+
+            console.log(`   Card after: ${card.className}`);
+            console.log(`✅ Updated card background for ${productName}`);
           });
 
           console.log('🎉 All product cards processed!');
