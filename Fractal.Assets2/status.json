@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-10-03T09:33:32.250Z",
+  "lastUpdated": "2025-10-03T09:35:08.803Z",
   "products": {
     "fortnite": {
       "status": "UNDETECTED",
@@ -30,8 +30,8 @@
       "available": true
     },
     "valorant_vip": {
-      "status": "UNDETECTED",
-      "available": true
+      "status": "UPDATING",
+      "available": false
     },
     "valorant_external": {
       "status": "UNDETECTED",
