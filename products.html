@@ -1413,11 +1413,18 @@
     }
 
     function showModal(modalId) {
-      const modal = document.getElementById(modalId);
-      modal.classList.remove('opacity-0', 'pointer-events-none');
-      modal.classList.add('opacity-100');
-      document.body.style.overflow = 'hidden';
+  const modal = document.getElementById(modalId);
+  if (!modal) return;
+  modal.classList.remove('opacity-0', 'pointer-events-none');
+  modal.classList.add('opacity-100');
+  document.body.style.overflow = 'hidden';
+  // Apply availability gating per status.json on open
+  try {
+    if (window.PRODUCT_STATUS) {
+      applyModalAvailability(modal);
     }
+  } catch (e) { /* noop */ }
+}
     
     function hideModal(modalId) {
       const modal = document.getElementById(modalId);
