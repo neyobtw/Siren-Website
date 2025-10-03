@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-10-03T09:32:22.513Z",
+  "lastUpdated": "2025-10-03T09:33:32.250Z",
   "products": {
     "fortnite": {
       "status": "UNDETECTED",
@@ -54,8 +54,8 @@
       "available": true
     },
     "perm_spoofer": {
-      "status": "DETECTED",
-      "available": false
+      "status": "UNDETECTED",
+      "available": true
     }
   }
 }
