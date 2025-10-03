@@ -1,0 +1,15 @@
+{
+  "name": "rekall-status-bot",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "deploy:commands": "node scripts/deploy-commands.js"
+  },
+  "dependencies": {
+    "discord.js": "14.15.3",
+    "dotenv": "16.4.5"
+  }
+}

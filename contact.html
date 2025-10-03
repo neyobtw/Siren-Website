@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./Fractal.Assets2/output.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="./Fractal.Assets2/logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./Fractal.Assets2/logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./Fractal.Assets2/logo.png">
+  <link rel="shortcut icon" href="./Fractal.Assets2/logo.png">
+  <link rel="manifest" href="./Fractal.Assets2/site.webmanifest">
+  <link rel="stylesheet" href="./Fractal.Assets2/swiper-bundle.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link href="./Fractal.Assets2/css2" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
+
+  <!-- Primary Meta Tags -->
+  <title>Rekall | Contact - Support</title>
+  <meta name="title" content="Rekall | Contact - Support">
+  <meta name="description" content="Contact Rekall support. Get help with purchases, technical issues, and product questions.">
+  <meta name="keywords" content="Rekall contact, Rekall support, customer support, help, questions">
+  <meta name="author" content="Rekall">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  <meta name="revisit-after" content="7 days">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://rekall.cc/contact">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rekall.cc/contact">
+  <meta property="og:title" content="Rekall | Contact - Support">
+  <meta property="og:description" content="Contact Rekall support for assistance with purchases, technical issues, and product questions.">
+  <meta property="og:image" content="https://rekall.cc/Fractal.Assets2/logo.png">
+  <meta property="og:site_name" content="Rekall">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://rekall.cc/contact">
+  <meta name="twitter:title" content="Rekall | Contact - Support">
+  <meta name="twitter:description" content="Get help from Rekall support with purchases and technical issues.">
+  <meta name="twitter:image" content="https://rekall.cc/Fractal.Assets2/logo.png">
+
+  <!-- Additional SEO Enhancements -->
+  <meta name="theme-color" content="#000000">
+</head>
+
+<body class="bg-black font-primary scroll-smooth">
+
+  <nav class="w-full py-5 border-b border-[#1C1C26]">
+    <div class="px-6 md:px-24 mx-auto flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex-shrink-0">
+        <img src="./Fractal.Assets2/logo.png" class="w-20 min-w-0" alt="Rekall Logo">
+      </div>
+      <!-- Main Navigation - Desktop Only -->
+      <div class="hidden md:flex items-center space-x-10">
+        <a class="text-white/40 font-medium hover:text-white transition" href="index.html">Home</a>
+        <a href="products.html" class="text-white/40 font-medium hover:text-white transition">Products</a>
+        <a href="#" onclick="showDownloadsModal(); return false;" class="text-white/40 font-medium hover:text-white transition">Downloads</a>
+        <a class="text-white/40 font-medium hover:text-white transition" href="status.html">Status</a>
+      </div>
+      <!-- Auth Buttons -->
+      <div class="hidden md:flex items-center space-x-4">
+        <a href="https://discord.gg/5PTE9tD5s9" target="_blank" class="bg-zinc-900 hover:bg-zinc-800 px-6 py-2 rounded-lg text-white font-medium border-b-4 border-zinc-950 transition-all hover:translate-y-1 hover:border-b-2">Join Discord</a>
+        <a href="https://rekall.mysellauth.com/customer/dashboard" class="bg-white hover:bg-white/90 px-6 py-2 rounded-lg text-black font-medium border-b-4 border-white/80 transition-all hover:translate-y-1 hover:border-b-2">Customer Dashboard</a>
+      </div>
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden flex items-center space-x-3">
+        <a href="products.html" class="bg-white hover:bg-white/90 px-4 py-1.5 rounded-lg text-black text-sm font-medium border-b-3 border-white/80 transition-all hover:translate-y-1 hover:border-b-1">View Products</a>
+        <button id="mobile-menu-button" type="button" class="text-gray-300 hover:text-white bg-zinc-900 p-2 rounded-lg border border-zinc-800 focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden">
+      <div class="absolute left-0 right-0 z-40 px-6 pt-4 pb-6 bg-zinc-900/95 backdrop-blur-lg border-b border-zinc-800 shadow-2xl transition-all duration-300 transform -translate-y-1 opacity-0" id="mobile-menu-container">
+        <!-- Mobile Navigation Links -->
+        <div class="space-y-3 py-3">
+          <a class="block text-white/70 font-medium hover:text-white transition px-3 py-2 rounded-lg hover:bg-black/30" href="index.html">Home</a>
+          <a href="products.html" class="block text-white/70 font-medium hover:text-white transition px-3 py-2 rounded-lg hover:bg-black/30">Products</a>
+          <a href="#" onclick="showDownloadsModal(); return false;" class="block text-white/70 font-medium hover:text-white transition px-3 py-2 rounded-lg hover:bg-black/30">Downloads</a>
+          <a class="block text-white font-medium hover:text-white transition px-3 py-2 rounded-lg hover:bg-black/30" href="status.html">Status</a>
+        </div>
+        <!-- Mobile Auth Button -->
+        <div class="pt-3 border-t border-zinc-800">
+          <a href="https://discord.gg/5PTE9tD5s9" target="_blank" class="flex items-center justify-center gap-2 bg-zinc-800 hover:bg-black/30 px-4 py-3 rounded-lg text-white font-medium transition-all">Join Discord</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contact Section -->
+  <section class="py-12 md:py-16 lg:py-20">
+    <div class="container px-4 sm:px-8 md:px-12 lg:px-24 mx-auto">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+          Contact <span class="text-white">Us</span>
+        </h1>
+        <p class="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto">
+          Get in touch with our support team. We're here to help with any questions or concerns.
+        </p>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="max-w-2xl mx-auto">
+        <div class="bg-zinc-900/60 backdrop-blur-sm p-8 rounded-2xl border border-zinc-800/50">
+          <form id="contactForm" class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="firstName" class="block text-white font-medium mb-2">First Name</label>
+                <input type="text" id="firstName" name="firstName" required
+                  class="w-full px-4 py-3 bg-zinc-800 border border-zinc-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-white transition-colors">
+              </div>
+              <div>
+                <label for="lastName" class="block text-white font-medium mb-2">Last Name</label>
+                <input type="text" id="lastName" name="lastName" required
+                  class="w-full px-4 py-3 bg-zinc-800 border border-zinc-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-white transition-colors">
+              </div>
+            </div>
+            
+            <div>
+              <label for="email" class="block text-white font-medium mb-2">Email Address</label>
+              <input type="email" id="email" name="email" required
+                class="w-full px-4 py-3 bg-zinc-800 border border-zinc-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-white transition-colors">
+            </div>
+            
+            <div>
+              <label for="discord" class="block text-white font-medium mb-2">Discord Username (Optional)</label>
+              <input type="text" id="discord" name="discord" placeholder="username#1234"
+                class="w-full px-4 py-3 bg-zinc-800 border border-zinc-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-white transition-colors">
+            </div>
+            
+            <div>
+              <label for="subject" class="block text-white font-medium mb-2">Subject</label>
+              <select id="subject" name="subject" required
+                class="w-full px-4 py-3 bg-zinc-800 border border-zinc-700 rounded-lg text-white focus:outline-none focus:border-white transition-colors">
+                <option value="">Select a subject</option>
+                <option value="General Inquiry">General Inquiry</option>
+                <option value="Technical Support">Technical Support</option>
+                <option value="Purchase Question">Purchase Question</option>
+                <option value="Bug Report">Bug Report</option>
+                <option value="Feature Request">Feature Request</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            
+            <div>
+              <label for="message" class="block text-white font-medium mb-2">Message</label>
+              <textarea id="message" name="message" rows="6" required
+                class="w-full px-4 py-3 bg-zinc-800 border border-zinc-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-white transition-colors resize-none"
+                placeholder="Tell us how we can help you..."></textarea>
+            </div>
+            
+            <div class="flex items-center justify-center">
+              <button type="submit" 
+                class="bg-white hover:bg-white/90 px-8 py-3 rounded-lg text-black font-medium border-b-4 border-white/80 transition-all hover:translate-y-1 hover:border-b-2">
+                Send Message
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Alternative Contact Methods -->
+      <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div class="bg-zinc-900/60 backdrop-blur-sm p-6 rounded-xl border border-zinc-800/50 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <h3 class="text-white font-semibold mb-2">Email Support</h3>
+          <p class="text-gray-400 text-sm">support@rekall.cc</p>
+        </div>
+        
+        <div class="text-center">
+          <div class="bg-zinc-900/60 backdrop-blur-sm p-6 rounded-xl border border-zinc-800/50 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"></path>
+            </svg>
+          </div>
+          <h3 class="text-white font-semibold mb-2">Discord Server</h3>
+          <p class="text-gray-400 text-sm">Join our community</p>
+          <a href="https://discord.gg/5PTE9tD5s9" target="_blank" class="text-white hover:underline text-sm">discord.gg/5PTE9tD5s9</a>
+        </div>
+        
+        <div class="text-center">
+          <div class="bg-zinc-900/60 backdrop-blur-sm p-6 rounded-xl border border-zinc-800/50 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-white font-semibold mb-2">Response Time</h3>
+          <p class="text-gray-400 text-sm">Within 24 hours</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-zinc-900 mt-12 md:mt-16 lg:mt-24 pt-12 md:pt-16 lg:pt-20 pb-0">
+    <div class="mx-auto px-4 sm:px-8 md:px-12 lg:px-24">
+      <!-- Main footer content with more spacing -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 md:gap-x-8 lg:gap-x-12 gap-y-8 md:gap-y-10 mb-12 md:mb-16">
+        <!-- Column 1: Logo and social -->
+        <div>
+          <img src="./Fractal.Assets2/logo.png" alt="Rekall Logo" class="h-10 md:h-12 mb-4 md:mb-6">
+          <p class="text-gray-400 mb-6">Undetected products since 2025</p>
+        </div>
+        
+        <!-- Column 2: Our Products -->
+        <div>
+          <h3 class="text-white font-medium text-lg mb-4 md:mb-6">Our Products</h3>
+          <ul class="space-y-3">
+            <li>
+              <a href="products.html" class="text-gray-400 hover:text-white transition-colors">View Products</a>
+            </li>
+          </ul>
+        </div>
+        
+        <!-- Column 3: Informations -->
+        <div>
+          <h3 class="text-white font-medium text-lg mb-4 md:mb-6">Information</h3>
+          <ul class="space-y-3">
+            <li>
+              <a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a>
+            </li>
+            <li>
+              <a href="terms.html" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
+            </li>
+          </ul>
+        </div>
+        
+        <!-- Column 4: Join Discord -->
+        <div>
+          <h3 class="text-white font-medium text-lg mb-4 md:mb-6">Join Our Discord</h3>
+          <p class="text-gray-400 mb-6 md:mb-12">Join our community to get support, <br class="hidden md:block"> updates and connect with other users.</p>
+          <a href="https://discord.gg/5PTE9tD5s9" class="bg-zinc-800 hover:bg-zinc-800/80 px-6 md:px-8 py-3 rounded-lg text-white font-medium border-b-4 border-zinc-950 transition-all hover:translate-y-1 hover:border-b-2">Join Discord</a>
+        </div>
+      </div>
+      
+      <!-- Copyright section -->
+      <div class="border-t border-zinc-800 py-6 md:py-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-500 text-xs md:text-sm mb-4 md:mb-0 text-center md:text-left">
+          Copyright © 2025 Rekall - All trademarks, logos, screenshots, and gameplay are property of their respective owners.
+        </p>
+        <div class="flex items-center space-x-6">
+          <span class="text-gray-500 text-xs md:text-sm flex gap-2 items-center">
+            Created By Rekall Development
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- White bottom bar -->
+    <div class="bg-white/10 py-1">
+      <div class="container mx-auto px-4 sm:px-8 md:px-12 lg:px-24 flex justify-center">
+        <p class="text-white/80 text-xs">Rekall</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Downloads Modal -->
+  <div id="downloads-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm transition-opacity duration-300 opacity-0 pointer-events-none">
+    <div class="bg-black border border-white/10 rounded-2xl shadow-2xl p-6 w-full max-w-md mx-auto relative">
+      <div class="text-center">
+        <h3 class="text-white text-xl font-bold mb-4">Get Your Download</h3>
+        <p class="text-gray-300 mb-6">/docs inside your ticket <a href="https://discord.gg/5PTE9tD5s9" target="_blank" class="text-white hover:underline">discord.gg/5PTE9tD5s9</a> to receive your download.</p>
+        <a href="https://discord.gg/5PTE9tD5s9" target="_blank" class="inline-block bg-zinc-800 hover:bg-zinc-800/80 px-6 py-3 rounded-lg text-white font-medium border-b-4 border-zinc-950 transition-all hover:translate-y-1 hover:border-b-2">Join Discord</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Contact form submission
+    document.getElementById('contactForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const form = e.target;
+      const formData = new FormData(form);
+      const submitButton = form.querySelector('button[type="submit"]');
+      const statusMessage = document.createElement('div');
+      form.appendChild(statusMessage);
+      
+      // Get form values
+      const name = `${formData.get('firstName')} ${formData.get('lastName')}`;
+      const email = formData.get('email');
+      const subject = formData.get('subject');
+      const message = formData.get('message');
+      const discord = formData.get('discord');
+      
+      // Simple validation
+      if (!name || !email || !subject || !message) {
+        statusMessage.textContent = 'Please fill in all fields.';
+        statusMessage.className = 'text-red-500 text-sm mt-2';
+        return;
+      }
+      
+      // Validate email format
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        statusMessage.textContent = 'Please enter a valid email address.';
+        statusMessage.className = 'text-red-500 text-sm mt-2';
+        return;
+      }
+      
+      // Disable submit button
+      submitButton.disabled = true;
+      submitButton.innerHTML = 'Sending...';
+      statusMessage.textContent = '';
+      
+      try {
+        const response = await fetch('/.netlify/functions/submit-form', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name,
+            email,
+            subject,
+            message,
+            discord: discord || ''
+          }),
+        });
+        
+        const data = await response.json();
+        
+        if (response.ok) {
+          statusMessage.textContent = 'Message sent successfully!';
+          statusMessage.className = 'text-green-500 text-sm mt-2';
+          submitButton.innerHTML = 'Sent!';
+          submitButton.classList.add('bg-green-500', 'hover:bg-green-600');
+          form.reset();
+        } else {
+          throw new Error(data.error || 'Failed to send message');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        statusMessage.textContent = 'Failed to send message. Please try again later.';
+        statusMessage.className = 'text-red-500 text-sm mt-2';
+      } finally {
+        // Don't reset the button if the form was successfully submitted
+        if (!submitButton.classList.contains('bg-green-500')) {
+          submitButton.disabled = false;
+          submitButton.innerHTML = 'Send Message';
+        }
+        
+        // Clear status message after 5 seconds
+        setTimeout(() => {
+          statusMessage.textContent = '';
+          // Reset button after message disappears
+          if (submitButton.classList.contains('bg-green-500')) {
+            submitButton.disabled = false;
+            submitButton.innerHTML = 'Send Message';
+            submitButton.classList.remove('bg-green-500', 'hover:bg-green-600');
+          }
+        }, 5000);
+      }
+    });
+
+    // Downloads modal functions
+    function showDownloadsModal() {
+      const modal = document.getElementById('downloads-modal');
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      modal.classList.add('opacity-100');
+    }
+    
+    function hideDownloadsModal() {
+      const modal = document.getElementById('downloads-modal');
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      modal.classList.remove('opacity-100');
+    }
+    
+    // Close modal when clicking outside
+    document.getElementById('downloads-modal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        hideDownloadsModal();
+      }
+    });
+
+    // Mobile menu functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileMenuContainer = document.getElementById('mobile-menu-container');
+      
+      let isMenuOpen = false;
+      
+      if (mobileMenuButton && mobileMenu && mobileMenuContainer) {
+        mobileMenuButton.addEventListener('click', function() {
+          isMenuOpen = !isMenuOpen;
+          
+          if (isMenuOpen) {
+            mobileMenu.classList.remove('hidden');
+            
+            // Staggered animation
+            setTimeout(() => {
+              mobileMenuContainer.classList.remove('-translate-y-1', 'opacity-0');
+              mobileMenuContainer.classList.add('translate-y-0', 'opacity-100');
+              
+              // Change button icon to X
+              mobileMenuButton.innerHTML = `
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              `;
+            }, 10);
+          } else {
+            // Reverse animation
+            mobileMenuContainer.classList.add('-translate-y-1', 'opacity-0');
+            mobileMenuContainer.classList.remove('translate-y-0', 'opacity-100');
+            
+            // Change button icon back to hamburger
+            mobileMenuButton.innerHTML = `
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            `;
+            
+            // Hide menu after animation completes
+            setTimeout(() => {
+              mobileMenu.classList.add('hidden');
+            }, 300);
+          }
+        });
+        
+        // Close mobile menu when clicking nav links
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            // Don't instantly close for hash links to allow smooth scrolling
+            setTimeout(() => {
+              mobileMenuButton.click();
+            }, 100);
+          });
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+          if (isMenuOpen && !mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+            mobileMenuButton.click();
+          }
+        });
+      }
+    });
+  </script>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6884396f828524191a31a205/1j1280mug';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+<script src="js/maintenance.js"></script></body>
+</html>

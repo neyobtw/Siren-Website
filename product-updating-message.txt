@@ -1,0 +1,6 @@
+<!-- PRODUCT UPDATING NOTICE: Product purchases disabled -->
+<div class="mt-4">
+  <div class="w-full bg-gradient-to-r from-amber-600 to-amber-500 text-white font-semibold text-sm py-2.5 rounded-lg border border-white/10 shadow-md shadow-amber-500/10 text-center">
+    This product is currently updating and is not available for purchase.
+  </div>
+</div>

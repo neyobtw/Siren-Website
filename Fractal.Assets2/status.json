@@ -1,0 +1,61 @@
+{
+  "lastUpdated": "2025-10-03T08:56:53.066Z",
+  "products": {
+    "fortnite": {
+      "status": "UPDATING",
+      "available": false
+    },
+    "fortnite_lite": {
+      "status": "UNDETECTED",
+      "available": true
+    },
+    "rust": {
+      "status": "UNDETECTED",
+      "available": true
+    },
+    "r6_full": {
+      "status": "UNDETECTED",
+      "available": true
+    },
+    "r6_unlock_all": {
+      "status": "UNDETECTED",
+      "available": true
+    },
+    "bo6_internal": {
+      "status": "UNDETECTED",
+      "available": true
+    },
+    "valorant_colorbot": {
+      "status": "UNDETECTED",
+      "available": true
+    },
+    "valorant_vip": {
+      "status": "UNDETECTED",
+      "available": true
+    },
+    "valorant_external": {
+      "status": "UNDETECTED",
+      "available": true
+    },
+    "marvel_rivals": {
+      "status": "UNDETECTED",
+      "available": true
+    },
+    "apex_rekall": {
+      "status": "UNDETECTED",
+      "available": true
+    },
+    "eft": {
+      "status": "UPDATING",
+      "available": false
+    },
+    "temp_spoofer": {
+      "status": "UNDETECTED",
+      "available": true
+    },
+    "perm_spoofer": {
+      "status": "UNDETECTED",
+      "available": true
+    }
+  }
+}
