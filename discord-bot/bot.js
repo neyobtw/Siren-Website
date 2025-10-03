@@ -13,7 +13,12 @@ const GUILD_ID = process.env.GUILD_ID; // optional for guild-only registration
 const CLIENT_ID = process.env.CLIENT_ID; // your application (bot) id
 const ALLOWED_ROLE_IDS = (process.env.ALLOWED_ROLE_IDS || '').split(',').map(s => s.trim()).filter(Boolean);
 const ALLOWED_USER_IDS = (process.env.ALLOWED_USER_IDS || '').split(',').map(s => s.trim()).filter(Boolean);
-const STATUS_PATH = path.resolve(__dirname, '..', 'Fractal.Assets2', 'status.json');
+// GitHub repo config for remote status updates
+const GH_OWNER = process.env.GITHUB_REPO_OWNER;          // e.g., "neyobtw"
+const GH_REPO = process.env.GITHUB_REPO_NAME;            // e.g., "Siren-Website"
+const GH_PATH = process.env.STATUS_FILE_PATH || 'Fractal.Assets2/status.json';
+const GH_BRANCH = process.env.STATUS_BRANCH || 'main';
+const GH_TOKEN = process.env.GITHUB_TOKEN;               // PAT with repo scope
 
 // Product keys mapping (status.json keys)
 const PRODUCT_KEYS = [
@@ -33,18 +38,66 @@ const PRODUCT_KEYS = [
   'perm_spoofer'
 ];
 
-function loadStatus() {
+// ---- GitHub-backed status storage ----
+async function githubGetStatus() {
+  if (!GH_OWNER || !GH_REPO || !GH_TOKEN) {
+    // Fallback to local file if present (useful for dev)
+    try {
+      const localPath = path.resolve(__dirname, '..', 'Fractal.Assets2', 'status.json');
+      const raw = fs.readFileSync(localPath, 'utf-8');
+      return JSON.parse(raw);
+    } catch {
+      return { lastUpdated: null, products: {} };
+    }
+  }
+  const url = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${encodeURIComponent(GH_PATH)}?ref=${GH_BRANCH}`;
+  const res = await fetch(url, { headers: { Authorization: `Bearer ${GH_TOKEN}`, 'User-Agent': 'status-bot' } });
+  if (!res.ok) return { lastUpdated: null, products: {} };
+  const data = await res.json();
   try {
-    const raw = fs.readFileSync(STATUS_PATH, 'utf-8');
-    return JSON.parse(raw);
-  } catch (e) {
+    const content = Buffer.from(data.content, 'base64').toString('utf8');
+    return JSON.parse(content);
+  } catch {
     return { lastUpdated: null, products: {} };
   }
 }
 
-function saveStatus(status) {
-  status.lastUpdated = new Date().toISOString();
-  fs.writeFileSync(STATUS_PATH, JSON.stringify(status, null, 2));
+async function githubSaveStatus(statusObj) {
+  statusObj.lastUpdated = new Date().toISOString();
+
+  if (!GH_OWNER || !GH_REPO || !GH_TOKEN) {
+    // Fallback to local write (dev only)
+    const localPath = path.resolve(__dirname, '..', 'Fractal.Assets2', 'status.json');
+    fs.writeFileSync(localPath, JSON.stringify(statusObj, null, 2));
+    return;
+  }
+
+  // Get existing sha if file exists
+  let sha;
+  const getUrl = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${encodeURIComponent(GH_PATH)}?ref=${GH_BRANCH}`;
+  const getRes = await fetch(getUrl, { headers: { Authorization: `Bearer ${GH_TOKEN}`, 'User-Agent': 'status-bot' } });
+  if (getRes.ok) {
+    const existing = await getRes.json();
+    sha = existing.sha;
+  }
+
+  const putUrl = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${encodeURIComponent(GH_PATH)}`;
+  const body = {
+    message: `chore(status): update ${GH_PATH}`,
+    content: Buffer.from(JSON.stringify(statusObj, null, 2)).toString('base64'),
+    sha,
+    branch: GH_BRANCH,
+    committer: { name: 'Status Bot', email: 'bot@example.com' }
+  };
+  const putRes = await fetch(putUrl, {
+    method: 'PUT',
+    headers: { Authorization: `Bearer ${GH_TOKEN}`, 'User-Agent': 'status-bot', 'Content-Type': 'application/json' },
+    body: JSON.stringify(body)
+  });
+  if (!putRes.ok) {
+    const err = await putRes.text();
+    throw new Error(`GitHub update failed: ${putRes.status} ${err}`);
+  }
 }
 
 function isAuthorized(interaction) {
@@ -103,13 +156,18 @@ client.on('interactionCreate', async (interaction) => {
   const statusLabel = interaction.options.getString('status', true);
   const available = interaction.options.getBoolean('available', true);
 
-  const data = loadStatus();
-  if (!data.products[product]) data.products[product] = {};
-  data.products[product].status = statusLabel;
-  data.products[product].available = available;
-  saveStatus(data);
-
-  await interaction.reply({ content: `Updated ${product}: status=${statusLabel}, available=${available}`, ephemeral: true });
+  try {
+    const data = await githubGetStatus();
+    if (!data.products) data.products = {};
+    if (!data.products[product]) data.products[product] = {};
+    data.products[product].status = statusLabel;
+    data.products[product].available = available;
+    await githubSaveStatus(data);
+    await interaction.reply({ content: `Updated ${product}: status=${statusLabel}, available=${available}`, ephemeral: true });
+  } catch (e) {
+    console.error('Failed to update status:', e);
+    await interaction.reply({ content: 'Failed to update status (GitHub update error).', ephemeral: true });
+  }
 });
 
 if (!TOKEN || !CLIENT_ID) {

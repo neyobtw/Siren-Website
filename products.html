@@ -1701,44 +1701,50 @@
     }
 
     function setModalAvailability(modal, available) {
-      if (!modal) return;
-      // Identify purchase buttons (SellAuth) commonly used inside modals
-      const purchaseButtons = modal.querySelectorAll('button[onclick*="openSellAuthCheckout"], button[data-purchase], a[data-purchase]');
-      const existingBanner = modal.querySelector('#modal-availability-banner');
+  if (!modal) return;
+  const purchaseButtons = modal.querySelectorAll(
+    'button[onclick*="openSellAuthCheckout"], button[data-purchase], a[data-purchase]'
+  );
+  const existingBanner = modal.querySelector('#modal-availability-banner');
+  const purchaseGrids = modal.querySelectorAll('.mt-4.grid');
 
-      if (available === false) {
-        // Disable buttons
-        purchaseButtons.forEach(btn => {
-          btn.setAttribute('disabled', 'true');
-          btn.setAttribute('aria-disabled', 'true');
-          btn.classList.add('opacity-60', 'cursor-not-allowed');
-        });
-        // Inject banner if not present (skip if Rust already has static banner)
-        if (!existingBanner && !modal.querySelector('.rust-updating-static-banner')) {
-          const banner = document.createElement('div');
-          banner.id = 'modal-availability-banner';
-          banner.className = 'w-full bg-gradient-to-r from-amber-600 to-amber-500 text-white font-semibold text-sm py-2.5 rounded-lg border border-white/10 shadow-md shadow-amber-500/10 text-center mb-4';
-          banner.textContent = 'This product is currently updating and is not available for purchase.';
-          // Insert banner below the title if possible
-          const title = modal.querySelector('h3');
-          if (title && title.parentElement) {
-            title.parentElement.insertBefore(banner, title.nextSibling);
-          } else {
-            const container = modal.querySelector('.text-center') || modal.firstElementChild || modal;
-            container.insertBefore(banner, container.firstChild);
-          }
-        }
+  if (available === false) {
+    purchaseButtons.forEach(btn => {
+      btn.setAttribute('disabled', 'true');
+      btn.setAttribute('aria-disabled', 'true');
+      btn.classList.add('opacity-60', 'cursor-not-allowed');
+    });
+
+    // Hide purchase grids entirely when unavailable
+    purchaseGrids.forEach(g => g.classList.add('hidden'));
+
+    if (!existingBanner && !modal.querySelector('.rust-updating-static-banner')) {
+      const banner = document.createElement('div');
+      banner.id = 'modal-availability-banner';
+      banner.className = 'w-full bg-gradient-to-r from-amber-600 to-amber-500 text-white font-semibold text-sm py-2.5 rounded-lg border border-white/10 shadow-md shadow-amber-500/10 text-center mb-4';
+      banner.textContent = 'This product is currently updating and is not available for purchase.';
+      const title = modal.querySelector('h3');
+      if (title && title.parentElement) {
+        title.parentElement.insertBefore(banner, title.nextSibling);
       } else {
-        // Re-enable buttons
-        purchaseButtons.forEach(btn => {
-          btn.removeAttribute('disabled');
-          btn.removeAttribute('aria-disabled');
-          btn.classList.remove('opacity-60', 'cursor-not-allowed');
-        });
-        // Remove injected banner if present
-        if (existingBanner) existingBanner.remove();
+        const container = modal.querySelector('.text-center') || modal.firstElementChild || modal;
+        container.insertBefore(banner, container.firstChild);
       }
     }
+  } else {
+    purchaseButtons.forEach(btn => {
+      btn.removeAttribute('disabled');
+      btn.removeAttribute('aria-disabled');
+      btn.classList.remove('opacity-60', 'cursor-not-allowed');
+    });
+
+    // Show purchase grids again when available
+    purchaseGrids.forEach(g => g.classList.remove('hidden'));
+
+    if (existingBanner) existingBanner.remove();
+  }
+}
+
 
     function applyModalAvailability(modal) {
       try {

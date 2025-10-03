@@ -542,6 +542,22 @@
                 const text = badge.querySelector('.status-text') || badge.querySelector('span:last-child');
                 if (text) text.textContent = stVal;
 
+                // Update dot color (the tiny rounded span in the badge)
+const dot =
+  badge.querySelector('.status-dot') ||
+  badge.querySelector('span.w-1.5.h-1.5.rounded-full');
+
+if (dot) {
+  dot.classList.remove('bg-green-500','bg-amber-500','bg-red-500');
+  if (stVal === 'UNDETECTED') {
+    dot.classList.add('bg-green-500');
+  } else if (stVal === 'UPDATING') {
+    dot.classList.add('bg-amber-500');
+  } else {
+    dot.classList.add('bg-red-500');
+  }
+}
+
                 // Also update the visual card colors (top gradient bar + card background tint)
                 const topBar = card.querySelector('.h-1.rounded-full');
                 if (topBar) {
