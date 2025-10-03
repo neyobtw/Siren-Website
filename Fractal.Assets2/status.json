@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-10-03T08:49:01.036Z",
+  "lastUpdated": "2025-10-03T08:56:53.066Z",
   "products": {
     "fortnite": {
       "status": "UPDATING",
@@ -46,8 +46,8 @@
       "available": true
     },
     "eft": {
-      "status": "UNDETECTED",
-      "available": true
+      "status": "UPDATING",
+      "available": false
     },
     "temp_spoofer": {
       "status": "UNDETECTED",
