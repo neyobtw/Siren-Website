@@ -21,6 +21,10 @@
       "status": "UNDETECTED",
       "available": true
     },
+    "bo7_internal": {
+      "status": "UNDETECTED",
+      "available": true
+    },
     "bo6_internal": {
       "status": "UNDETECTED",
       "available": true

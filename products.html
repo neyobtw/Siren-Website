@@ -136,6 +136,12 @@
             '1m': 666396
           }
         },
+        bo7_internal: {
+          productId: 484298,
+          variants: {
+            '1d': 714905
+          }
+        },
         bo6_internal: {
           productId: 454796,
           variants: {
@@ -283,6 +289,7 @@
           if (s === 'rust') return 'rust';
           if (s === 'r6 full') return 'r6_full';
           if (s.startsWith('r6 unlock')) return 'r6_unlock_all';
+          if (s.startsWith('bo7')) return 'bo7_internal';
           if (s.startsWith('bo6')) return 'bo6_internal';
           if (s.startsWith('valorant color')) return 'valorant_colorbot';
           if (s.startsWith('valorant vip')) return 'valorant_vip';
@@ -665,6 +672,32 @@
               <span class="bg-[#2d2d35] text-gray-300 px-3 py-1 rounded-full text-xs">Skins</span>
             </div>
             <button class="w-full bg-white hover:bg-white/90 text-black font-bold py-3 rounded-lg transition-all" onclick="showModal('r6-unlock-modal')">
+              View Details
+            </button>
+          </div>
+        </div>
+
+        <!-- BO7 Internal Product -->
+        <div class="bg-gradient-to-b from-green-500/15 to-[#141419] rounded-xl overflow-hidden border border-[#1C1C26]/50 hover:translate-y-[-4px] duration-300 ease-in-out transition-all group" data-order="5.5">
+          <div class="h-1 rounded-full w-full bg-gradient-to-r from-green-500 to-green-400"></div>
+          <div class="p-6">
+            <div class="mb-4">
+              <img src="./Fractal.Assets2/BO7.png" alt="BO7 Internal" class="w-full h-56 object-contain rounded-lg">
+            </div>
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-2xl font-bold text-white">BO7 Internal</h3>
+              <div class="bg-green-500/20 border-green-500/40 text-green-500 border text-xs px-2.5 py-1 rounded-full font-medium flex items-center gap-2">
+                <span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
+                <span>UNDETECTED</span>
+              </div>
+            </div>
+            <p class="text-gray-400 text-sm mb-4">High-performance internal cheat for Black Ops 7 with kernel-level access.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="bg-[#2d2d35] text-gray-300 px-3 py-1 rounded-full text-xs">Aimbot</span>
+              <span class="bg-[#2d2d35] text-gray-300 px-3 py-1 rounded-full text-xs">ESP</span>
+              <span class="bg-[#2d2d35] text-gray-300 px-3 py-1 rounded-full text-xs">Server Crasher</span>
+            </div>
+            <button class="w-full bg-white hover:bg-white/90 text-black font-bold py-3 rounded-lg transition-all" onclick="showModal('bo7-modal')">
               View Details
             </button>
           </div>
@@ -1143,6 +1176,40 @@
             <button class="w-full bg-gradient-to-b from-purple-600 to-fuchsia-600 text-white font-semibold text-sm py-2.5 rounded-lg border border-white/10 shadow-md shadow-fuchsia-500/10 hover:from-purple-500 hover:to-fuchsia-500 hover:shadow-fuchsia-500/20 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-400/70 sm:col-span-2"
                     onclick="openSellAuthCheckout('r6_unlock_all', '1m')">
               Purchase 1 Month
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BO7 Internal Modal -->
+  <div id="bo7-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm transition-opacity duration-300 opacity-0 pointer-events-none">
+    <div class="bg-black border border-white/10 rounded-2xl shadow-2xl p-6 w-full max-w-2xl mx-auto relative">
+      <button onclick="hideModal('bo7-modal')" class="absolute top-4 right-4 text-white/60 hover:text-white text-2xl">&times;</button>
+      <div class="text-center">
+        <h3 class="text-white text-2xl font-bold mb-4">BO7 Internal Cheat</h3>
+        <img src="./Fractal.Assets2/BO7.png" alt="BO7 Internal" class="w-full h-64 object-contain rounded-lg mb-4">
+        <p class="text-gray-300 mb-6">Built-in blocker/spoofer for Black Ops 7. Working on all platforms with advanced features.</p>
+        
+        <div class="bg-zinc-900 border border-white/10 rounded-xl p-6 mb-6">
+          <div class="flex items-center justify-between mb-4">
+            <span class="bg-white text-black text-sm font-bold px-3 py-1 rounded-md">INTERNAL</span>
+            <span class="text-white text-xl font-bold">$6.00</span>
+          </div>
+          <div class="text-white font-semibold text-lg mb-3">BO7 Internal Premium</div>
+          <ul class="text-white/80 text-sm mb-4 text-left space-y-1">
+            <li>&bull; Aimbot (Standard, P-Silent)</li>
+            <li>&bull; Player ESP (Box, Skeleton, Health)</li>
+            <li>&bull; Anti-Aim (Spin Bot, Jitter Bot)</li>
+            <li>&bull; Recoil Control & Removals</li>
+            <li>&bull; Unlock All & Custom Clantag</li>
+            <li>&bull; 24/7 Premium Support</li>
+          </ul>
+          <div class="mt-4">
+            <button class="w-full bg-gradient-to-b from-purple-600 to-fuchsia-600 text-white font-semibold text-sm py-2.5 rounded-lg border border-white/10 shadow-md shadow-fuchsia-500/10 hover:from-purple-500 hover:to-fuchsia-500 hover:shadow-fuchsia-500/20 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-400/70"
+                    onclick="openSellAuthCheckout('bo7_internal', '1d')">
+              Purchase 1 Day Beta
             </button>
           </div>
         </div>
@@ -1742,6 +1809,7 @@
       if (s === 'rust' || s === 'rust cheat') return 'rust';
       if (s === 'r6 full') return 'r6_full';
       if (s.startsWith('r6 unlock')) return 'r6_unlock_all';
+      if (s.startsWith('bo7')) return 'bo7_internal';
       if (s.startsWith('bo6')) return 'bo6_internal';
       if (s.startsWith('valorant color')) return 'valorant_colorbot';
       if (s.startsWith('valorant vip')) return 'valorant_vip';
